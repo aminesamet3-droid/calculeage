@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Âge du chat en âge humain - Calculateur 2025</title>
+    <meta name="description" content="Calculez l'âge de votre chat en équivalent humain. Formule vétérinaire précise. Découvrez le stade de vie de votre félin.">
+    <meta name="keywords" content="âge chat humain, calculer âge chat, conversion âge chat, mon chat a quel âge, calculateur âge chat">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Âge du chat en âge humain - Calculateur">
+    <meta property="og:description" content="Découvrez l'équivalent humain de l'âge de votre chat. Formule vétérinaire officielle.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculeage.eu/chat.html">
+    <meta property="og:image" content="https://calculeage.eu/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculateur d'âge du chat">
+    <meta name="twitter:description" content="Calculez l'âge de votre chat en âge humain avec la formule vétérinaire.">
+    <meta name="twitter:image" content="https://calculeage.eu/og-image.jpg">
+    
+    <link rel="canonical" href="https://calculeage.eu/chat.html">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --cat: #8b5cf6;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        nav ul { display: flex; list-style: none; gap: 15px; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        nav a:hover { color: var(--primary); }
+        .hero {
+            background: linear-gradient(135deg, var(--cat) 0%, #7c3aed 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p { font-size: 18px; margin-bottom: 30px; opacity: 0.95; }
+        .calculator-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin: -40px auto 40px;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 25px; }
+        .form-group > label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--cat);
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--cat) 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        .result {
+            display: none;
+            margin-top: 30px;
+        }
+        .result.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-block {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border: 2px solid var(--cat);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .result h3 {
+            color: #6b21a8;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .result-main {
+            font-size: 48px;
+            font-weight: 700;
+            color: #581c87;
+            margin: 20px 0;
+        }
+        .result-text {
+            font-size: 18px;
+            color: #6b21a8;
+            margin-bottom: 15px;
+        }
+        .life-stage {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .life-stage-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cat);
+            margin-bottom: 10px;
+        }
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--cat);
+        }
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .age-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .age-table th, .age-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .age-table th {
+            background: #f3e8ff;
+            font-weight: 600;
+            color: #581c87;
+        }
+        .highlight-box {
+            background: #f3e8ff;
+            border-left: 4px solid var(--cat);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .calculator-section { padding: 25px; margin: -30px 20px 30px; }
+            .result-main { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">📅 Calcul d'Âge</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="age-en-mois-jours.html">Âge en mois</a></li>
+                <li><a href="chien.html">Âge chien</a></li>
+                <li><a href="chat.html">Âge chat</a></li>
+                <li><a href="comparer-ages.html">Comparer</a></li>
+                <li><a href="age-celebrites.html">Célébrités</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>🐱 Calculer l'âge de votre chat en âge humain</h1>
+                <p>Découvrez l'équivalent humain de l'âge de votre félin</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="calculator-section">
+                <div class="form-group">
+                    <label for="catAge">Âge de votre chat (en années)</label>
+                    <input type="number" id="catAge" min="0" max="30" step="0.5" placeholder="Ex: 5">
+                </div>
+                
+                <button type="button" class="btn" onclick="calculateCatAge()">Calculer l'âge humain 🐾</button>
+                
+                <div class="result" id="result">
+                    <div class="result-block">
+                        <h3>🎂 Résultat</h3>
+                        <div class="result-text">Votre chat a l'équivalent de</div>
+                        <div class="result-main" id="humanAge"></div>
+                        <div class="result-text">en âge humain</div>
+                        
+                        <div class="life-stage">
+                            <div class="life-stage-title" id="stageTitle"></div>
+                            <div id="stageDesc"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="content-section">
+            <div class="container">
+                <h2>Comment calculer l'âge d'un chat en âge humain ?</h2>
+                
+                <p>Contrairement à l'idée reçue qui consiste à multiplier par 7, les <strong>vétérinaires</strong> ont établi une formule plus précise pour calculer l'âge d'un chat en équivalent humain.</p>
+                
+                <h3>La formule vétérinaire officielle</h3>
+                
+                <div class="highlight-box">
+                    <p><strong>🔬 Formule scientifique pour les chats :</strong></p>
+                    <ul>
+                        <li><strong>1ère année :</strong> = 15 ans humains</li>
+                        <li><strong>2ème année :</strong> = 15 + 9 = 24 ans humains</li>
+                        <li><strong>Chaque année suivante :</strong> = +4 ans humains</li>
+                    </ul>
+                </div>
+                
+                <p>Cette méthode reflète mieux la <strong>maturation rapide</strong> des chats durant leurs deux premières années, suivie d'un vieillissement plus régulier.</p>
+                
+                <h3>Tableau de correspondance âge chat / âge humain</h3>
+                
+                <table class="age-table">
+                    <thead>
+                        <tr>
+                            <th>Âge du chat</th>
+                            <th>Âge humain</th>
+                            <th>Stade de vie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6 mois</td>
+                            <td>10 ans</td>
+                            <td>Chaton</td>
+                        </tr>
+                        <tr>
+                            <td>1 an</td>
+                            <td>15 ans</td>
+                            <td>Adolescent</td>
+                        </tr>
+                        <tr>
+                            <td>2 ans</td>
+                            <td>24 ans</td>
+                            <td>Jeune adulte</td>
+                        </tr>
+                        <tr>
+                            <td>5 ans</td>
+                            <td>36 ans</td>
+                            <td>Adulte</td>
+                        </tr>
+                        <tr>
+                            <td>10 ans</td>
+                            <td>56 ans</td>
+                            <td>Mature</td>
+                        </tr>
+                        <tr>
+                            <td>15 ans</td>
+                            <td>76 ans</td>
+                            <td>Senior</td>
+                        </tr>
+                        <tr>
+                            <td>20 ans</td>
+                            <td>96 ans</td>
+                            <td>Très âgé</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Les 6 stades de vie du chat</h3>
+                
+                <ul>
+                    <li><strong>Chaton (0-6 mois) :</strong> Croissance rapide, sevrage, socialisation intense, apprentissage</li>
+                    <li><strong>Junior (6 mois - 2 ans) :</strong> Puberté, comportement joueur, énergie débordante</li>
+                    <li><strong>Adulte (3-6 ans) :</strong> Pic de forme physique, comportement stabilisé</li>
+                    <li><strong>Mature (7-10 ans) :</strong> Début du ralentissement, premiers signes de vieillissement</li>
+                    <li><strong>Senior (11-14 ans) :</strong> Ralentissement notable, besoins spécifiques</li>
+                    <li><strong>Gériatrique (15+ ans) :</strong> Vieillesse avancée, surveillance médicale renforcée</li>
+                </ul>
+                
+                <h3>Espérance de vie des chats</h3>
+                
+                <p>L'espérance de vie d'un chat dépend de plusieurs facteurs :</p>
+                
+                <ul>
+                    <li><strong>Chat domestique d'intérieur :</strong> 12-18 ans (parfois 20+ ans)</li>
+                    <li><strong>Chat d'extérieur :</strong> 7-10 ans (risques accrus : accidents, maladies)</li>
+                    <li><strong>Chat errant :</strong> 3-5 ans</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>🏆 Record du monde :</strong> Le chat le plus vieux officiellement reconnu est Creme Puff (Texas, USA) qui a vécu 38 ans et 3 jours (1967-2005), soit environ 168 ans en âge humain !</p>
+                </div>
+                
+                <h3>Signes de vieillissement chez le chat</h3>
+                
+                <p>À partir de 7-8 ans, surveillez ces signes :</p>
+                
+                <ul>
+                    <li><strong>Physiques :</strong> Poils blancs sur le museau, diminution de la vue/ouïe, raideur articulaire</li>
+                    <li><strong>Comportementaux :</strong> Moins actif, dort plus, moins joueur</li>
+                    <li><strong>Santé :</strong> Problèmes dentaires, insuffisance rénale, hyperthyroïdie</li>
+                </ul>
+                
+                <h3>Conseils pour prolonger la vie de votre chat</h3>
+                
+                <ul>
+                    <li><strong>Alimentation adaptée :</strong> Croquettes premium selon l'âge, hydratation suffisante</li>
+                    <li><strong>Visites vétérinaires régulières :</strong> Annuelles jusqu'à 7 ans, puis bi-annuelles</li>
+                    <li><strong>Vie en intérieur :</strong> Réduit drastiquement les risques d'accidents et maladies</li>
+                    <li><strong>Stimulation mentale :</strong> Jeux interactifs, arbres à chat, jouets variés</li>
+                    <li><strong>Hygiène :</strong> Brossage régulier, soins dentaires</li>
+                    <li><strong>Stérilisation :</strong> Augmente l'espérance de vie de 1-3 ans</li>
+                    <li><strong>Environnement sûr :</strong> Éliminer les plantes toxiques, sécuriser les fenêtres</li>
+                </ul>
+                
+                <h3>Différences chat vs chien</h3>
+                
+                <p>Pourquoi les chats vivent-ils généralement plus longtemps que les chiens ?</p>
+                
+                <ul>
+                    <li><strong>Taille :</strong> Les chats sont majoritairement de taille moyenne (contrairement aux chiens qui varient énormément)</li>
+                    <li><strong>Métabolisme :</strong> Métabolisme plus stable et régulier</li>
+                    <li><strong>Mode de vie :</strong> Moins d'accidents quand ils vivent en intérieur</li>
+                    <li><strong>Génétique :</strong> Moins de problèmes de santé liés à la sélection de races extrêmes</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Âge - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculateur d'Âge du Chat en Âge Humain",
+        "description": "Calculez l'âge de votre chat en équivalent humain. Formule vétérinaire officielle.",
+        "url": "https://calculeage.eu/chat.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "featureList": [
+            "Calcul âge chat en âge humain",
+            "Formule vétérinaire officielle",
+            "6 stades de vie du chat",
+            "Espérance de vie féline"
+        ]
+    }
+    </script>
+    
+    <script>
+        function calculateCatAge() {
+            const catAge = parseFloat(document.getElementById('catAge').value);
+            
+            if (!catAge || catAge < 0) {
+                alert('⚠️ Veuillez entrer un âge valide');
+                return;
+            }
+            
+            if (catAge > 30) {
+                alert('⚠️ Âge exceptionnellement élevé. Vérifiez votre saisie.');
+                return;
+            }
+            
+            let humanAge = 0;
+            
+            // Formule vétérinaire pour les chats
+            if (catAge <= 1) {
+                humanAge = Math.round(catAge * 15);
+            } else if (catAge <= 2) {
+                humanAge = 15 + Math.round((catAge - 1) * 9);
+            } else {
+                humanAge = 24 + Math.round((catAge - 2) * 4);
+            }
+            
+            // Déterminer le stade de vie
+            let stageTitle, stageDesc;
+            if (catAge < 0.5) {
+                stageTitle = '🍼 Chaton';
+                stageDesc = 'Votre chat est en pleine croissance. C\'est la période cruciale pour la socialisation et l\'apprentissage de la propreté.';
+            } else if (catAge < 2) {
+                stageTitle = '🐱 Junior';
+                stageDesc = 'Votre chat est adolescent, très joueur et énergique. Il atteint sa maturité sexuelle (pensez à la stérilisation).';
+            } else if (catAge < 7) {
+                stageTitle = '💪 Adulte';
+                stageDesc = 'Votre chat est dans la force de l\'âge. Maintenez une alimentation équilibrée et des jeux réguliers.';
+            } else if (catAge < 11) {
+                stageTitle = '🎯 Mature';
+                stageDesc = 'Votre chat entre dans l\'âge mûr. Surveillez son poids et commencez les bilans vétérinaires bi-annuels.';
+            } else if (catAge < 15) {
+                stageTitle = '👴 Senior';
+                stageDesc = 'Votre chat est senior. Augmentez la surveillance médicale et adaptez son environnement (accès facilité aux ressources).';
+            } else {
+                stageTitle = '🏆 Gériatrique';
+                stageDesc = 'Votre chat est dans un âge avancé. Félicitations ! Assurez-lui un maximum de confort et des suivis vétérinaires réguliers.';
+            }
+            
+            document.getElementById('humanAge').textContent = humanAge + ' ans';
+            document.getElementById('stageTitle').textContent = stageTitle;
+            document.getElementById('stageDesc').textContent = stageDesc;
+            
+            document.getElementById('result').classList.add('show');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        document.getElementById('catAge').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') calculateCatAge();
+        });
+    </script>
+</body>
+</html>

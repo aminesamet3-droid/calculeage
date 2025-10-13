@@ -1,0 +1,28 @@
+# robots.txt pour Calcul d'Âge
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Bloquer les mauvais robots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://calculeage.eu/sitemap.xml
+
+# Règles spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Règles pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0

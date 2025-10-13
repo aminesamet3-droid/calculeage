@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Âge des célébrités - Calculateur en temps réel 2025</title>
+    <meta name="description" content="Découvrez l'âge exact des célébrités françaises et internationales. Calcul en temps réel. Comparez votre âge aux stars !">
+    <meta name="keywords" content="âge célébrités, âge stars, célébrités âge, âge acteurs, âge chanteurs, qui a mon âge célébrité">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Âge des célébrités en temps réel">
+    <meta property="og:description" content="Découvrez l'âge exact de vos stars préférées et comparez votre âge aux célébrités !">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculeage.eu/age-celebrites.html">
+    <meta property="og:image" content="https://calculeage.eu/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Âge des célébrités">
+    <meta name="twitter:description" content="Découvrez quelle star a le même âge que vous !">
+    <meta name="twitter:image" content="https://calculeage.eu/og-image.jpg">
+    
+    <link rel="canonical" href="https://calculeage.eu/age-celebrites.html">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --gold: #fbbf24;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        nav ul { display: flex; list-style: none; gap: 15px; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        nav a:hover { color: var(--primary); }
+        .hero {
+            background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p { font-size: 18px; margin-bottom: 30px; opacity: 0.95; }
+        .search-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin: -40px auto 40px;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 16px 50px 16px 20px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: var(--gold);
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold);
+            color: white;
+        }
+        .celebs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .celeb-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .celeb-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .celeb-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .celeb-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #fef3c7;
+            color: #78350f;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .celeb-birth {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        .celeb-age {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        .my-age-section {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+            border: 2px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .my-age-section h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .my-age-inputs {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr auto;
+            gap: 10px;
+            align-items: end;
+        }
+        .my-age-inputs input, .my-age-inputs select {
+            padding: 12px;
+            font-size: 14px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+        }
+        .my-age-inputs button {
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .same-age-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .search-section { padding: 20px; margin: -30px 20px 30px; }
+            .celebs-grid { grid-template-columns: 1fr; }
+            .my-age-inputs { grid-template-columns: 1fr; }
+            .filter-buttons { gap: 5px; }
+            .filter-btn { padding: 8px 15px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">📅 Calcul d'Âge</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="age-en-mois-jours.html">Âge en mois</a></li>
+                <li><a href="chien.html">Âge chien</a></li>
+                <li><a href="chat.html">Âge chat</a></li>
+                <li><a href="comparer-ages.html">Comparer</a></li>
+                <li><a href="age-celebrites.html">Célébrités</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>⭐ Âge des Célébrités</h1>
+                <p>Découvrez l'âge exact de vos stars préférées</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Rechercher une célébrité..." onkeyup="filterCelebs()">
+                    <span class="search-icon">🔍</span>
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterByCategory('all')">Tous</button>
+                    <button class="filter-btn" onclick="filterByCategory('cinema')">Cinéma</button>
+                    <button class="filter-btn" onclick="filterByCategory('musique')">Musique</button>
+                    <button class="filter-btn" onclick="filterByCategory('sport')">Sport</button>
+                    <button class="filter-btn" onclick="filterByCategory('politique')">Politique</button>
+                </div>
+            </section>
+            
+            <div class="my-age-section">
+                <h3>🎯 Qui a le même âge que vous ?</h3>
+                <div class="my-age-inputs">
+                    <input type="number" id="myDay" placeholder="Jour" min="1" max="31">
+                    <select id="myMonth">
+                        <option value="">Mois</option>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7">Juillet</option>
+                        <option value="8">Août</option>
+                        <option value="9">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Décembre</option>
+                    </select>
+                    <input type="number" id="myYear" placeholder="Année" min="1900" max="2025">
+                    <button onclick="findSameAge()">Trouver</button>
+                </div>
+            </div>
+            
+            <div class="celebs-grid" id="celebsGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                Aucune célébrité trouvée 😢
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Âge - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Âge des Célébrités",
+        "description": "Base de données de l'âge des célébrités en temps réel. Découvrez quelle star a le même âge que vous.",
+        "url": "https://calculeage.eu/age-celebrites.html",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "featureList": [
+            "Base de 40+ célébrités",
+            "Âge en temps réel",
+            "Recherche par nom",
+            "Filtres par catégorie",
+            "Qui a mon âge ?"
+        ]
+    }
+    </script>
+    
+    <script>
+        const celebrities = [
+            // Cinéma Français
+            { name: 'Omar Sy', birth: '1978-01-20', category: 'cinema' },
+            { name: 'Marion Cotillard', birth: '1975-09-30', category: 'cinema' },
+            { name: 'Jean Dujardin', birth: '1972-06-19', category: 'cinema' },
+            { name: 'Gad Elmaleh', birth: '1971-04-19', category: 'cinema' },
+            { name: 'Audrey Tautou', birth: '1976-08-09', category: 'cinema' },
+            { name: 'Vincent Cassel', birth: '1966-11-23', category: 'cinema' },
+            { name: 'Sophie Marceau', birth: '1966-11-17', category: 'cinema' },
+            { name: 'Kev Adams', birth: '1991-07-01', category: 'cinema' },
+            
+            // Cinéma International
+            { name: 'Leonardo DiCaprio', birth: '1974-11-11', category: 'cinema' },
+            { name: 'Brad Pitt', birth: '1963-12-18', category: 'cinema' },
+            { name: 'Scarlett Johansson', birth: '1984-11-22', category: 'cinema' },
+            { name: 'Tom Cruise', birth: '1962-07-03', category: 'cinema' },
+            { name: 'Emma Watson', birth: '1990-04-15', category: 'cinema' },
+            { name: 'Ryan Gosling', birth: '1980-11-12', category: 'cinema' },
+            { name: 'Jennifer Lawrence', birth: '1990-08-15', category: 'cinema' },
+            
+            // Musique Française
+            { name: 'Stromae', birth: '1985-03-12', category: 'musique' },
+            { name: 'Christine and the Queens', birth: '1988-06-01', category: 'musique' },
+            { name: 'Angèle', birth: '1995-12-03', category: 'musique' },
+            { name: 'David Guetta', birth: '1967-11-07', category: 'musique' },
+            { name: 'Soprano', birth: '1979-01-14', category: 'musique' },
+            { name: 'Mylène Farmer', birth: '1961-09-12', category: 'musique' },
+            
+            // Musique International
+            { name: 'Taylor Swift', birth: '1989-12-13', category: 'musique' },
+            { name: 'Ed Sheeran', birth: '1991-02-17', category: 'musique' },
+            { name: 'Beyoncé', birth: '1981-09-04', category: 'musique' },
+            { name: 'Justin Bieber', birth: '1994-03-01', category: 'musique' },
+            { name: 'Ariana Grande', birth: '1993-06-26', category: 'musique' },
+            { name: 'Billie Eilish', birth: '2001-12-18', category: 'musique' },
+            
+            // Sport
+            { name: 'Kylian Mbappé', birth: '1998-12-20', category: 'sport' },
+            { name: 'Antoine Griezmann', birth: '1991-03-21', category: 'sport' },
+            { name: 'Cristiano Ronaldo', birth: '1985-02-05', category: 'sport' },
+            { name: 'Lionel Messi', birth: '1987-06-24', category: 'sport' },
+            { name: 'Rafael Nadal', birth: '1986-06-03', category: 'sport' },
+            { name: 'Serena Williams', birth: '1981-09-26', category: 'sport' },
+            { name: 'Tony Parker', birth: '1982-05-17', category: 'sport' },
+            
+            // Politique & Autres
+            { name: 'Emmanuel Macron', birth: '1977-12-21', category: 'politique' },
+            { name: 'Barack Obama', birth: '1961-08-04', category: 'politique' },
+            { name: 'Elon Musk', birth: '1971-06-28', category: 'politique' },
+            { name: 'Mark Zuckerberg', birth: '1984-05-14', category: 'politique' }
+        ];
+        
+        let currentFilter = 'all';
+        let userBirthdate = null;
+        
+        function calculateAge(birthdate) {
+            const today = new Date();
+            const birth = new Date(birthdate);
+            let years = today.getFullYear() - birth.getFullYear();
+            let months = today.getMonth() - birth.getMonth();
+            let days = today.getDate() - birth.getDate();
+            
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            return { years, months, days, total: years * 365 + months * 30 + days };
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                          'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+        
+        function getCategoryLabel(category) {
+            const labels = {
+                'cinema': '🎬 Cinéma',
+                'musique': '🎵 Musique',
+                'sport': '⚽ Sport',
+                'politique': '🏛️ Politique'
+            };
+            return labels[category] || category;
+        }
+        
+        function displayCelebrities(celebsToShow) {
+            const grid = document.getElementById('celebsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (celebsToShow.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            
+            grid.innerHTML = celebsToShow.map(celeb => {
+                const age = calculateAge(celeb.birth);
+                const sameAge = userBirthdate && Math.abs(age.total - calculateAge(userBirthdate).total) < 365;
+                
+                return `
+                    <div class="celeb-card">
+                        <div class="celeb-name">
+                            ${celeb.name}
+                            ${sameAge ? '<span class="same-age-badge">MÊME ÂGE !</span>' : ''}
+                        </div>
+                        <div class="celeb-category">${getCategoryLabel(celeb.category)}</div>
+                        <div class="celeb-birth">Né(e) le ${formatDate(celeb.birth)}</div>
+                        <div class="celeb-age">${age.years} ans</div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function filterByCategory(category) {
+            currentFilter = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            filterCelebs();
+        }
+        
+        function filterCelebs() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filtered = celebrities;
+            
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(c => c.category === currentFilter);
+            }
+            
+            if (searchTerm) {
+                filtered = filtered.filter(c => c.name.toLowerCase().includes(searchTerm));
+            }
+            
+            // Sort by age (youngest first)
+            filtered.sort((a, b) => new Date(b.birth) - new Date(a.birth));
+            
+            displayCelebrities(filtered);
+        }
+        
+        function findSameAge() {
+            const day = parseInt(document.getElementById('myDay').value);
+            const month = parseInt(document.getElementById('myMonth').value);
+            const year = parseInt(document.getElementById('myYear').value);
+            
+            if (!day || !month || !year) {
+                alert('⚠️ Veuillez remplir votre date de naissance complète');
+                return;
+            }
+            
+            userBirthdate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const myAge = calculateAge(userBirthdate);
+            
+            // Find celebrities with similar age (within 1 year)
+            const similar = celebrities.filter(celeb => {
+                const celebAge = calculateAge(celeb.birth);
+                return Math.abs(celebAge.total - myAge.total) < 365;
+            });
+            
+            if (similar.length === 0) {
+                alert('Aucune célébrité n\'a exactement votre âge dans notre base. Mais vous pouvez explorer toutes les stars !');
+            } else {
+                alert(`✨ ${similar.length} célébrité(s) ont environ votre âge ! Elles sont marquées en vert.`);
+            }
+            
+            displayCelebrities(similar.length > 0 ? similar : celebrities);
+        }
+        
+        // Initial display
+        displayCelebrities(celebrities);
+    </script>
+</body>
+</html>

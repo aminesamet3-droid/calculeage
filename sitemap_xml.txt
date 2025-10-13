@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://calculeage.eu/</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Page Âge en mois et jours -->
+    <url>
+        <loc>https://calculeage.eu/age-en-mois-jours.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Page Âge du chien -->
+    <url>
+        <loc>https://calculeage.eu/chien.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Page Âge du chat -->
+    <url>
+        <loc>https://calculeage.eu/chat.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Page Comparer âges -->
+    <url>
+        <loc>https://calculeage.eu/comparer-ages.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Page Célébrités -->
+    <url>
+        <loc>https://calculeage.eu/age-celebrites.html</loc>
+        <lastmod>2025-10-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
