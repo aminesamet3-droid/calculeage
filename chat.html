@@ -11,16 +11,16 @@
     <meta property="og:title" content="Âge du chat en âge humain - Calculateur">
     <meta property="og:description" content="Découvrez l'équivalent humain de l'âge de votre chat. Formule vétérinaire officielle.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calculeage.eu/chat.html">
-    <meta property="og:image" content="https://calculeage.eu/og-image.jpg">
+    <meta property="og:url" content="https://calculeage.fr/chat.html">
+    <meta property="og:image" content="https://calculeage.fr/og-image.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calculateur d'âge du chat">
     <meta name="twitter:description" content="Calculez l'âge de votre chat en âge humain avec la formule vétérinaire.">
-    <meta name="twitter:image" content="https://calculeage.eu/og-image.jpg">
+    <meta name="twitter:image" content="https://calculeage.fr/og-image.jpg">
     
-    <link rel="canonical" href="https://calculeage.eu/chat.html">
+    <link rel="canonical" href="https://calculeage.fr/chat.html">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -234,9 +234,110 @@
             margin: 0 10px;
         }
         @media (max-width: 768px) {
-            h1 { font-size: 28px; }
-            .calculator-section { padding: 25px; margin: -30px 20px 30px; }
-            .result-main { font-size: 36px; }
+            h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .calculator-section {
+                padding: 20px;
+                margin: -30px 15px 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                font-size: 13px;
+            }
+
+            nav li {
+                flex-shrink: 0;
+            }
+
+            nav a {
+                white-space: nowrap;
+                font-size: 13px;
+            }
+
+            .result-main {
+                font-size: 36px;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+
+            .content-section p, .content-section li {
+                font-size: 16px;
+            }
+
+            .age-table {
+                font-size: 14px;
+            }
+
+            .age-table th, .age-table td {
+                padding: 8px;
+            }
+
+            input[type="number"], select {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .calculator-section {
+                padding: 15px;
+            }
+
+            .result-main {
+                font-size: 28px;
+            }
+
+            .age-table {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -430,7 +531,7 @@
         "@type": "WebApplication",
         "name": "Calculateur d'Âge du Chat en Âge Humain",
         "description": "Calculez l'âge de votre chat en équivalent humain. Formule vétérinaire officielle.",
-        "url": "https://calculeage.eu/chat.html",
+        "url": "https://calculeage.fr/chat.html",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web",
         "offers": {

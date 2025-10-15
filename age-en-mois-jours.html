@@ -11,16 +11,16 @@
     <meta property="og:title" content="Calculer son âge en mois et jours">
     <meta property="og:description" content="Convertissez votre âge en mois et jours. Idéal pour le suivi des bébés et petite enfance.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calculeage.eu/age-en-mois-jours.html">
-    <meta property="og:image" content="https://calculeage.eu/og-image.jpg">
+    <meta property="og:url" content="https://calculeage.fr/age-en-mois-jours.html">
+    <meta property="og:image" content="https://calculeage.fr/og-image.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calculer son âge en mois et jours">
     <meta name="twitter:description" content="Outil gratuit pour convertir votre âge en mois et jours précis.">
-    <meta name="twitter:image" content="https://calculeage.eu/og-image.jpg">
+    <meta name="twitter:image" content="https://calculeage.fr/og-image.jpg">
     
-    <link rel="canonical" href="https://calculeage.eu/age-en-mois-jours.html">
+    <link rel="canonical" href="https://calculeage.fr/age-en-mois-jours.html">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -358,9 +358,140 @@
             margin: 0 10px;
         }
         @media (max-width: 768px) {
-            h1 { font-size: 28px; }
-            .calculator-section { padding: 25px; margin: -30px 20px 30px; }
-            .date-inputs { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .calculator-section {
+                padding: 20px;
+                margin: -30px 15px 30px;
+            }
+
+            .date-inputs {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                font-size: 13px;
+            }
+
+            nav li {
+                flex-shrink: 0;
+            }
+
+            nav a {
+                white-space: nowrap;
+                font-size: 13px;
+            }
+
+            .result-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .result-item {
+                padding: 15px;
+            }
+
+            .result-value {
+                font-size: 20px;
+            }
+
+            .result-label {
+                font-size: 12px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .share-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+
+            .share-menu {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                width: auto;
+                margin: 0;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .result-main {
+                font-size: 24px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+
+            .content-section p, .content-section li {
+                font-size: 16px;
+            }
+
+            input[type="number"], select {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .calculator-section {
+                padding: 15px;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -602,7 +733,7 @@
         "@type": "WebApplication",
         "name": "Calculateur d'Âge en Mois et Jours",
         "description": "Convertissez votre âge en mois et jours. Idéal pour le suivi des bébés et la petite enfance.",
-        "url": "https://calculeage.eu/age-en-mois-jours.html",
+        "url": "https://calculeage.fr/age-en-mois-jours.html",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Web",
         "offers": {
@@ -808,7 +939,7 @@
         function shareViaFacebook(event) {
             event.preventDefault();
             event.stopPropagation();
-            const shareUrl = 'https://calculeage.eu';
+            const shareUrl = 'https://calculeage.fr';
             const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
             window.open(url, '_blank', 'width=600,height=400');
             closeShareMenu();

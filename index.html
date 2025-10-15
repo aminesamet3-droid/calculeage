@@ -11,8 +11,8 @@
     <meta property="og:title" content="Calcul âge exact – Calculez votre âge en années, mois et jours">
     <meta property="og:description" content="Outil gratuit pour calculer votre âge précis. Résultat instantané en années, mois, jours, semaines et heures.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calculeage.eu/">
-    <meta property="og:image" content="https://calculeage.eu/og-image.jpg">
+    <meta property="og:url" content="https://calculeage.fr/">
+    <meta property="og:image" content="https://calculeage.fr/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
@@ -20,9 +20,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calcul âge exact – Outil gratuit">
     <meta name="twitter:description" content="Calculez votre âge précis en secondes. Gratuit et instantané.">
-    <meta name="twitter:image" content="https://calculeage.eu/og-image.jpg">
+    <meta name="twitter:image" content="https://calculeage.fr/og-image.jpg">
     
-    <link rel="canonical" href="https://calculeage.eu/">
+    <link rel="canonical" href="https://calculeage.fr/">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://agebiologique.eu">
@@ -511,25 +511,146 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 32px;
+                font-size: 28px;
+                line-height: 1.3;
             }
-            
+
+            .hero p {
+                font-size: 16px;
+            }
+
             .calculator-section {
-                padding: 25px;
-                margin: -30px 20px 30px;
+                padding: 20px;
+                margin: -30px 15px 30px;
             }
-            
+
             .date-inputs {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
-            
-            nav ul {
+
+            nav {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 15px;
             }
-            
+
+            nav ul {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            nav li {
+                flex-shrink: 0;
+            }
+
+            nav a {
+                white-space: nowrap;
+                font-size: 14px;
+            }
+
             .result-details {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .detail-item {
+                padding: 12px;
+            }
+
+            .detail-value {
+                font-size: 18px;
+            }
+
+            .detail-label {
+                font-size: 12px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .share-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+
+            .share-menu {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                width: auto;
+                margin: 0;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .result-main {
+                font-size: 22px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+
+            .content-section p, .content-section li {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 15px;
+            }
+
+            input[type="number"], input[type="date"], select {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 13px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 4px 8px;
+            }
+
+            .calculator-section {
+                padding: 15px;
+            }
+
+            .result-details {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1079,7 +1200,7 @@
         function shareViaFacebook(event) {
             event.preventDefault();
             event.stopPropagation();
-            const shareUrl = 'https://calculeage.eu';
+            const shareUrl = 'https://calculeage.fr';
             const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
             window.open(url, '_blank', 'width=600,height=400');
             closeShareMenu();

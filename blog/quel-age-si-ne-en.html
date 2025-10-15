@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quel âge si né en 1990, 2000, 1980 ? Calcul rapide 2025</title>
+    <meta name="description" content="Découvrez quel âge vous avez si né en 1990, 2000, 1985, 1980. Tableau complet par année de naissance de 1950 à 2020 avec calcul précis.">
+    <meta name="keywords" content="quel âge si né en, âge par année naissance, calculer âge né en 1990, âge si né 2000">
+
+    <link rel="canonical" href="https://calculeage.fr/blog/quel-age-si-ne-en.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #10b981;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #2563eb;
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .year-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+
+        .year-link:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">📅 Calcul d'Âge</a>
+            <ul>
+                <li><a href="../index.html#calculer">Calculer</a></li>
+                <li><a href="../blog/comment-calculer-son-age-exact.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Quel âge si né en... ? Réponse par année</h1>
+                <p>Découvrez votre âge exact selon votre année de naissance</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="article-content">
+                    <p>Vous vous demandez <strong>quel âge vous avez si vous êtes né en 1990, 2000, 1985 ou une autre année</strong> ? Cette question revient fréquemment, que ce soit par simple curiosité, pour vérifier rapidement l'âge d'une personne, ou pour des démarches administratives. Dans cet article complet, nous répondons à toutes vos questions sur le calcul d'âge par année de naissance.</p>
+
+                    <h2>Tableau rapide : Quel âge si né en... ?</h2>
+
+                    <p>Voici un <strong>tableau complet</strong> indiquant l'âge que vous avez en 2025 selon votre année de naissance. Ce tableau est valable si vous avez déjà célébré votre anniversaire en 2025.</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Année de naissance</th>
+                                    <th>Âge en 2025 (après anniversaire)</th>
+                                    <th>Génération</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2020</td><td>5 ans</td><td>Génération Alpha</td></tr>
+                                <tr><td>2015</td><td>10 ans</td><td>Génération Alpha</td></tr>
+                                <tr><td>2010</td><td>15 ans</td><td>Génération Alpha</td></tr>
+                                <tr><td>2005</td><td>20 ans</td><td>Génération Z</td></tr>
+                                <tr><td>2000</td><td>25 ans</td><td>Génération Z</td></tr>
+                                <tr><td>1995</td><td>30 ans</td><td>Millénial</td></tr>
+                                <tr><td>1990</td><td>35 ans</td><td>Millénial</td></tr>
+                                <tr><td>1985</td><td>40 ans</td><td>Millénial</td></tr>
+                                <tr><td>1980</td><td>45 ans</td><td>Génération X</td></tr>
+                                <tr><td>1975</td><td>50 ans</td><td>Génération X</td></tr>
+                                <tr><td>1970</td><td>55 ans</td><td>Génération X</td></tr>
+                                <tr><td>1965</td><td>60 ans</td><td>Génération X</td></tr>
+                                <tr><td>1960</td><td>65 ans</td><td>Baby-boomer</td></tr>
+                                <tr><td>1955</td><td>70 ans</td><td>Baby-boomer</td></tr>
+                                <tr><td>1950</td><td>75 ans</td><td>Baby-boomer</td></tr>
+                                <tr><td>1945</td><td>80 ans</td><td>Génération silencieuse</td></tr>
+                                <tr><td>1940</td><td>85 ans</td><td>Génération silencieuse</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p><strong>Attention :</strong> Ce tableau indique l'âge après avoir célébré votre anniversaire en 2025. Si votre anniversaire n'est pas encore passé, retirez 1 an au résultat.</p>
+                    </div>
+
+                    <h2>Les années les plus recherchées</h2>
+
+                    <h3>Quel âge si né en 1990 ?</h3>
+
+                    <p>Si vous êtes <strong>né en 1990</strong>, vous avez 35 ans en 2025 (après votre anniversaire). Vous appartenez à la génération des Millénials, aussi appelée génération Y. Vous avez grandi avec l'essor d'Internet, connu les cassettes VHS et les premiers téléphones portables. En 1990, François Mitterrand était président de la France, et la Coupe du Monde de football se déroulait en Italie.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1990.html" class="year-link">Voir le détail complet pour 1990</a></p>
+
+                    <h3>Quel âge si né en 2000 ?</h3>
+
+                    <p>Si vous êtes <strong>né en 2000</strong>, vous avez 25 ans en 2025. Vous faites partie de la génération Z, la première génération véritablement née avec Internet. Vous avez connu le passage à l'an 2000 (Y2K), l'essor des smartphones et des réseaux sociaux dès l'adolescence. C'est une génération particulièrement à l'aise avec le numérique.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-2000.html" class="year-link">Voir le détail complet pour 2000</a></p>
+
+                    <h3>Quel âge si né en 1985 ?</h3>
+
+                    <p>Si vous êtes <strong>né en 1985</strong>, vous avez 40 ans en 2025. Vous appartenez à la fin de la génération X ou au début des Millénials selon les classifications. Vous avez connu l'enfance sans Internet, puis l'adolescence avec son arrivée. En 1985, la France était présidée par François Mitterrand, et le rock français connaissait son âge d'or.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1985.html" class="year-link">Voir le détail complet pour 1985</a></p>
+
+                    <h3>Quel âge si né en 1980 ?</h3>
+
+                    <p>Si vous êtes <strong>né en 1980</strong>, vous avez 45 ans en 2025. Vous êtes de la génération X, celle qui a vécu la transition entre l'analogique et le numérique. Vous vous souvenez des premiers ordinateurs personnels, des walkman et de l'époque sans téléphone portable. En 1980, Valéry Giscard d'Estaing terminait son mandat présidentiel.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1980.html" class="year-link">Voir le détail complet pour 1980</a></p>
+
+                    <h3>Quel âge si né en 1975 ?</h3>
+
+                    <p>Si vous êtes <strong>né en 1975</strong>, vous avez 50 ans en 2025, un demi-siècle ! Vous appartenez au cœur de la génération X. Vous avez connu les trente glorieuses finissantes, les chocs pétroliers, et la musique disco. En 1975, Valéry Giscard d'Estaing venait d'être élu président, et la guerre du Vietnam se terminait.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1975.html" class="year-link">Voir le détail complet pour 1975</a></p>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre âge exact</h3>
+                        <p style="margin-bottom: 20px;">Obtenez votre âge précis en années, mois et jours</p>
+                        <a href="../index.html#calculer" class="btn">Calculer maintenant</a>
+                    </div>
+
+                    <h2>Comment calculer rapidement son âge selon l'année</h2>
+
+                    <p>Pour savoir <strong>quel âge vous avez si né en une année donnée</strong>, la formule de base est simple :</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Âge = Année actuelle - Année de naissance</strong></p>
+                        <p>Puis :</p>
+                        <ul>
+                            <li>Si votre anniversaire est déjà passé cette année → gardez ce résultat</li>
+                            <li>Si votre anniversaire n'est pas encore passé → retirez 1 an</li>
+                        </ul>
+                    </div>
+
+                    <p>Par exemple, nous sommes en 2025 :</p>
+                    <ul>
+                        <li>Né en 1990, anniversaire le 15 mars → déjà passé en octobre → 2025 - 1990 = 35 ans</li>
+                        <li>Né en 1990, anniversaire le 20 décembre → pas encore passé → 2025 - 1990 - 1 = 34 ans</li>
+                    </ul>
+
+                    <h2>Les générations selon l'année de naissance</h2>
+
+                    <p>Connaître son âge par année de naissance permet aussi de savoir à quelle <strong>génération</strong> on appartient. Chaque génération partage des références culturelles, des valeurs et des expériences communes.</p>
+
+                    <h3>Génération silencieuse (1928-1945)</h3>
+
+                    <p>Si vous êtes né entre 1928 et 1945, vous avez entre 80 et 97 ans en 2025. Vous avez connu ou êtes né pendant la Seconde Guerre mondiale. Cette génération a reconstruit la France d'après-guerre.</p>
+
+                    <h3>Baby-boomers (1946-1964)</h3>
+
+                    <p>Nés entre 1946 et 1964, vous avez entre 61 et 79 ans en 2025. Vous représentez l'explosion démographique de l'après-guerre, les trente glorieuses, Mai 68, et l'émancipation des mœurs.</p>
+
+                    <h3>Génération X (1965-1979)</h3>
+
+                    <p>Entre 46 et 60 ans en 2025. Vous avez grandi avec la télévision, vécu la transition vers l'informatique, et êtes souvent considérés comme pragmatiques et autonomes.</p>
+
+                    <h3>Millénials ou Génération Y (1980-1994)</h3>
+
+                    <p>Entre 31 et 45 ans en 2025. Première génération digitale, vous avez connu l'arrivée d'Internet et des smartphones. Vous valorisez l'équilibre vie pro/perso et les expériences.</p>
+
+                    <h3>Génération Z (1995-2009)</h3>
+
+                    <p>Entre 16 et 30 ans en 2025. Nés avec Internet et les smartphones, hyperconnectés, engagés sur les questions écologiques et sociales.</p>
+
+                    <h3>Génération Alpha (depuis 2010)</h3>
+
+                    <p>15 ans maximum en 2025. Première génération entièrement née au 21e siècle, avec les réseaux sociaux, l'intelligence artificielle et le streaming comme norme.</p>
+
+                    <h2>Années de naissance et événements marquants</h2>
+
+                    <h3>Né en 1970 : 55 ans en 2025</h3>
+
+                    <p>Vous avez connu le premier choc pétrolier (1973), la victoire de la France au Mondial de football 1998, le passage à l'euro (2002). Vous avez vu l'évolution incroyable de la technologie, des téléphones à cadran aux smartphones.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1970.html" class="year-link">Détail complet pour 1970</a></p>
+
+                    <h3>Né en 1995 : 30 ans en 2025</h3>
+
+                    <p>À 30 ans, vous êtes au cœur de la vie active. Vous avez grandi avec les premières consoles de jeux modernes (PlayStation, Nintendo 64), vécu l'essor des réseaux sociaux (Facebook, Twitter) pendant vos études.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-1995.html" class="year-link">Détail complet pour 1995</a></p>
+
+                    <h3>Né en 2005 : 20 ans en 2025</h3>
+
+                    <p>À 20 ans, vous atteignez la majorité légale complète en France. Vous pouvez voter, signer tous les contrats, et êtes juridiquement autonome. Vous avez grandi avec YouTube, les smartphones tactiles et Instagram.</p>
+
+                    <p><a href="../age-par-annee/age-ne-en-2005.html" class="year-link">Détail complet pour 2005</a></p>
+
+                    <h2>Pourquoi connaître son âge par année est utile</h2>
+
+                    <p>Savoir rapidement <strong>quel âge si né en</strong> une année donnée présente plusieurs utilités pratiques :</p>
+
+                    <ul>
+                        <li><strong>Vérification rapide :</strong> Lors de rencontres ou dans un contexte professionnel, calculer mentalement l'âge approximatif</li>
+                        <li><strong>Démarches administratives :</strong> Vérifier l'éligibilité à certains droits ou obligations liés à l'âge</li>
+                        <li><strong>Planification :</strong> Anticiper les étapes de vie (retraite, anniversaires importants)</li>
+                        <li><strong>Contexte historique :</strong> Situer quelqu'un par rapport aux événements qu'il a vécus</li>
+                        <li><strong>Marketing et études :</strong> Les entreprises ciblent leurs offres selon les générations</li>
+                    </ul>
+
+                    <h2>Cas particuliers et précisions</h2>
+
+                    <h3>Le 29 février</h3>
+
+                    <p>Si vous êtes né un <strong>29 février</strong>, vous n'avez techniquement un anniversaire que tous les 4 ans. Cependant, légalement, vous vieillissez chaque année. Les années non bissextiles, votre anniversaire légal est généralement considéré comme le 28 février à minuit (donc le 1er mars à 0h00).</p>
+
+                    <h3>Début ou fin d'année</h3>
+
+                    <p>Pour les personnes nées en janvier ou décembre, la question "quel âge si né en" nécessite de préciser le mois. En janvier 2025, une personne née en décembre 1990 a encore 34 ans, tandis qu'une personne née en janvier 1990 a déjà 35 ans.</p>
+
+                    <h2>Outils et ressources</h2>
+
+                    <p>Pour un calcul plus précis tenant compte du mois et du jour, nous vous recommandons d'utiliser notre <strong>calculateur d'âge en ligne</strong>. Il vous donnera votre âge exact en années, mois et jours, ainsi que d'autres informations intéressantes comme le nombre total de jours vécus.</p>
+
+                    <p>Vous pouvez également consulter nos pages dédiées par année de naissance pour des informations détaillées sur chaque année :</p>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="../age-par-annee/age-ne-en-1950.html" class="year-link">1950</a>
+                        <a href="../age-par-annee/age-ne-en-1955.html" class="year-link">1955</a>
+                        <a href="../age-par-annee/age-ne-en-1960.html" class="year-link">1960</a>
+                        <a href="../age-par-annee/age-ne-en-1965.html" class="year-link">1965</a>
+                        <a href="../age-par-annee/age-ne-en-1970.html" class="year-link">1970</a>
+                        <a href="../age-par-annee/age-ne-en-1975.html" class="year-link">1975</a>
+                        <a href="../age-par-annee/age-ne-en-1980.html" class="year-link">1980</a>
+                        <a href="../age-par-annee/age-ne-en-1985.html" class="year-link">1985</a>
+                        <a href="../age-par-annee/age-ne-en-1990.html" class="year-link">1990</a>
+                        <a href="../age-par-annee/age-ne-en-1995.html" class="year-link">1995</a>
+                        <a href="../age-par-annee/age-ne-en-2000.html" class="year-link">2000</a>
+                        <a href="../age-par-annee/age-ne-en-2005.html" class="year-link">2005</a>
+                        <a href="../age-par-annee/age-ne-en-2010.html" class="year-link">2010</a>
+                        <a href="../age-par-annee/age-ne-en-2015.html" class="year-link">2015</a>
+                        <a href="../age-par-annee/age-ne-en-2020.html" class="year-link">2020</a>
+                    </div>
+
+                    <h2>Conclusion</h2>
+
+                    <p>Connaître <strong>quel âge on a si né en</strong> une année donnée est un calcul simple mais utile au quotidien. Que vous cherchiez à vérifier rapidement votre âge, à situer une personne dans une génération, ou à planifier un événement futur, cette information reste un repère fondamental.</p>
+
+                    <p>Pour plus de précision, n'hésitez pas à utiliser notre calculateur en ligne qui tiendra compte de votre jour et mois de naissance exacts, ainsi que des subtilités du calendrier comme les années bissextiles.</p>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre âge exact maintenant</h3>
+                        <p style="margin-bottom: 20px;">Résultat précis en années, mois et jours</p>
+                        <a href="../index.html#calculer" class="btn">Calculer mon âge</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Âge - Tous droits réservés</p>
+            <p>
+                <a href="../index.html">Accueil</a> |
+                <a href="../index.html#calculer">Calculateur</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
