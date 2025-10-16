@@ -38,7 +38,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Articles de blog SEO -->
+  <!-- Articles de blog SEO (20 articles) -->
   <url>
     <loc>https://calculeage.fr/blog/comment-calculer-son-age-exact.html</loc>
     <lastmod>2025-10-15</lastmod>
@@ -99,8 +99,116 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://calculeage.fr/blog/age-legal-france.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/calculer-age-mois.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/calculer-age-semaines.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/calculer-age-jours.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/calculer-age-heures.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/age-mental-test.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/difference-age-celebrites.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/age-moyen-mariage-france.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/calculer-duree-vie.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/blog/age-coreen-vs-francais.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
-  <!-- Pages par année de naissance -->
+  <!-- Pages par année de naissance (44 pages) -->
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1930.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1935.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1940.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1945.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1946.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1947.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1948.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-1949.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-1950.html</loc>
     <lastmod>2025-10-15</lastmod>
@@ -129,13 +237,13 @@
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-1970.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-1975.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-1980.html</loc>
@@ -198,13 +306,85 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2006.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2007.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2008.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2009.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-2010.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2011.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2012.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2013.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2014.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-2015.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2016.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2017.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2018.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2019.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -216,18 +396,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2021.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2022.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2023.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://calculeage.fr/age-par-annee/age-ne-en-2024.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://calculeage.fr/age-par-annee/age-ne-en-2025.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
-  <!-- Pages par ville -->
+  <!-- Pages par ville (20 villes) -->
   <url>
     <loc>https://calculeage.fr/ville/calcul-age-paris.html</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://calculeage.fr/ville/calcul-age-marseille.html</loc>
@@ -252,5 +456,95 @@
     <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-bordeaux.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-lille.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-nantes.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-strasbourg.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-montpellier.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-rennes.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-reims.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-le-havre.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-saint-etienne.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-toulon.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-grenoble.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-dijon.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-angers.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-nimes.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculeage.fr/ville/calcul-age-villeurbanne.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
