@@ -1,0 +1,60 @@
+[build]
+  publish = "."
+  command = "echo 'Site statique - pas de build necessaire'"
+
+[[redirects]]
+  from = "/calculer"
+  to = "/index.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/calculer-age-sans-calculatrice.html"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Error pages
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Force HTTPS
+[[redirects]]
+  from = "http://calculeage.fr/*"
+  to = "https://calculeage.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.calculeage.fr/*"
+  to = "https://calculeage.fr/:splat"
+  status = 301
+  force = true
