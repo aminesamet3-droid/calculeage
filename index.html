@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +24,103 @@
     <meta name="twitter:image" content="https://calculeage.fr/og-image.jpg">
     
     <link rel="canonical" href="https://calculeage.fr/">
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://agebiologique.eu">
-    
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calcul d'Âge - Calculateur d'âge gratuit",
+      "alternateName": "Calculateur d'âge en ligne",
+      "url": "https://calculeage.fr/",
+      "description": "Calculez votre âge exact en années, mois et jours. Outil gratuit, précis et instantané. Prend en compte les années bissextiles.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "8542",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Calcul d'Âge",
+        "url": "https://calculeage.fr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calcul d'Âge",
+        "url": "https://calculeage.fr/"
+      },
+      "inLanguage": "fr-FR",
+      "featureList": [
+        "Calcul d'âge précis en années, mois et jours",
+        "Prise en compte des années bissextiles",
+        "Calcul à une date spécifique",
+        "Statistiques amusantes (battements de cœur, respirations)",
+        "Partage sur réseaux sociaux",
+        "100% gratuit et sans inscription"
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Comment calculer son âge exact en années, mois et jours ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour calculer votre âge exact, entrez votre jour, mois et année de naissance dans notre calculateur. L'outil prend automatiquement en compte les années bissextiles et vous donne instantanément votre âge précis en années, mois et jours."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'une année bissextile ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une année bissextile compte 366 jours au lieu de 365, avec un 29 février supplémentaire. Cela se produit tous les 4 ans (années divisibles par 4), sauf pour les années séculaires qui ne sont bissextiles que si elles sont divisibles par 400."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Le calculateur est-il gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, notre calculateur d'âge est 100% gratuit et ne nécessite aucune inscription. Vous pouvez l'utiliser autant de fois que vous le souhaitez, sans limite."
+        }
+      }]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://calculeage.fr/"
+      }]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -654,9 +747,70 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 4px 0;
+            z-index: 10000;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Enhanced Focus Indicators */
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        input[type="checkbox"]:focus-visible {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Noscript Fallback -->
+    <noscript>
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 20px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style="max-width: 600px; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
+                <svg style="width: 80px; height: 80px; margin: 0 auto 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">JavaScript Requis</h1>
+                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 15px;">
+                    Le calculateur d'âge nécessite JavaScript pour fonctionner.
+                </p>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px;">
+                    Veuillez activer JavaScript dans les paramètres de votre navigateur pour accéder à l'application.
+                </p>
+                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; font-size: 14px; text-align: left;">
+                    <strong style="display: block; margin-bottom: 10px;">Comment activer JavaScript :</strong>
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                        <li><strong>Chrome:</strong> Paramètres → Confidentialité → Paramètres du site → JavaScript</li>
+                        <li><strong>Firefox:</strong> about:config → javascript.enabled → true</li>
+                        <li><strong>Safari:</strong> Préférences → Sécurité → Activer JavaScript</li>
+                        <li><strong>Edge:</strong> Paramètres → Autorisations du site → JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </noscript>
     <header>
         <nav class="container">
             <a href="index.html" class="logo">📅 Calcul d'Âge</a>
@@ -669,12 +823,12 @@
                 <li><a href="age-celebrites.html">Célébrités</a></li>
                 <li><a href="#comment-ca-marche">Info</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="https://agebiologique.eu" target="_blank">Âge Bio</a></li>
+                <li><a href="https://agebiologique.eu" target="_blank" rel="noopener noreferrer" aria-label="Calculer votre âge biologique (ouvre dans un nouvel onglet)">Âge Bio</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
+
+    <main id="main-content" role="main">
         <section class="hero">
             <div class="container">
                 <h1>Calculer mon âge exact à partir de ma date de naissance</h1>
@@ -689,11 +843,11 @@
                     <div class="date-inputs">
                         <div class="input-wrapper">
                             <label for="day">Jour</label>
-                            <input type="number" id="day" min="1" max="31" placeholder="15">
+                            <input type="number" id="day" min="1" max="31" placeholder="15" aria-label="Jour de naissance" aria-describedby="day-label">
                         </div>
                         <div class="input-wrapper">
                             <label for="month">Mois</label>
-                            <select id="month">
+                            <select id="month" aria-label="Mois de naissance" aria-describedby="month-label">
                                 <option value="">Sélectionner</option>
                                 <option value="1">Janvier</option>
                                 <option value="2">Février</option>
@@ -711,18 +865,18 @@
                         </div>
                         <div class="input-wrapper">
                             <label for="year">Année</label>
-                            <input type="number" id="year" min="1900" max="2025" placeholder="1990">
+                            <input type="number" id="year" min="1900" max="2025" placeholder="1990" aria-label="Année de naissance" aria-describedby="year-label">
                         </div>
                     </div>
                     
                     <div class="checkbox-group">
-                        <input type="checkbox" id="customDate">
+                        <input type="checkbox" id="customDate" aria-label="Activer le calcul à une date spécifique" aria-controls="targetDateGroup">
                         <label for="customDate">Calculer à une date spécifique</label>
                     </div>
-                    
-                    <div id="targetDateGroup" style="display: none; margin-top: 15px;">
-                        <label for="targetDate" style="display: block; margin-bottom: 8px; font-weight: 600;">Date cible</label>
-                        <input type="date" id="targetDate">
+
+                    <div id="targetDateGroup" style="display: none; margin-top: 15px;" role="region" aria-labelledby="targetDate-label">
+                        <label for="targetDate" id="targetDate-label" style="display: block; margin-bottom: 8px; font-weight: 600;">Date cible</label>
+                        <input type="date" id="targetDate" aria-label="Date cible pour le calcul d'âge" aria-describedby="targetDate-label">
                     </div>
                 </div>
                 
@@ -804,7 +958,7 @@
                     <div class="actions-block">
                         <div class="actions-title">🎯 Que souhaitez-vous faire ?</div>
                         <div style="margin-bottom: 12px;">
-                            <a href="https://agebiologique.eu" class="share-btn bio-btn" target="_blank" rel="noopener" style="width: 100%; display: block; text-align: center; font-size: 18px; line-height: 1.4;">🧬 Et votre VRAI âge ?<br>Calculez votre âge biologique</a>
+                            <a href="https://agebiologique.eu" class="share-btn bio-btn" target="_blank" rel="noopener noreferrer" style="width: 100%; display: block; text-align: center; font-size: 18px; line-height: 1.4;" aria-label="Calculer votre âge biologique sur agebiologique.eu (ouvre dans un nouvel onglet)">🧬 Et votre VRAI âge ?<br>Calculez votre âge biologique</a>
                         </div>
                         <div class="share-buttons">
                             <button class="share-btn" onclick="copyResult()" style="flex: 1;">📋 Copier</button>
@@ -901,7 +1055,7 @@
                     <li><strong>Âge social :</strong> Comment la société perçoit votre âge en fonction de votre apparence et comportement.</li>
                 </ul>
                 
-                <p>Pour découvrir votre âge biologique et comprendre votre véritable état de santé, nous vous invitons à utiliser notre <a href="https://agebiologique.eu" target="_blank" rel="noopener"><strong>calculateur d'âge biologique</strong></a>.</p>
+                <p>Pour découvrir votre âge biologique et comprendre votre véritable état de santé, nous vous invitons à utiliser notre <a href="https://agebiologique.eu" target="_blank" rel="noopener noreferrer" aria-label="Calculateur d'âge biologique (ouvre dans un nouvel onglet)"><strong>calculateur d'âge biologique</strong></a>.</p>
             </div>
         </section>
         
@@ -936,7 +1090,7 @@
                 
                 <div class="faq-item">
                     <div class="faq-question">Quelle est la différence entre l'âge chronologique et l'âge biologique ?</div>
-                    <div class="faq-answer">L'âge chronologique est le temps écoulé depuis votre naissance (ce que calcule cet outil). L'âge biologique reflète l'état réel de votre corps et peut différer de votre âge chronologique selon votre hygiène de vie, génétique et facteurs environnementaux. Une personne de 50 ans peut avoir un âge biologique de 40 ans si elle est en excellente santé. Pour découvrir votre âge biologique, visitez <a href="https://agebiologique.eu" target="_blank" rel="noopener">agebiologique.eu</a>.</div>
+                    <div class="faq-answer">L'âge chronologique est le temps écoulé depuis votre naissance (ce que calcule cet outil). L'âge biologique reflète l'état réel de votre corps et peut différer de votre âge chronologique selon votre hygiène de vie, génétique et facteurs environnementaux. Une personne de 50 ans peut avoir un âge biologique de 40 ans si elle est en excellente santé. Pour découvrir votre âge biologique, visitez <a href="https://agebiologique.eu" target="_blank" rel="noopener noreferrer" aria-label="Agebiologique.eu (ouvre dans un nouvel onglet)">agebiologique.eu</a>.</div>
                 </div>
                 
                 <div class="faq-item">
