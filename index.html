@@ -29,6 +29,9 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
 
+    <!-- Google Analytics 4 -->
+    <script async src="analytics.js"></script>
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://agebiologique.eu">
 
@@ -958,7 +961,7 @@
                     <div class="actions-block">
                         <div class="actions-title">🎯 Que souhaitez-vous faire ?</div>
                         <div style="margin-bottom: 12px;">
-                            <a href="https://agebiologique.eu" class="share-btn bio-btn" target="_blank" rel="noopener noreferrer" style="width: 100%; display: block; text-align: center; font-size: 18px; line-height: 1.4;" aria-label="Calculer votre âge biologique sur agebiologique.eu (ouvre dans un nouvel onglet)">🧬 Et votre VRAI âge ?<br>Calculez votre âge biologique</a>
+                            <a href="https://agebiologique.eu" class="share-btn bio-btn" target="_blank" rel="noopener noreferrer" style="width: 100%; display: block; text-align: center; font-size: 18px; line-height: 1.4;" aria-label="Calculer votre âge biologique sur agebiologique.eu (ouvre dans un nouvel onglet)" onclick="if(typeof trackBioAgeClick !== 'undefined') trackBioAgeClick();">🧬 Et votre VRAI âge ?<br>Calculez votre âge biologique</a>
                         </div>
                         <div class="share-buttons">
                             <button class="share-btn" onclick="copyResult()" style="flex: 1;">📋 Copier</button>
@@ -1215,9 +1218,14 @@
             
             // Generate fun statistics
             generateFunStats(birthdate, targetDate, totalDays, years);
-            
+
             document.getElementById('result').classList.add('show');
             document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Track event in Google Analytics
+            if (typeof trackAgeCalculation !== 'undefined') {
+                trackAgeCalculation(years);
+            }
         }
         
         function generateFunStats(birthdate, targetDate, totalDays, years) {
@@ -1251,11 +1259,17 @@
                 return;
             }
             const btn = event ? event.target : null;
+            const isShowing = stats.classList.contains('show');
             stats.classList.toggle('show');
             if (btn) {
-                btn.textContent = stats.classList.contains('show') 
-                    ? '✨ Masquer les statistiques' 
+                btn.textContent = stats.classList.contains('show')
+                    ? '✨ Masquer les statistiques'
                     : '✨ Découvrir des statistiques amusantes';
+            }
+
+            // Track event in Google Analytics (only when opening)
+            if (!isShowing && typeof trackFunStats !== 'undefined') {
+                trackFunStats();
             }
         }
         
@@ -1275,6 +1289,10 @@
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
                     alert('✅ Résultat copié dans le presse-papier !\n\n💡 Vous pouvez maintenant le coller où vous voulez, ou cliquer sur "Partager" pour l\'envoyer directement.');
+                    // Track event in Google Analytics
+                    if (typeof trackCopy !== 'undefined') {
+                        trackCopy();
+                    }
                 }).catch(() => {
                     alert('❌ Erreur lors de la copie');
                 });
@@ -1286,6 +1304,10 @@
                 try {
                     document.execCommand('copy');
                     alert('✅ Résultat copié !');
+                    // Track event in Google Analytics
+                    if (typeof trackCopy !== 'undefined') {
+                        trackCopy();
+                    }
                 } catch (err) {
                     alert('❌ Erreur lors de la copie');
                 }
@@ -1349,24 +1371,36 @@
             const text = getShareText();
             const url = `https://wa.me/?text=${encodeURIComponent(text + '\n\n✨ Calculé sur Calcul d\'Âge')}`;
             window.open(url, '_blank');
+            // Track event in Google Analytics
+            if (typeof trackShare !== 'undefined') {
+                trackShare('whatsapp');
+            }
             closeShareMenu();
         }
-        
+
         function shareViaFacebook(event) {
             event.preventDefault();
             event.stopPropagation();
             const shareUrl = 'https://calculeage.fr';
             const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
             window.open(url, '_blank', 'width=600,height=400');
+            // Track event in Google Analytics
+            if (typeof trackShare !== 'undefined') {
+                trackShare('facebook');
+            }
             closeShareMenu();
         }
-        
+
         function shareViaTwitter(event) {
             event.preventDefault();
             event.stopPropagation();
             const text = getShareText();
             const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + ' ✨')}&url=${encodeURIComponent(window.location.href)}`;
             window.open(url, '_blank', 'width=600,height=400');
+            // Track event in Google Analytics
+            if (typeof trackShare !== 'undefined') {
+                trackShare('twitter');
+            }
             closeShareMenu();
         }
     </script>

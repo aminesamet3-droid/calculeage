@@ -15,7 +15,7 @@ User-agent: MJ12bot
 Disallow: /
 
 # Sitemap
-Sitemap: https://calculeage.eu/sitemap.xml
+Sitemap: https://calculeage.fr/sitemap.xml
 
 # Règles spécifiques pour Google
 User-agent: Googlebot
