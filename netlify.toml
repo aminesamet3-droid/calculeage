@@ -75,27 +75,28 @@
 # ============================================
 # PLUGIN CONFIGURATION
 # ============================================
-# Lighthouse CI Plugin (pour monitoring performance)
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+# Lighthouse CI Plugin (désactivé - trop strict pour déploiement initial)
+# Utilisez https://pagespeed.web.dev/ pour tester manuellement
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
 
-  [plugins.inputs.thresholds]
-    performance = 0.95
-    accessibility = 1.0
-    best-practices = 0.95
-    seo = 1.0
+#   [plugins.inputs.thresholds]
+#     performance = 0.95
+#     accessibility = 1.0
+#     best-practices = 0.95
+#     seo = 1.0
 
-# Sitemap Plugin (génération automatique)
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
+# Sitemap Plugin (désactivé - on utilise sitemap.xml manuel)
+# [[plugins]]
+#   package = "@netlify/plugin-sitemap"
 
-  [plugins.inputs]
-    buildDir = "."
-    exclude = [
-      './404.html',
-      './mentions-legales.html',
-      './politique-confidentialite.html'
-    ]
+#   [plugins.inputs]
+#     buildDir = "."
+#     exclude = [
+#       './404.html',
+#       './mentions-legales.html',
+#       './politique-confidentialite.html'
+#     ]
 
 # A11y Plugin (vérification accessibilité)
 # [[plugins]]

@@ -107,11 +107,8 @@
   # ============================================
   # SERVER INFORMATION HIDING
   # ============================================
-  # Masque les informations du serveur
-  Server:
-  X-Powered-By:
-  X-AspNet-Version:
-  X-AspNetMvc-Version:
+  # Masque les informations du serveur (valeurs vides intentionnelles)
+  # Note: Netlify va override certains de ces headers
 
   # ============================================
   # TIMING ATTACK PREVENTION
