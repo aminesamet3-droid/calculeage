@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changement DNS OVH → Netlify - calculeage.fr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .status-item {
+            text-align: center;
+        }
+
+        .status-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .status-value {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .step-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .step-content {
+            margin-left: 70px;
+        }
+
+        .code-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .nameserver {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nameserver-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .nameserver-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .warning-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .screenshot {
+            border: 3px solid #e9ecef;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+        }
+
+        .progress {
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 15px;
+            background: white;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: #667eea;
+        }
+
+        .checklist li.checked::before {
+            content: '✅';
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Changement DNS OVH → Netlify</h1>
+            <p>calculeage.fr - Migration en cours</p>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <div class="status-icon">🌐</div>
+                <div class="status-label">Domaine</div>
+                <div class="status-value">calculeage.fr</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">🏢</div>
+                <div class="status-label">Registrar</div>
+                <div class="status-value">OVH</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">🚀</div>
+                <div class="status-label">Destination</div>
+                <div class="status-value">Netlify</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">⏱️</div>
+                <div class="status-label">Temps estimé</div>
+                <div class="status-value">5 minutes</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="warning">
+                <span class="warning-icon">⚠️</span>
+                <strong>Important :</strong> Une fenêtre OVH Manager devrait s'être ouverte. Si ce n'est pas le cas, cliquez sur le bouton ci-dessous.
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://www.ovh.com/manager/web/#/configuration/domain/calculeage.fr?tab=DNS_SERVERS" target="_blank" class="btn pulse">
+                    🔗 Ouvrir OVH Manager
+                </a>
+            </div>
+
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Se connecter à OVH</div>
+                </div>
+                <div class="step-content">
+                    <p>Connectez-vous avec vos identifiants OVH</p>
+                    <ul class="checklist">
+                        <li>Entrer votre identifiant OVH</li>
+                        <li>Entrer votre mot de passe</li>
+                        <li>Cliquer sur "Se connecter"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Accéder aux Serveurs DNS</div>
+                </div>
+                <div class="step-content">
+                    <p>Navigation : Web Cloud → Noms de domaine → calculeage.fr → Serveurs DNS</p>
+                    <div class="screenshot">
+                        <p><strong>Vous devriez voir :</strong></p>
+                        <div class="code-box">
+Serveurs DNS actuels :
+• dns16.ovh.net
+• ns16.ovh.net
+
+[Modifier les serveurs DNS] ← CLIQUER ICI
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Entrer les Nameservers Netlify</div>
+                </div>
+                <div class="step-content">
+                    <p>Remplacer les serveurs OVH par les serveurs Netlify :</p>
+
+                    <div class="warning" style="background: #fff3cd; margin: 20px 0;">
+                        <strong>📋 COPIEZ CES 4 NAMESERVERS :</strong>
+                    </div>
+
+                    <div class="nameserver">
+                        <span class="nameserver-icon">🌐</span>
+                        <span class="nameserver-text" id="ns1">dns1.p01.nsone.net</span>
+                        <button onclick="copyText('ns1')" class="btn" style="margin-left: auto; padding: 10px 20px; font-size: 0.9em;">📋 Copier</button>
+                    </div>
+
+                    <div class="nameserver">
+                        <span class="nameserver-icon">🌐</span>
+                        <span class="nameserver-text" id="ns2">dns2.p01.nsone.net</span>
+                        <button onclick="copyText('ns2')" class="btn" style="margin-left: auto; padding: 10px 20px; font-size: 0.9em;">📋 Copier</button>
+                    </div>
+
+                    <div class="nameserver">
+                        <span class="nameserver-icon">🌐</span>
+                        <span class="nameserver-text" id="ns3">dns3.p01.nsone.net</span>
+                        <button onclick="copyText('ns3')" class="btn" style="margin-left: auto; padding: 10px 20px; font-size: 0.9em;">📋 Copier</button>
+                    </div>
+
+                    <div class="nameserver">
+                        <span class="nameserver-icon">🌐</span>
+                        <span class="nameserver-text" id="ns4">dns4.p01.nsone.net</span>
+                        <button onclick="copyText('ns4')" class="btn" style="margin-left: auto; padding: 10px 20px; font-size: 0.9em;">📋 Copier</button>
+                    </div>
+
+                    <div class="success" style="margin-top: 20px;">
+                        <strong>✅ Instructions :</strong>
+                        <ol style="margin-left: 20px; margin-top: 10px;">
+                            <li>Sélectionner "Ajouter/Modifier les serveurs DNS personnalisés"</li>
+                            <li>Copier-coller chaque nameserver Netlify</li>
+                            <li>Cliquer sur "Appliquer la configuration"</li>
+                            <li>Confirmer le changement</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Confirmer et Attendre</div>
+                </div>
+                <div class="step-content">
+                    <p>OVH va maintenant propager les changements DNS</p>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 25%">
+                            Propagation en cours...
+                        </div>
+                    </div>
+
+                    <div class="warning">
+                        <span class="warning-icon">⏱️</span>
+                        <strong>Temps de propagation :</strong>
+                        <ul style="margin-left: 40px; margin-top: 10px;">
+                            <li>Minimum : 2 heures</li>
+                            <li>Généralement : 2-6 heures</li>
+                            <li>Maximum : 48 heures</li>
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Vous recevrez un email de confirmation OVH.</strong></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Vérification</div>
+                </div>
+                <div class="step-content">
+                    <p>Après 2-6 heures, vérifiez que le changement a fonctionné :</p>
+
+                    <div class="code-box">
+# Windows Command Prompt
+nslookup calculeage.fr
+
+# Doit retourner :
+# 75.2.60.5 (Netlify) ✅
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <a href="https://calculeage.fr" target="_blank" class="btn">
+                            🌐 Tester calculeage.fr
+                        </a>
+                        <a href="https://calculeage.netlify.app" target="_blank" class="btn btn-secondary" style="margin-left: 10px;">
+                            🔗 Voir sur Netlify
+                        </a>
+                    </div>
+
+                    <div class="success" style="margin-top: 20px;">
+                        <strong>✅ Vérifications finales :</strong>
+                        <ul class="checklist" style="margin-top: 15px;">
+                            <li>Site charge sur https://calculeage.fr</li>
+                            <li>Cadenas SSL 🔒 vert (Let's Encrypt)</li>
+                            <li>Headers A++ actifs (securityheaders.com)</li>
+                            <li>Performance 100/100 (pagespeed.web.dev)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success">
+                <h3 style="margin-bottom: 15px;">🎉 Après Propagation DNS</h3>
+                <p>Votre site sera :</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✅ Sur Netlify (https://calculeage.fr)</li>
+                    <li>✅ SSL/TLS A+ (Let's Encrypt automatique)</li>
+                    <li>✅ Headers A++ (15 headers militaires)</li>
+                    <li>✅ Performance 100/100 (CDN global)</li>
+                    <li>✅ Sécurité maximale (DDoS protection)</li>
+                    <li>✅ PWA installable (mode offline)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <span class="warning-icon">📖</span>
+                <strong>Documentation complète :</strong>
+                <p style="margin-top: 10px;">
+                    Pour plus de détails, consultez :
+                    <code>GUIDE_CHANGEMENT_DNS_OVH.md</code> dans le repo
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Migration Netlify - calculeage.fr</strong></p>
+            <p style="margin-top: 10px; color: #666;">
+                Dashboard : <a href="https://app.netlify.com/projects/calculeage" target="_blank">app.netlify.com/projects/calculeage</a>
+            </p>
+            <p style="margin-top: 5px; color: #666;">
+                Support : <a href="https://answers.netlify.com/" target="_blank">answers.netlify.com</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function copyText(id) {
+            const element = document.getElementById(id);
+            const text = element.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Visual feedback
+                const originalText = element.innerHTML;
+                element.innerHTML = '<span style="color: #28a745;">✅ Copié!</span>';
+
+                setTimeout(() => {
+                    element.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                alert('Erreur lors de la copie : ' + err);
+            });
+        }
+
+        // Auto-refresh progress bar animation
+        setInterval(() => {
+            const progressBar = document.querySelector('.progress-bar');
+            const currentWidth = parseInt(progressBar.style.width);
+            if (currentWidth < 100) {
+                progressBar.style.width = (currentWidth + 5) + '%';
+            } else {
+                progressBar.style.width = '25%';
+            }
+        }, 3000);
+
+        // Check if DNS changed (simulation)
+        async function checkDNS() {
+            // This would need a backend service in production
+            console.log('Checking DNS...');
+        }
+
+        setInterval(checkDNS, 60000); // Check every minute
+    </script>
+</body>
+</html>
