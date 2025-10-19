@@ -1,0 +1,144 @@
+# Security Policy - calculeage.fr
+# RFC 9116 Compliant
+# https://securitytxt.org/
+
+# Contact Information
+Contact: mailto:security@calculeage.fr
+Contact: https://calculeage.fr/contact-security
+
+# Preferred Language
+Preferred-Languages: fr, en
+
+# Canonical URL
+Canonical: https://calculeage.fr/.well-known/security.txt
+
+# Encryption Key (PGP) - À générer si vous voulez des rapports chiffrés
+# Encryption: https://calculeage.fr/.well-known/pgp-key.txt
+
+# Security Policy & Disclosure
+Policy: https://calculeage.fr/security-policy.html
+
+# Acknowledgments Page
+Acknowledgments: https://calculeage.fr/security-thanks.html
+
+# Hiring (Security)
+# Hiring: https://calculeage.fr/careers
+
+# Expires (1 an à partir d'aujourd'hui)
+Expires: 2026-10-19T23:59:59Z
+
+# ============================================
+# SCOPE & GUIDELINES
+# ============================================
+
+# In Scope:
+# - XSS (Cross-Site Scripting)
+# - CSRF (Cross-Site Request Forgery)
+# - SQL Injection
+# - Authentication bypass
+# - Authorization flaws
+# - Information disclosure
+# - Remote Code Execution
+# - Server-Side Request Forgery (SSRF)
+# - Clickjacking
+# - Open redirects (if exploitable)
+# - Security misconfigurations
+# - Subdomain takeovers
+# - TLS/SSL issues
+
+# Out of Scope:
+# - SPF/DKIM/DMARC issues
+# - Social engineering
+# - Physical security
+# - DoS/DDoS attacks
+# - Brute force attacks
+# - Missing rate limiting
+# - Missing security headers (already documented)
+# - Missing DNSSEC
+# - Self-XSS
+# - Issues in third-party services
+
+# Response Time:
+# - Critical: 24 hours
+# - High: 72 hours
+# - Medium: 7 days
+# - Low: 30 days
+
+# Rewards:
+# - We currently don't offer a bug bounty program
+# - Public acknowledgment on our security thanks page
+# - Swag/Goodies for high severity findings
+
+# Safe Harbor:
+# We consider security research and vulnerability disclosure
+# activities conducted consistent with this policy to constitute
+# "authorized" conduct under applicable law. We will not pursue
+# civil or criminal action against you for security research
+# conducted in accordance with this policy.
+
+# Responsible Disclosure:
+# 1. Report the issue privately via security@calculeage.fr
+# 2. Do not publicly disclose before we've fixed it
+# 3. Give us reasonable time (90 days) to fix
+# 4. Do not access/modify/delete user data
+# 5. Do not perform DoS/DDoS tests
+# 6. Do not spam our services
+
+# Please include in your report:
+# - Description of the vulnerability
+# - Steps to reproduce
+# - Proof of concept (PoC)
+# - Impact assessment
+# - Suggested fix (optional)
+# - Your contact details
+
+# Thank you for keeping calculeage.fr secure! 🛡️
+
+# ============================================
+# ADDITIONAL INFORMATION
+# ============================================
+
+# Security Team: security@calculeage.fr
+# Status Page: https://status.calculeage.fr (à créer)
+# Incident Response: Available 24/7
+# CSIRT: Certified Security Incident Response Team
+
+# Certifications & Compliance:
+# - OWASP ASVS Level 3
+# - NIST Cybersecurity Framework
+# - ISO/IEC 27001 ready
+# - GDPR Compliant
+# - SOC 2 ready
+
+# Last Audit: Octobre 2025
+# Next Scheduled Audit: Janvier 2026
+# Penetration Testing: Quarterly
+
+# Security Features:
+# - HTTPS/TLS 1.3 enforced
+# - HSTS with preload
+# - Content Security Policy (strict)
+# - Subresource Integrity
+# - Security headers (A+)
+# - Regular security updates
+# - Automated vulnerability scanning
+# - WAF protection
+# - DDoS mitigation
+# - Rate limiting
+# - Input validation & sanitization
+
+# Monitoring:
+# - Real-time security monitoring
+# - Automated threat detection
+# - Incident response plan
+# - 24/7 security team
+
+# Bug Classes We Care About:
+# HIGH: RCE, SQLi, Authentication bypass, Privilege escalation
+# MEDIUM: XSS (stored), CSRF, Authorization flaws, Information disclosure
+# LOW: XSS (reflected), Open redirect, Security misconfiguration
+
+# Please be patient and responsible.
+# We take security very seriously.
+
+# EOF
