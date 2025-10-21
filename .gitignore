@@ -1,0 +1,27 @@
+# Netlify
+.netlify/
+node_modules/
+
+# Local development
+.DS_Store
+Thumbs.db
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+venv/
+env/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+.cache/
