@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculer son age en jours : Outil et methode de calcul</title>
+    <meta name="description" content="Decouvrez combien de jours vous avez vecu. Formule de calcul, gestion des annees bissextiles, exemples pratiques et conversions.">
+    <meta name="keywords" content="calculer age en jours, age jours, conversion jours annees, annees bissextiles">
+
+    <link rel="canonical" href="https://www.calculeage.fr/blog/calculer-age-jours.html">
+
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        :root {--primary: #667eea;--primary-dark: #764ba2;--secondary: #10b981;--text: #333;--text-light: #666;--bg: #f8f9fa;--white: #fff;--border: #e0e0e0;}
+        body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;line-height: 1.6;color: var(--text);background: var(--bg);}
+        .container {max-width: 1200px;margin: 0 auto;padding: 0 20px;}
+        header {background: var(--white);box-shadow: 0 2px 4px rgba(0,0,0,0.1);padding: 20px 0;position: sticky;top: 0;z-index: 100;}
+        nav {display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap: 20px;}
+        .logo {font-size: 24px;font-weight: 700;color: var(--primary);text-decoration: none;}
+        nav ul {display: flex;list-style: none;gap: 20px;flex-wrap: wrap;}
+        nav a {text-decoration: none;color: var(--text);font-weight: 500;transition: color 0.3s;}
+        nav a:hover {color: var(--primary);}
+        .hero {background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);color: white;padding: 60px 0;text-align: center;}
+        h1 {font-size: 42px;margin-bottom: 20px;font-weight: 700;}
+        .hero p {font-size: 20px;margin-bottom: 30px;opacity: 0.95;}
+        .content-section {background: var(--white);padding: 60px 0;}
+        .article-content {max-width: 800px;margin: 0 auto;}
+        .content-section h2 {font-size: 32px;margin-bottom: 20px;margin-top: 40px;color: #2563eb;}
+        .content-section h3 {font-size: 24px;margin-top: 30px;margin-bottom: 15px;color: var(--text);}
+        .content-section p {margin-bottom: 15px;font-size: 17px;line-height: 1.8;}
+        .content-section ul, .content-section ol {margin-left: 20px;margin-bottom: 20px;}
+        .content-section li {margin-bottom: 10px;line-height: 1.7;font-size: 17px;}
+        .highlight-box {background: #f0f9ff;border-left: 4px solid var(--primary);padding: 20px;margin: 20px 0;border-radius: 8px;}
+        .cta-box {background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);color: white;padding: 30px;border-radius: 12px;text-align: center;margin: 40px 0;}
+        .cta-box h3 {color: white;margin-bottom: 15px;}
+        .btn {background: white;color: var(--primary);border: none;padding: 16px 40px;font-size: 18px;font-weight: 600;border-radius: 8px;cursor: pointer;text-decoration: none;display: inline-block;transition: transform 0.2s;}
+        .btn:hover {transform: translateY(-2px);}
+        .faq-section {background: var(--bg);padding: 60px 0;}
+        .faq-item {background: var(--white);padding: 25px;margin-bottom: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+        .faq-question {font-weight: 700;font-size: 18px;color: var(--text);margin-bottom: 10px;}
+        .faq-answer {color: var(--text-light);line-height: 1.7;}
+        table {width: 100%;border-collapse: collapse;margin: 25px 0;font-size: 16px;box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        table thead tr {background-color: var(--primary);color: white;text-align: left;}
+        table th, table td {padding: 15px;border: 1px solid var(--border);}
+        table tbody tr {background-color: var(--white);}
+        table tbody tr:nth-child(even) {background-color: var(--bg);}
+        footer {background: #1f2937;color: #d1d5db;padding: 40px 0;text-align: center;}
+        footer a {color: #9ca3af;text-decoration: none;margin: 0 10px;}
+        footer a:hover {color: var(--white);}
+        @media (max-width: 768px) {h1 {font-size: 28px;}.content-section h2 {font-size: 26px;}.content-section h3 {font-size: 20px;}}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Calcul d'Age</a>
+            <ul>
+                <li><a href="../index.html#calculer">Calculer</a></li>
+                <li><a href="../age-en-mois-jours.html">Age en mois</a></li>
+                <li><a href="../chien.html">Age chien</a></li>
+                <li><a href="../chat.html">Age chat</a></li>
+                <li><a href="../comparer-ages.html">Comparer</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Calculer son age en jours : Outil et methode de calcul</h1>
+                <p>Combien de jours avez-vous vecu ? Decouvrez la methode complete</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="article-content">
+                    <p>Vous etes-vous deja demande <strong>combien de jours vous avez vecu</strong> depuis votre naissance ? Ce calcul, bien plus impressionnant que le simple comptage en annees, revele des chiffres souvent surprenants. Un adulte de 30 ans a deja vecu plus de 10 000 jours ! Decouvrons ensemble comment calculer precisement votre age en jours.</p>
+
+                    <h2>Pourquoi calculer son age en jours ?</h2>
+
+                    <p>Le <strong>calcul de l'age en jours</strong> offre plusieurs avantages pratiques et psychologiques interessants.</p>
+
+                    <h3>Une perspective impressionnante</h3>
+
+                    <p>Exprimer votre age en jours transforme votre perception du temps :</p>
+                    <ul>
+                        <li>25 ans = environ 9 125 jours</li>
+                        <li>50 ans = environ 18 250 jours</li>
+                        <li>75 ans = environ 27 375 jours</li>
+                        <li>Ces chiffres "grands" rendent tangible le temps vecu</li>
+                    </ul>
+
+                    <h3>Applications concretes</h3>
+
+                    <ul>
+                        <li><strong>Anniversaires speciaux :</strong> Celebrez vos 10 000 ou 20 000 jours de vie</li>
+                        <li><strong>Compteurs de sobriete :</strong> Nombre de jours sans alcool, tabac</li>
+                        <li><strong>Relations amoureuses :</strong> Nombre de jours ensemble</li>
+                        <li><strong>Projets professionnels :</strong> Duree precise d'un contrat ou projet</li>
+                        <li><strong>Calculs legaux :</strong> Delais precis pour procedures administratives</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p><strong>Le saviez-vous ?</strong> A 27 ans et 4 mois environ, vous atteignez exactement 10 000 jours de vie. C'est un anniversaire symbolique que beaucoup aiment celebrer !</p>
+                    </div>
+
+                    <h2>La formule de base pour calculer l'age en jours</h2>
+
+                    <p>Pour <strong>calculer votre age en jours</strong>, la methode depend du niveau de precision souhaite.</p>
+
+                    <h3>Methode approximative rapide</h3>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Age en jours ≈ Age en annees x 365</p>
+
+                    <p>Cette formule donne une approximation rapide mais ignore les annees bissextiles.</p>
+
+                    <p><strong>Exemple :</strong> 30 ans x 365 = 10 950 jours (approximation)</p>
+
+                    <h3>Methode precise avec annees bissextiles</h3>
+
+                    <p>Pour un calcul exact, il faut compter :</p>
+                    <ol>
+                        <li>Le nombre d'annees completes</li>
+                        <li>Le nombre d'annees bissextiles dans cette periode</li>
+                        <li>Les jours supplementaires depuis le dernier anniversaire</li>
+                    </ol>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">
+                        Age en jours = (Annees normales x 365) + (Annees bissextiles x 366) + Jours supplementaires
+                    </p>
+
+                    <h3>Exemple detaille</h3>
+
+                    <p>Pour une personne nee le 1er mars 1990, au 15 fevrier 2025 :</p>
+
+                    <ul>
+                        <li><strong>Periode :</strong> Du 1er mars 1990 au 15 fevrier 2025</li>
+                        <li><strong>Annees completes :</strong> 34 ans (jusqu'au 1er mars 2024)</li>
+                        <li><strong>Annees bissextiles :</strong> 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024 = 9 annees</li>
+                        <li><strong>Annees normales :</strong> 34 - 9 = 25 annees</li>
+                        <li><strong>Jours des annees completes :</strong> (25 x 365) + (9 x 366) = 9125 + 3294 = 12 419 jours</li>
+                        <li><strong>Jours supplementaires :</strong> Du 1er mars 2024 au 15 fevrier 2025 = 351 jours</li>
+                        <li><strong>Total :</strong> 12 419 + 351 = 12 770 jours</li>
+                    </ul>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre age en jours instantanement</h3>
+                        <p style="margin-bottom: 20px;">Obtenez votre age exact en jours avec notre calculateur gratuit</p>
+                        <a href="../index.html#calculer" class="btn">Calculer maintenant</a>
+                    </div>
+
+                    <h2>Comprendre les annees bissextiles</h2>
+
+                    <p>Les <strong>annees bissextiles</strong> sont essentielles pour un calcul precis de votre age en jours.</p>
+
+                    <h3>Qu'est-ce qu'une annee bissextile ?</h3>
+
+                    <p>Une annee bissextile compte <strong>366 jours</strong> au lieu de 365, avec l'ajout d'un 29 fevrier.</p>
+
+                    <h3>Les regles des annees bissextiles</h3>
+
+                    <p>Une annee est bissextile si :</p>
+                    <ul>
+                        <li>Elle est divisible par 4 ET</li>
+                        <li>Si elle est divisible par 100, elle doit aussi etre divisible par 400</li>
+                    </ul>
+
+                    <p><strong>Exemples :</strong></p>
+                    <ul>
+                        <li><strong>2024 :</strong> Bissextile (divisible par 4)</li>
+                        <li><strong>2000 :</strong> Bissextile (divisible par 400)</li>
+                        <li><strong>1900 :</strong> NON bissextile (divisible par 100 mais pas par 400)</li>
+                        <li><strong>2100 :</strong> Ne sera PAS bissextile</li>
+                    </ul>
+
+                    <h3>Impact sur le calcul</h3>
+
+                    <p>Sur une vie de 80 ans :</p>
+                    <ul>
+                        <li>Sans annees bissextiles : 80 x 365 = 29 200 jours</li>
+                        <li>Avec annees bissextiles (~20) : 29 200 + 20 = 29 220 jours</li>
+                        <li><strong>Difference :</strong> 20 jours d'ecart !</li>
+                    </ul>
+
+                    <h2>Tableau de conversion annees vers jours</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age (annees)</th>
+                                <th>Jours approximatifs</th>
+                                <th>Age (annees)</th>
+                                <th>Jours approximatifs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1 an</td><td>365 jours</td><td>30 ans</td><td>10 950 jours</td></tr>
+                            <tr><td>5 ans</td><td>1 825 jours</td><td>40 ans</td><td>14 600 jours</td></tr>
+                            <tr><td>10 ans</td><td>3 650 jours</td><td>50 ans</td><td>18 250 jours</td></tr>
+                            <tr><td>18 ans</td><td>6 570 jours</td><td>60 ans</td><td>21 900 jours</td></tr>
+                            <tr><td>20 ans</td><td>7 300 jours</td><td>70 ans</td><td>25 550 jours</td></tr>
+                            <tr><td>25 ans</td><td>9 125 jours</td><td>80 ans</td><td>29 200 jours</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Anniversaires speciaux en jours</h2>
+
+                    <p>Celebrez des <strong>milestones uniques</strong> en jours :</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Jours de vie</th>
+                                <th>Age approximatif</th>
+                                <th>Signification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>365 jours</td><td>1 an</td><td>Premier anniversaire</td></tr>
+                            <tr><td>1 000 jours</td><td>2 ans 9 mois</td><td>Premier millier</td></tr>
+                            <tr><td>5 000 jours</td><td>13 ans 8 mois</td><td>Mi-adolescence</td></tr>
+                            <tr><td>10 000 jours</td><td>27 ans 4 mois</td><td>Dix mille jours symboliques</td></tr>
+                            <tr><td>15 000 jours</td><td>41 ans</td><td>Quinze mille jours</td></tr>
+                            <tr><td>20 000 jours</td><td>54 ans 9 mois</td><td>Vingt mille jours</td></tr>
+                            <tr><td>25 000 jours</td><td>68 ans 5 mois</td><td>Quart de siecle en jours</td></tr>
+                            <tr><td>30 000 jours</td><td>82 ans</td><td>Rare milestone</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Planifier votre prochain anniversaire en jours</h3>
+
+                    <p>Pour calculer votre prochain anniversaire "rond" en jours :</p>
+                    <ol>
+                        <li>Calculez votre age actuel en jours</li>
+                        <li>Identifiez le prochain multiple de 1000 (ou 100)</li>
+                        <li>Calculez la date correspondante</li>
+                    </ol>
+
+                    <p><strong>Exemple :</strong> Vous avez 9 750 jours. Votre 10 000e jour sera dans 250 jours.</p>
+
+                    <h2>Methodes de calcul alternatives</h2>
+
+                    <h3>Utiliser un calculateur en ligne</h3>
+
+                    <p>Les <strong>calculateurs d'age en ligne</strong> sont la methode la plus simple et precise :</p>
+                    <ul>
+                        <li>Resultat instantane garanti exact</li>
+                        <li>Gestion automatique des annees bissextiles</li>
+                        <li>Affichage en plusieurs unites (jours, heures, minutes)</li>
+                        <li>Calcul du prochain anniversaire en jours</li>
+                    </ul>
+
+                    <h3>Formule Excel / Google Sheets</h3>
+
+                    <p>Dans un tableur, utilisez :</p>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-family: monospace;">
+                        =AUJOURDHUI() - date_naissance
+                    </p>
+
+                    <p>Le resultat s'affiche directement en nombre de jours.</p>
+
+                    <h3>Calcul manuel detaille</h3>
+
+                    <p>Pour calculer manuellement :</p>
+                    <ol>
+                        <li>Listez toutes les annees depuis votre naissance</li>
+                        <li>Identifiez les annees bissextiles (divisibles par 4)</li>
+                        <li>Comptez : (annees normales x 365) + (bissextiles x 366)</li>
+                        <li>Ajoutez les jours depuis votre dernier anniversaire</li>
+                    </ol>
+
+                    <div class="cta-box">
+                        <h3>Calculez precisement votre age en jours</h3>
+                        <p style="margin-bottom: 20px;">Outil gratuit avec gestion automatique des annees bissextiles</p>
+                        <a href="../index.html#calculer" class="btn">Acceder au calculateur</a>
+                    </div>
+
+                    <h2>Conversions depuis et vers les jours</h2>
+
+                    <h3>Jours vers autres unites</h3>
+
+                    <ul>
+                        <li><strong>Vers annees :</strong> Jours / 365,25 (moyenne incluant bissextiles)</li>
+                        <li><strong>Vers mois :</strong> Jours / 30,42 (mois moyen)</li>
+                        <li><strong>Vers semaines :</strong> Jours / 7</li>
+                        <li><strong>Vers heures :</strong> Jours x 24</li>
+                        <li><strong>Vers minutes :</strong> Jours x 1440</li>
+                        <li><strong>Vers secondes :</strong> Jours x 86 400</li>
+                    </ul>
+
+                    <h3>Exemples de conversion</h3>
+
+                    <p><strong>10 000 jours representent :</strong></p>
+                    <ul>
+                        <li>27,4 annees</li>
+                        <li>328,8 mois</li>
+                        <li>1428,6 semaines</li>
+                        <li>240 000 heures</li>
+                        <li>14 400 000 minutes</li>
+                        <li>864 000 000 secondes</li>
+                    </ul>
+
+                    <h2>Applications pratiques du comptage en jours</h2>
+
+                    <h3>Compteurs de sobriete et habitudes</h3>
+
+                    <p>Le comptage en jours est ideal pour :</p>
+                    <ul>
+                        <li><strong>Arret du tabac :</strong> Nombre de jours sans cigarette</li>
+                        <li><strong>Sobriete :</strong> Jours sans alcool ou substances</li>
+                        <li><strong>Sport :</strong> Jours d'entrainement consecutifs</li>
+                        <li><strong>Meditation :</strong> Jours de pratique</li>
+                        <li><strong>Regimes alimentaires :</strong> Jours de regime ou jeune</li>
+                    </ul>
+
+                    <h3>Relations et evenements</h3>
+
+                    <ul>
+                        <li><strong>Relations amoureuses :</strong> Jours ensemble (100, 365, 1000 jours)</li>
+                        <li><strong>Mariage :</strong> Anniversaire de mariage en jours</li>
+                        <li><strong>Naissance d'un enfant :</strong> Age du bebe en jours</li>
+                        <li><strong>Deuil :</strong> Jours depuis un deces</li>
+                    </ul>
+
+                    <h3>Projets et carriere</h3>
+
+                    <ul>
+                        <li><strong>Projets :</strong> Duree precise en jours ouvrables</li>
+                        <li><strong>Contrats :</strong> Duree exacte (CDD, missions)</li>
+                        <li><strong>Anciennete :</strong> Jours de travail dans l'entreprise</li>
+                        <li><strong>Conges :</strong> Calcul des jours de conges acquis</li>
+                    </ul>
+
+                    <h2>La perspective d'une vie en jours</h2>
+
+                    <h3>Esperance de vie en jours</h3>
+
+                    <p>L'<strong>esperance de vie en France</strong> (2025) :</p>
+                    <ul>
+                        <li><strong>Femmes :</strong> 85 ans ≈ 31 025 jours</li>
+                        <li><strong>Hommes :</strong> 79 ans ≈ 28 835 jours</li>
+                        <li><strong>Moyenne :</strong> 82 ans ≈ 29 930 jours</li>
+                    </ul>
+
+                    <h3>Combien de jours vous reste-t-il ?</h3>
+
+                    <p>Calcul theorique (non garanti bien sur !) :</p>
+                    <ol>
+                        <li>Estimez votre esperance de vie (ex: 82 ans = 29 930 jours)</li>
+                        <li>Calculez votre age actuel en jours</li>
+                        <li>Soustrayez : Jours restants = 29 930 - votre age en jours</li>
+                    </ol>
+
+                    <p><strong>Exemple pour 30 ans :</strong></p>
+                    <ul>
+                        <li>Age actuel : ~10 950 jours</li>
+                        <li>Jours restants : 29 930 - 10 950 = 18 980 jours</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p><strong>Reflexion :</strong> Voir votre vie en jours restants peut etre motivant pour profiter pleinement de chaque journee et ne pas remettre indefiniment vos projets importants.</p>
+                    </div>
+
+                    <h2>Outils et applications pour compter les jours</h2>
+
+                    <h3>Applications mobiles populaires</h3>
+
+                    <ul>
+                        <li><strong>Days Since / Days Until :</strong> Compteurs personnalisables</li>
+                        <li><strong>Age Calculator :</strong> Age en multiple unites</li>
+                        <li><strong>Quit Genius :</strong> Compteur de sobriete</li>
+                        <li><strong>Streaks :</strong> Suivi d'habitudes en jours</li>
+                        <li><strong>Daylio :</strong> Journal avec compteur de jours</li>
+                    </ul>
+
+                    <h3>Sites web specialises</h3>
+
+                    <ul>
+                        <li>Calculateurs d'age multi-unites</li>
+                        <li>Compteurs de jours en ligne</li>
+                        <li>Calendriers perpetuels</li>
+                        <li>Outils de calcul de dates</li>
+                    </ul>
+
+                    <h2>Conclusion : La valeur de chaque jour</h2>
+
+                    <p>Calculer son <strong>age en jours</strong> offre une perspective unique sur la duree de notre existence. Ces chiffres impressionnants - 10 000, 20 000, 30 000 jours - rendent le temps plus tangible et nous rappellent la valeur de chaque journee.</p>
+
+                    <p>Que vous souhaitiez celebrer un anniversaire special, suivre une habitude, ou simplement satisfaire votre curiosite, le calcul en jours apporte une granularite et une precision que les annees ne peuvent offrir.</p>
+
+                    <p>Utilisez notre <a href="../index.html#calculer">calculateur d'age gratuit</a> pour decouvrir exactement combien de jours vous avez vecu, et peut-etre planifier votre prochain anniversaire en jours. Chaque jour compte - faites-en bon usage !</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>Questions frequentes sur le calcul d'age en jours</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment calculer rapidement son age en jours ?</div>
+                    <div class="faq-answer">Pour une approximation rapide, multipliez votre age en annees par 365. Par exemple, 30 ans x 365 = 10 950 jours. Pour un calcul precis tenant compte des annees bissextiles, utilisez un calculateur en ligne qui donnera le resultat exact instantanement.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Combien de jours y a-t-il dans une annee ?</div>
+                    <div class="faq-answer">Une annee normale compte 365 jours, tandis qu'une annee bissextile compte 366 jours (avec le 29 fevrier). En moyenne, on compte 365,25 jours par an, ce qui correspond a une annee bissextile tous les 4 ans.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">A quel age atteint-on 10 000 jours de vie ?</div>
+                    <div class="faq-answer">On atteint 10 000 jours de vie a environ 27 ans et 4 mois. Ce milestone symbolique est souvent celebre comme un anniversaire special. Pour connaitre votre date exacte de 10 000 jours, utilisez notre calculateur.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment les annees bissextiles affectent-elles le calcul ?</div>
+                    <div class="faq-answer">Les annees bissextiles ajoutent un jour supplementaire tous les 4 ans environ. Sur une vie de 80 ans, cela represente environ 20 jours supplementaires. Pour un calcul precis, il faut identifier et comptabiliser chaque annee bissextile depuis votre naissance.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Combien de jours dans une vie moyenne ?</div>
+                    <div class="faq-answer">Avec une esperance de vie moyenne de 82 ans en France, une vie represente environ 29 930 jours. Les femmes vivent en moyenne 31 025 jours (85 ans) et les hommes 28 835 jours (79 ans). Ces chiffres incluent les annees bissextiles.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Age - Tous droits reserves</p>
+            <p>
+                <a href="../index.html">Accueil</a> |
+                <a href="../index.html#calculer">Calculateur</a> |
+                <a href="calculer-age-mois.html">Age en mois</a> |
+                <a href="#top">Haut de page</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment calculer rapidement son age en jours ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour une approximation rapide, multipliez votre age en annees par 365. Par exemple, 30 ans x 365 = 10 950 jours. Pour un calcul precis, utilisez un calculateur en ligne."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "A quel age atteint-on 10 000 jours de vie ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On atteint 10 000 jours de vie a environ 27 ans et 4 mois. Ce milestone symbolique est souvent celebre comme un anniversaire special."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de jours dans une vie moyenne ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Avec une esperance de vie moyenne de 82 ans en France, une vie represente environ 29 930 jours, incluant les annees bissextiles."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

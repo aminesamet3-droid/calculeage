@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Âge du chien en âge humain - Calculateur gratuit 2025</title>
+    <meta name="description" content="Calculez l'âge de votre chien en équivalent humain. Formule scientifique selon la taille et race. Outil gratuit et précis.">
+    <meta name="keywords" content="âge chien humain, calculer âge chien, conversion âge chien, mon chien a quel âge, calculateur âge chien">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Âge du chien en âge humain - Calculateur 2025">
+    <meta property="og:description" content="Découvrez l'équivalent humain de l'âge de votre chien selon sa taille. Formule scientifique vétérinaire.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.calculeage.fr/chien.html">
+    <meta property="og:image" content="https://www.calculeage.fr/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculateur d'âge du chien">
+    <meta name="twitter:description" content="Calculez l'âge de votre chien en âge humain avec la formule vétérinaire moderne.">
+    <meta name="twitter:image" content="https://www.calculeage.fr/og-image.jpg">
+    
+    <link rel="canonical" href="https://www.calculeage.fr/chien.html">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --dog: #f59e0b;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        nav ul { display: flex; list-style: none; gap: 15px; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        nav a:hover { color: var(--primary); }
+        .hero {
+            background: linear-gradient(135deg, var(--dog) 0%, #d97706 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p { font-size: 18px; margin-bottom: 30px; opacity: 0.95; }
+        .calculator-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin: -40px auto 40px;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 25px; }
+        .form-group > label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--dog);
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--dog) 0%, #d97706 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+        .result {
+            display: none;
+            margin-top: 30px;
+        }
+        .result.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-block {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid var(--dog);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .result h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .result-main {
+            font-size: 48px;
+            font-weight: 700;
+            color: #78350f;
+            margin: 20px 0;
+        }
+        .result-text {
+            font-size: 18px;
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        .life-stage {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .life-stage-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dog);
+            margin-bottom: 10px;
+        }
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--dog);
+        }
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .breed-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .breed-table th, .breed-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .breed-table th {
+            background: #fef3c7;
+            font-weight: 600;
+            color: #78350f;
+        }
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--dog);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .calculator-section {
+                padding: 20px;
+                margin: -30px 15px 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                font-size: 13px;
+            }
+
+            nav li {
+                flex-shrink: 0;
+            }
+
+            nav a {
+                white-space: nowrap;
+                font-size: 13px;
+            }
+
+            .result-main {
+                font-size: 36px;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+
+            .content-section p, .content-section li {
+                font-size: 16px;
+            }
+
+            .breed-table {
+                font-size: 14px;
+            }
+
+            .breed-table th, .breed-table td {
+                padding: 8px;
+            }
+
+            input[type="number"], select {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .calculator-section {
+                padding: 15px;
+            }
+
+            .result-main {
+                font-size: 28px;
+            }
+
+            .breed-table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">📅 Calcul d'Âge</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="age-en-mois-jours.html">Âge en mois</a></li>
+                <li><a href="chien.html">Âge chien</a></li>
+                <li><a href="chat.html">Âge chat</a></li>
+                <li><a href="comparer-ages.html">Comparer</a></li>
+                <li><a href="age-celebrites.html">Célébrités</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>🐕 Calculer l'âge de votre chien en âge humain</h1>
+                <p>Découvrez l'équivalent humain de l'âge de votre compagnon</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="calculator-section">
+                <div class="form-group">
+                    <label for="dogAge">Âge de votre chien</label>
+                    <input type="number" id="dogAge" min="0" max="30" step="0.5" placeholder="Ex: 5">
+                </div>
+                
+                <div class="form-group">
+                    <label for="dogSize">Taille de votre chien</label>
+                    <select id="dogSize">
+                        <option value="small">Petite race (&lt; 10 kg) - Ex: Chihuahua, Yorkshire</option>
+                        <option value="medium" selected>Moyenne race (10-25 kg) - Ex: Beagle, Cocker</option>
+                        <option value="large">Grande race (&gt; 25 kg) - Ex: Labrador, Berger Allemand</option>
+                    </select>
+                </div>
+                
+                <button type="button" class="btn" onclick="calculateDogAge()">Calculer l'âge humain 🐾</button>
+                
+                <div class="result" id="result">
+                    <div class="result-block">
+                        <h3>🎂 Résultat</h3>
+                        <div class="result-text">Votre chien a l'équivalent de</div>
+                        <div class="result-main" id="humanAge"></div>
+                        <div class="result-text">en âge humain</div>
+                        
+                        <div class="life-stage">
+                            <div class="life-stage-title" id="stageTitle"></div>
+                            <div id="stageDesc"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="content-section">
+            <div class="container">
+                <h2>Comment calculer l'âge d'un chien en âge humain ?</h2>
+                
+                <p>L'ancienne règle qui consistait à <strong>multiplier l'âge du chien par 7</strong> est obsolète et imprécise. Les scientifiques ont développé une formule plus exacte qui prend en compte la <strong>taille de la race</strong> et le fait que les chiens vieillissent plus rapidement durant leurs premières années.</p>
+                
+                <h3>La formule scientifique moderne</h3>
+                
+                <p>Selon les recherches vétérinaires récentes, voici comment calculer correctement l'âge d'un chien :</p>
+                
+                <div class="highlight-box">
+                    <p><strong>🔬 Formule par taille de race :</strong></p>
+                    <ul>
+                        <li><strong>Petite race (&lt;10kg) :</strong> 1ère année = 15 ans, 2ème année = +9 ans, puis +4 ans par an</li>
+                        <li><strong>Moyenne race (10-25kg) :</strong> 1ère année = 15 ans, 2ème année = +9 ans, puis +5 ans par an</li>
+                        <li><strong>Grande race (&gt;25kg) :</strong> 1ère année = 15 ans, 2ème année = +9 ans, puis +6 ans par an</li>
+                    </ul>
+                </div>
+                
+                <h3>Espérance de vie par race</h3>
+                
+                <p>La taille d'un chien influence fortement son espérance de vie :</p>
+                
+                <table class="breed-table">
+                    <thead>
+                        <tr>
+                            <th>Taille</th>
+                            <th>Espérance de vie</th>
+                            <th>Exemples de races</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Petite</strong></td>
+                            <td>12-16 ans</td>
+                            <td>Chihuahua, Yorkshire, Caniche nain</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Moyenne</strong></td>
+                            <td>10-13 ans</td>
+                            <td>Beagle, Cocker, Bulldog français</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grande</strong></td>
+                            <td>8-12 ans</td>
+                            <td>Labrador, Golden Retriever, Berger Allemand</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Géante</strong></td>
+                            <td>6-10 ans</td>
+                            <td>Dogue Allemand, Saint-Bernard, Terre-Neuve</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Les stades de vie du chien</h3>
+                
+                <ul>
+                    <li><strong>Chiot (0-2 ans) :</strong> Croissance rapide, apprentissage, socialisation intense</li>
+                    <li><strong>Adulte jeune (2-6 ans) :</strong> Pic de forme physique, énergie maximale</li>
+                    <li><strong>Adulte mature (6-10 ans) :</strong> Stabilité, début de ralentissement</li>
+                    <li><strong>Senior (10+ ans) :</strong> Ralentissement, besoins médicaux accrus</li>
+                </ul>
+                
+                <h3>Pourquoi les grands chiens vieillissent plus vite ?</h3>
+                
+                <p>Les recherches montrent que les grandes races de chiens vieillissent biologiquement plus rapidement que les petites. Plusieurs théories l'expliquent :</p>
+                
+                <ul>
+                    <li><strong>Croissance accélérée :</strong> Les grands chiens atteignent leur taille adulte très rapidement, ce qui sollicite davantage leur organisme</li>
+                    <li><strong>Métabolisme :</strong> Leur métabolisme produit plus de radicaux libres (stress oxydatif)</li>
+                    <li><strong>Maladies liées à la taille :</strong> Problèmes articulaires, cardiaques plus fréquents</li>
+                </ul>
+                
+                <h3>Conseils pour prolonger la vie de votre chien</h3>
+                
+                <ul>
+                    <li><strong>Alimentation équilibrée :</strong> Croquettes de qualité adaptées à sa taille et son âge</li>
+                    <li><strong>Exercice régulier :</strong> Promenades quotidiennes, activités ludiques</li>
+                    <li><strong>Suivi vétérinaire :</strong> Visites annuelles, vaccins à jour</li>
+                    <li><strong>Hygiène dentaire :</strong> Brossage régulier des dents</li>
+                    <li><strong>Poids optimal :</strong> Éviter le surpoids qui réduit l'espérance de vie</li>
+                    <li><strong>Stimulation mentale :</strong> Jeux, éducation, socialisation</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>💡 Le saviez-vous ?</strong> Le record de longévité canine appartient à Bluey, un Bouvier australien qui a vécu 29 ans et 5 mois (1910-1939), soit environ 160 ans en âge humain !</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Âge - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculateur d'Âge du Chien en Âge Humain",
+        "description": "Calculez l'âge de votre chien en équivalent humain selon sa taille. Formule scientifique vétérinaire moderne.",
+        "url": "https://www.calculeage.fr/chien.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "featureList": [
+            "Calcul âge chien selon taille",
+            "Formule scientifique vétérinaire",
+            "Stades de vie du chien",
+            "Espérance de vie par race"
+        ]
+    }
+    </script>
+    
+    <script>
+        function calculateDogAge() {
+            const dogAge = parseFloat(document.getElementById('dogAge').value);
+            const dogSize = document.getElementById('dogSize').value;
+            
+            if (!dogAge || dogAge < 0) {
+                alert('⚠️ Veuillez entrer un âge valide');
+                return;
+            }
+            
+            if (dogAge > 30) {
+                alert('⚠️ Âge exceptionnellement élevé. Vérifiez votre saisie.');
+                return;
+            }
+            
+            let humanAge = 0;
+            
+            // Calcul selon la formule scientifique
+            if (dogAge <= 1) {
+                humanAge = Math.round(dogAge * 15);
+            } else if (dogAge <= 2) {
+                humanAge = 15 + Math.round((dogAge - 1) * 9);
+            } else {
+                let yearlyRate;
+                switch(dogSize) {
+                    case 'small':
+                        yearlyRate = 4;
+                        break;
+                    case 'medium':
+                        yearlyRate = 5;
+                        break;
+                    case 'large':
+                        yearlyRate = 6;
+                        break;
+                }
+                humanAge = 24 + Math.round((dogAge - 2) * yearlyRate);
+            }
+            
+            // Déterminer le stade de vie
+            let stageTitle, stageDesc;
+            if (dogAge < 2) {
+                stageTitle = '🐶 Chiot';
+                stageDesc = 'Votre chien est en pleine croissance et découverte du monde. C\'est la période idéale pour la socialisation et l\'éducation.';
+            } else if (dogAge < 6) {
+                stageTitle = '💪 Adulte jeune';
+                stageDesc = 'Votre chien est au pic de sa forme physique. Il est énergique et actif. Maintenez une activité régulière.';
+            } else if (dogAge < 10) {
+                stageTitle = '🎯 Adulte mature';
+                stageDesc = 'Votre chien est stable et expérimenté. Surveillez son poids et adaptez son alimentation si nécessaire.';
+            } else {
+                stageTitle = '👴 Senior';
+                stageDesc = 'Votre chien entre dans ses années dorées. Augmentez la fréquence des visites vétérinaires et adaptez son confort (couchage, alimentation).';
+            }
+            
+            document.getElementById('humanAge').textContent = humanAge + ' ans';
+            document.getElementById('stageTitle').textContent = stageTitle;
+            document.getElementById('stageDesc').textContent = stageDesc;
+            
+            document.getElementById('result').classList.add('show');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') calculateDogAge();
+            });
+        });
+    </script>
+</body>
+</html>

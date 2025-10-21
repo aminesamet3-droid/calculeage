@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculer votre espérance de vie : Outils et statistiques France</title>
+    <meta name="description" content="Calculez votre espérance de vie avec nos outils gratuits. Statistiques France 2025, facteurs influençant la longévité, et conseils pour vivre plus longtemps.">
+    <meta name="keywords" content="espérance de vie France, calculer espérance de vie, durée de vie moyenne, longévité France 2025">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculer votre espérance de vie - Statistiques et outils France 2025">
+    <meta property="og:description" content="Découvrez votre espérance de vie avec nos calculateurs. Statistiques actualisées et conseils pour augmenter votre longévité.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.calculeage.fr/blog/calculer-duree-vie.html">
+
+    <link rel="canonical" href="https://www.calculeage.fr/blog/calculer-duree-vie.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #10b981;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #2563eb;
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: var(--bg);
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Calcul d'Age</a>
+            <ul>
+                <li><a href="../index.html#calculer">Calculer</a></li>
+                <li><a href="../age-en-mois-jours.html">Age en mois</a></li>
+                <li><a href="../chien.html">Age chien</a></li>
+                <li><a href="../chat.html">Age chat</a></li>
+                <li><a href="../comparer-ages.html">Comparer</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Calculer votre espérance de vie : Outils et statistiques France</h1>
+                <p>Découvrez combien d'années il vous reste probablement à vivre et comment augmenter votre longévité</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="article-content">
+                    <p>Combien de temps allez-vous vivre ? Cette question existentielle fascine l'humanité depuis toujours. Si personne ne peut prédire avec certitude la durée exacte de sa vie, les statistiques et la science permettent aujourd'hui d'<strong>estimer son espérance de vie</strong> avec une précision raisonnable. En France, l'espérance de vie continue d'augmenter, mais elle varie considérablement selon de nombreux facteurs : sexe, mode de vie, origine sociale, région d'habitation. Dans ce guide complet, nous allons explorer les statistiques actuelles de l'espérance de vie en France, comprendre comment la calculer pour votre cas personnel, et découvrir les actions concrètes pour maximiser vos chances de vivre longtemps et en bonne santé.</p>
+
+                    <h2>L'espérance de vie en France en 2025 : les chiffres clés</h2>
+
+                    <p>L'<strong>espérance de vie moyenne en France</strong> figure parmi les plus élevées au monde. Les dernières données de l'INSEE et de Santé Publique France nous donnent une image précise de la longévité des Français en 2025.</p>
+
+                    <h3>Les statistiques globales</h3>
+
+                    <p>En 2025, l'espérance de vie à la naissance en France s'établit autour de 80 ans pour les hommes et 86 ans pour les femmes. Cette moyenne place la France dans le top 10 mondial de la longévité, aux côtés du Japon, de la Suisse, et de l'Espagne. L'espérance de vie a progressé spectaculairement au cours du 20e siècle : en 1900, elle n'était que de 45 ans pour les hommes et 49 ans pour les femmes.</p>
+
+                    <p>L'écart entre hommes et femmes, bien que toujours significatif (environ 6 ans), tend à se réduire progressivement. En 1990, cet écart était de 8 ans. Les femmes bénéficient d'avantages biologiques (hormones protectrices, système immunitaire plus robuste) et comportementaux (moins de comportements à risque, meilleur suivi médical).</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Record français :</strong> Jeanne Calment, décédée en 1997 à l'âge de 122 ans et 164 jours, détient le record mondial de longévité vérifiée. Elle reste la personne ayant vécu le plus longtemps dans l'histoire humaine documentée.</p>
+                    </div>
+
+                    <h3>L'espérance de vie en bonne santé</h3>
+
+                    <p>Plus important que l'espérance de vie totale, l'<strong>espérance de vie en bonne santé</strong> (sans incapacité majeure) s'établit autour de 64 ans pour les hommes et 66 ans pour les femmes en France. Cela signifie qu'en moyenne, les Français passent les 15-20 dernières années de leur vie avec des limitations de santé ou d'autonomie. Cet indicateur est crucial car il reflète la qualité de vie, pas seulement sa durée.</p>
+
+                    <h2>Comment calculer votre espérance de vie personnelle ?</h2>
+
+                    <p>L'espérance de vie moyenne est un point de départ, mais votre <strong>espérance de vie personnelle</strong> dépend de nombreux facteurs individuels. Plusieurs méthodes permettent de l'estimer plus précisément.</p>
+
+                    <h3>La méthode actuarielle de base</h3>
+
+                    <p>La méthode la plus simple consiste à partir de l'espérance de vie moyenne pour votre sexe et votre âge actuel. En effet, l'espérance de vie augmente à mesure que vous vieillissez (car vous avez déjà survécu aux risques des années précédentes). Un homme de 60 ans en 2025 a une espérance de vie résiduelle d'environ 23 ans (vivra jusqu'à 83 ans), supérieure aux 80 ans d'espérance à la naissance.</p>
+
+                    <h3>Les calculateurs en ligne</h3>
+
+                    <p>De nombreux <strong>calculateurs d'espérance de vie en ligne</strong> existent, proposés par des compagnies d'assurance, des organismes de santé, ou des instituts de recherche. Ils vous posent une série de questions sur votre mode de vie, vos antécédents médicaux, vos habitudes, et calculent une estimation personnalisée.</p>
+
+                    <p>Ces outils prennent généralement en compte : votre âge et sexe actuels, votre IMC (indice de masse corporelle), vos habitudes alimentaires, votre activité physique, votre consommation de tabac et d'alcool, vos antécédents familiaux, votre niveau de stress, et votre situation socio-économique.</p>
+
+                    <h3>L'approche médicale personnalisée</h3>
+
+                    <p>Pour une estimation vraiment précise, une consultation avec un médecin spécialisé en prévention ou en gériatrie peut être utile. Le professionnel analysera vos examens médicaux (analyses sanguines, tension artérielle, fonction cardiaque), vos facteurs de risque personnels, et vos antécédents familiaux pour vous donner une évaluation personnalisée et des recommandations spécifiques.</p>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre âge exact</h3>
+                        <p style="margin-bottom: 20px;">Première étape : connaissez précisément votre âge actuel pour estimer votre espérance de vie</p>
+                        <a href="../index.html#calculer" class="btn">Calculer mon âge</a>
+                    </div>
+
+                    <h2>Les facteurs qui influencent l'espérance de vie</h2>
+
+                    <p>L'<strong>espérance de vie varie considérablement</strong> selon de nombreux facteurs, certains modifiables (mode de vie), d'autres non (génétique, sexe). Comprendre ces facteurs vous permet d'identifier les leviers d'action pour augmenter votre longévité.</p>
+
+                    <h3>Le sexe biologique</h3>
+
+                    <p>Les femmes vivent en moyenne 6 ans de plus que les hommes en France. Cette différence s'explique par des facteurs biologiques (hormones œstrogènes protectrices du système cardiovasculaire, double chromosome X offrant une redondance génétique) et comportementaux (les hommes adoptent davantage de comportements à risque, consultent moins le médecin, travaillent dans des métiers plus dangereux).</p>
+
+                    <h3>La génétique et les antécédents familiaux</h3>
+
+                    <p>La génétique influence environ 25 à 30% de votre espérance de vie. Si vos parents et grands-parents ont vécu longtemps, vous avez statistiquement plus de chances d'en faire autant. Certaines maladies génétiques (maladies cardiovasculaires héréditaires, cancers familiaux, diabète de type 1) peuvent réduire l'espérance de vie, tandis que des gènes de longévité (plus rares) peuvent l'augmenter.</p>
+
+                    <h3>Le mode de vie et les habitudes</h3>
+
+                    <p>Votre mode de vie influence environ 70% de votre espérance de vie, ce qui signifie que vous avez un contrôle important sur votre longévité. Les habitudes les plus impactantes sont :</p>
+
+                    <ul>
+                        <li><strong>Le tabagisme :</strong> Fumer réduit l'espérance de vie de 10 à 15 ans en moyenne. Les fumeurs de plus d'un paquet par jour perdent jusqu'à 20 ans d'espérance de vie.</li>
+                        <li><strong>L'alimentation :</strong> Une alimentation équilibrée de type méditerranéen peut ajouter 5 à 10 ans de vie. À l'inverse, une alimentation riche en produits ultra-transformés, sucres et graisses saturées réduit la longévité.</li>
+                        <li><strong>L'activité physique :</strong> Pratiquer 30 minutes d'exercice modéré par jour ajoute 3 à 5 ans d'espérance de vie. La sédentarité est considérée comme aussi dangereuse que le tabagisme.</li>
+                        <li><strong>La consommation d'alcool :</strong> La consommation excessive d'alcool (plus de 2 verres par jour) réduit l'espérance de vie de 5 à 10 ans. Une consommation modérée (1 verre par jour) semble neutre ou légèrement bénéfique.</li>
+                        <li><strong>Le sommeil :</strong> Dormir régulièrement 7 à 8 heures par nuit optimise la longévité. Moins de 6 heures ou plus de 9 heures sont associés à une mortalité accrue.</li>
+                    </ul>
+
+                    <h3>Le niveau socio-économique</h3>
+
+                    <p>En France, l'<strong>espérance de vie varie fortement selon la catégorie socio-professionnelle</strong>. Un cadre supérieur vit en moyenne 6 à 8 ans de plus qu'un ouvrier. À 35 ans, un cadre peut espérer vivre jusqu'à 84 ans, contre 76 ans pour un ouvrier. Cette différence s'explique par l'accès aux soins, les conditions de travail (pénibilité, exposition à des toxiques), le niveau d'éducation sanitaire, et les habitudes de vie.</p>
+
+                    <h3>La région d'habitation</h3>
+
+                    <p>L'espérance de vie varie également selon les régions françaises. L'Ile-de-France, l'Occitanie et l'Auvergne-Rhône-Alpes affichent les espérances de vie les plus élevées (82-83 ans pour les hommes). Les Hauts-de-France et certains départements d'outre-mer ont les espérances de vie les plus basses (77-78 ans pour les hommes). Ces écarts reflètent des différences de niveau de vie, d'accès aux soins, et de culture sanitaire.</p>
+
+                    <h2>L'évolution de l'espérance de vie en France</h2>
+
+                    <p>L'<strong>espérance de vie en France a considérablement progressé</strong> au cours du siècle dernier, mais cette progression connaît aujourd'hui un ralentissement.</p>
+
+                    <h3>Les gains spectaculaires du 20e siècle</h3>
+
+                    <p>Entre 1900 et 2000, l'espérance de vie a gagné plus de 30 ans en France, passant de 45 ans à 75 ans pour les hommes, et de 49 ans à 82 ans pour les femmes. Cette progression exceptionnelle s'explique par : la réduction drastique de la mortalité infantile (grâce aux vaccins et aux antibiotiques), l'amélioration de l'hygiène et de l'alimentation, les progrès de la médecine (chirurgie, traitements des maladies cardiovasculaires et cancers), et l'amélioration des conditions de travail et de vie.</p>
+
+                    <h3>Le ralentissement du 21e siècle</h3>
+
+                    <p>Depuis 2000, la progression de l'espérance de vie a nettement ralenti, gagnant seulement 2 à 3 ans en 25 ans. Certaines années, notamment 2015, 2020 et 2021 (en raison de la pandémie de COVID-19 et de canicules), ont même connu des reculs. Ce ralentissement s'explique par : l'atteinte de limites biologiques (la majorité des gains faciles ont été réalisés), l'émergence de nouveaux problèmes (obésité, maladies chroniques, pollution), et le vieillissement de la population (plus de personnes atteignent des âges avancés où la mortalité est élevée).</p>
+
+                    <h3>Les projections futures</h3>
+
+                    <p>Les démographes projettent une poursuite de la progression de l'espérance de vie, mais à un rythme plus lent qu'au 20e siècle. D'ici 2050, l'espérance de vie pourrait atteindre 85 ans pour les hommes et 90 ans pour les femmes en France, à condition que les progrès médicaux se poursuivent et que les comportements de santé s'améliorent. Cependant, certains facteurs (changement climatique, résistance aux antibiotiques, pandémies) pourraient ralentir ou inverser cette tendance.</p>
+
+                    <h2>Comparaison internationale de l'espérance de vie</h2>
+
+                    <p>Comment la France se situe-t-elle par rapport aux autres pays en matière d'<strong>espérance de vie</strong> ?</p>
+
+                    <h3>Les champions de la longévité</h3>
+
+                    <p>Le Japon détient le record mondial avec une espérance de vie de 85 ans pour les hommes et 88 ans pour les femmes. Hong Kong, la Suisse, Singapour, et l'Espagne complètent le top 5. Ces pays partagent certaines caractéristiques : systèmes de santé performants, régimes alimentaires sains (méditerranéen ou asiatique), activité physique régulière, et faible taux d'obésité.</p>
+
+                    <h3>La France dans le peloton de tête</h3>
+
+                    <p>La France se situe entre la 8e et la 12e place mondiale selon les années et les méthodologies, avec une espérance de vie proche de celle de l'Italie, de la Suède et de l'Australie. Cette position favorable s'explique par un système de santé de qualité, une alimentation traditionnellement équilibrée (bien que dégradée récemment), et un bon équilibre vie professionnelle/vie personnelle.</p>
+
+                    <h3>Les pays à faible espérance de vie</h3>
+
+                    <p>À l'opposé, certains pays d'Afrique subsaharienne (République centrafricaine, Tchad, Nigéria) affichent des espérances de vie inférieures à 55 ans, principalement en raison des conflits, des maladies infectieuses, de la malnutrition, et du manque d'accès aux soins. Les États-Unis, malgré leur richesse, ont une espérance de vie plus faible que la France (77 ans pour les hommes) en raison de l'obésité, de la crise des opioïdes, et des inégalités d'accès aux soins.</p>
+
+                    <div class="cta-box">
+                        <h3>Planifiez votre avenir</h3>
+                        <p style="margin-bottom: 20px;">Calculez l'âge que vous aurez à une date future pour mieux planifier votre retraite</p>
+                        <a href="../index.html#calculer" class="btn">Calculer mon âge futur</a>
+                    </div>
+
+                    <h2>Comment augmenter son espérance de vie : conseils pratiques</h2>
+
+                    <p>Si la génétique joue un rôle, vos choix de vie ont un impact encore plus important sur votre longévité. Voici des <strong>stratégies scientifiquement prouvées pour augmenter votre espérance de vie</strong>.</p>
+
+                    <h3>Adopter une alimentation optimale</h3>
+
+                    <p>Le régime méditerranéen est considéré comme le plus favorable à la longévité : abondance de fruits et légumes (au moins 5 portions par jour), huile d'olive comme principale source de graisses, poissons gras 2 à 3 fois par semaine (riches en oméga-3), légumineuses régulières (lentilles, pois chiches), céréales complètes, fruits à coque (noix, amandes), consommation modérée de viande rouge, et limitation des produits ultra-transformés.</p>
+
+                    <h3>Maintenir une activité physique régulière</h3>
+
+                    <p>L'OMS recommande au minimum 150 minutes d'activité modérée par semaine, soit 30 minutes 5 fois par semaine. L'idéal combine exercice cardiovasculaire (marche rapide, course, vélo, natation), renforcement musculaire (2 séances par semaine minimum), et exercices d'équilibre et de souplesse (yoga, tai-chi). Même commencer à 60 ou 70 ans apporte des bénéfices significatifs.</p>
+
+                    <h3>Arrêter le tabac définitivement</h3>
+
+                    <p>C'est la <strong>mesure la plus impactante</strong> pour augmenter l'espérance de vie. Arrêter de fumer à 30 ans permet de récupérer presque entièrement l'espérance de vie d'un non-fumeur. Même à 60 ans, l'arrêt ajoute 3 à 5 ans de vie. Le risque cardiovasculaire diminue de 50% après seulement un an d'arrêt.</p>
+
+                    <h3>Gérer le stress et cultiver les relations sociales</h3>
+
+                    <p>Le stress chronique réduit l'espérance de vie en affectant le système cardiovasculaire et immunitaire. Des techniques de gestion du stress (méditation, relaxation, psychothérapie) sont bénéfiques. Les relations sociales de qualité augmentent l'espérance de vie de 3 à 7 ans : maintenir des liens familiaux forts, cultiver des amitiés profondes, participer à des activités communautaires ou associatives.</p>
+
+                    <h3>Optimiser le sommeil</h3>
+
+                    <p>Dormir 7 à 8 heures par nuit de manière régulière optimise la longévité. Pour améliorer votre sommeil : respecter des horaires réguliers de coucher et lever, éviter les écrans 1 heure avant le coucher, maintenir la chambre fraîche (18-19°C), limiter caféine et alcool, et pratiquer une activité physique (mais pas le soir).</p>
+
+                    <h3>Suivre régulièrement sa santé</h3>
+
+                    <p>Les <strong>dépistages réguliers</strong> permettent de détecter précocement les maladies et d'augmenter considérablement les chances de guérison. Consultez votre médecin au moins une fois par an, faites les dépistages recommandés (cancer colorectal à partir de 50 ans, cancer du sein à partir de 50 ans pour les femmes, cancer de la prostate à discuter avec votre médecin), surveillez votre tension artérielle et votre cholestérol, et ne négligez pas la santé dentaire.</p>
+
+                    <h2>Les zones bleues : secrets de longévité exceptionnelle</h2>
+
+                    <p>Les <strong>zones bleues</strong> sont des régions du monde où les centenaires sont particulièrement nombreux et où l'espérance de vie dépasse largement la moyenne mondiale. Étudier ces zones révèle des secrets de longévité applicables partout.</p>
+
+                    <h3>Les cinq zones bleues identifiées</h3>
+
+                    <p>Le chercheur Dan Buettner a identifié cinq zones bleues principales : Okinawa (Japon), Sardaigne (Italie), Ikaria (Grèce), Nicoya (Costa Rica), et Loma Linda (Californie, USA). Dans ces régions, vivre jusqu'à 100 ans est courant, et les maladies chroniques (cancer, diabète, maladies cardiovasculaires) sont rares.</p>
+
+                    <h3>Les points communs des zones bleues</h3>
+
+                    <p>Ces populations partagent neuf caractéristiques communes, appelées "Power 9" : activité physique naturelle quotidienne (marche, jardinage, pas de salle de sport), sens du but dans la vie (raison de se lever le matin), gestion du stress par des rituels quotidiens, règle du "hara hachi bu" (arrêter de manger à 80% de satiété), alimentation principalement végétale avec viande occasionnelle, consommation modérée et régulière d'alcool (vin rouge), appartenance à une communauté religieuse ou spirituelle, priorité à la famille, et cercle social supportif favorisant les comportements sains.</p>
+
+                    <h3>Leçons applicables en France</h3>
+
+                    <p>Bien qu'il soit impossible de recréer exactement ces environnements, nous pouvons adopter leurs principes : intégrer l'activité physique naturellement (vélo pour les déplacements, escaliers, jardinage), cultiver un réseau social de qualité, adopter une alimentation principalement végétale, et trouver un sens et un but à sa vie (engagement associatif, transmission de savoirs, projets personnels).</p>
+
+                    <h2>Espérance de vie vs espérance de vie en bonne santé</h2>
+
+                    <p>Vivre longtemps est désirable, mais vivre longtemps <strong>en bonne santé</strong> l'est encore plus. C'est pourquoi l'espérance de vie en bonne santé est un indicateur crucial.</p>
+
+                    <h3>La compression de la morbidité</h3>
+
+                    <p>L'objectif idéal est la "compression de la morbidité" : rester en bonne santé le plus longtemps possible et ne connaître qu'une courte période de maladie en fin de vie. Malheureusement, la tendance actuelle en France va plutôt vers l'expansion de la morbidité : on vit plus vieux mais avec plus d'années de dépendance.</p>
+
+                    <h3>Comment maximiser les années en bonne santé</h3>
+
+                    <p>Les mêmes facteurs qui augmentent l'espérance de vie totale augmentent également l'espérance de vie en bonne santé : activité physique (particulièrement le renforcement musculaire pour prévenir la sarcopénie), stimulation cognitive (lecture, jeux de société, apprentissage), alimentation anti-inflammatoire, maintien du lien social, et gestion des maladies chroniques pour éviter les complications.</p>
+
+                    <h2>Conclusion : votre longévité entre vos mains</h2>
+
+                    <p>Si l'<strong>espérance de vie moyenne</strong> en France est encourageante (80 ans pour les hommes, 86 ans pour les femmes), votre espérance de vie personnelle dépend largement de vos choix quotidiens. La génétique ne compte que pour 25 à 30% ; le reste est sous votre contrôle.</p>
+
+                    <p>Adopter une alimentation saine, pratiquer une activité physique régulière, arrêter le tabac, modérer l'alcool, gérer le stress, bien dormir, et cultiver des relations sociales de qualité peuvent vous faire gagner 10 à 15 ans de vie, et surtout des années de vie en bonne santé. Il n'est jamais trop tard pour commencer : même à 60 ou 70 ans, ces changements apportent des bénéfices considérables.</p>
+
+                    <p>Calculer son espérance de vie n'est pas un exercice morbide, mais un outil de prise de conscience et de motivation. En connaissant approximativement le temps qu'il vous reste, vous pouvez mieux planifier votre vie, prioriser ce qui compte vraiment, et surtout, prendre les mesures pour prolonger et améliorer ces précieuses années à venir.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>Questions fréquentes</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quelle est l'espérance de vie moyenne en France en 2025 ?</div>
+                    <div class="faq-answer">En 2025, l'espérance de vie moyenne en France est d'environ 80 ans pour les hommes et 86 ans pour les femmes. Ces chiffres placent la France parmi les pays ayant la plus haute espérance de vie au monde, aux côtés du Japon, de la Suisse et de l'Espagne.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment calculer son espérance de vie personnelle ?</div>
+                    <div class="faq-answer">Pour calculer votre espérance de vie personnelle, vous pouvez utiliser des calculateurs en ligne qui prennent en compte votre âge, sexe, mode de vie, habitudes alimentaires, activité physique, consommation de tabac et d'alcool, antécédents familiaux et situation socio-économique. Une consultation médicale peut offrir une estimation encore plus précise.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quels sont les facteurs les plus importants pour augmenter son espérance de vie ?</div>
+                    <div class="faq-answer">Les facteurs les plus impactants sont l'arrêt du tabac (peut ajouter 10-15 ans), une alimentation équilibrée de type méditerranéen (5-10 ans), une activité physique régulière (3-5 ans), un sommeil de qualité (7-8h par nuit), la gestion du stress, et le maintien de relations sociales de qualité. Ces facteurs contrôlent environ 70% de votre espérance de vie.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quelle est la différence entre espérance de vie et espérance de vie en bonne santé ?</div>
+                    <div class="faq-answer">L'espérance de vie totale mesure la durée de vie complète, tandis que l'espérance de vie en bonne santé mesure les années vécues sans incapacité majeure. En France, elle est d'environ 64 ans pour les hommes et 66 ans pour les femmes, ce qui signifie qu'on passe en moyenne 15-20 ans en fin de vie avec des limitations de santé.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Age - Tous droits réservés</p>
+            <p>
+                <a href="../index.html">Accueil</a> |
+                <a href="../index.html#calculer">Calculateur</a> |
+                <a href="#top">Haut de page</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Quelle est l'espérance de vie moyenne en France en 2025 ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "En 2025, l'espérance de vie moyenne en France est d'environ 80 ans pour les hommes et 86 ans pour les femmes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment calculer son espérance de vie personnelle ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vous pouvez utiliser des calculateurs en ligne qui prennent en compte votre âge, sexe, mode de vie, habitudes alimentaires, activité physique, consommation de tabac et d'alcool, antécédents familiaux et situation socio-économique."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quels sont les facteurs les plus importants pour augmenter son espérance de vie ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Les facteurs les plus impactants sont l'arrêt du tabac, une alimentation équilibrée, une activité physique régulière, un sommeil de qualité, la gestion du stress, et le maintien de relations sociales de qualité."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

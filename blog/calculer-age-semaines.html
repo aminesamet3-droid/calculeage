@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculer son age en semaines : Combien de semaines depuis votre naissance ?</title>
+    <meta name="description" content="Decouvrez combien de semaines vous avez vecu. Methode de calcul, formule avec 52 semaines par an, exemples pratiques et conversions.">
+    <meta name="keywords" content="calculer age en semaines, age semaines, conversion semaines annees, 52 semaines par an">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculer son age en semaines : Guide complet">
+    <meta property="og:description" content="Calculez precisement votre age en semaines. Formules, exemples et outils.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.calculeage.fr/blog/calculer-age-semaines.html">
+
+    <link rel="canonical" href="https://www.calculeage.fr/blog/calculer-age-semaines.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #10b981;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #2563eb;
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: var(--bg);
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table thead tr {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+        }
+
+        table th, table td {
+            padding: 15px;
+            border: 1px solid var(--border);
+        }
+
+        table tbody tr {
+            background-color: var(--white);
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: var(--bg);
+        }
+
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Calcul d'Age</a>
+            <ul>
+                <li><a href="../index.html#calculer">Calculer</a></li>
+                <li><a href="../age-en-mois-jours.html">Age en mois</a></li>
+                <li><a href="../chien.html">Age chien</a></li>
+                <li><a href="../chat.html">Age chat</a></li>
+                <li><a href="../comparer-ages.html">Comparer</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Calculer son age en semaines : Combien de semaines depuis votre naissance ?</h1>
+                <p>Decouvrez combien de semaines vous avez vecu avec notre guide complet</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="article-content">
+                    <p>Avez-vous deja pense a <strong>calculer votre age en semaines</strong> ? Cette unite de temps offre une perspective fascinante sur la duree de votre existence. Alors que nous avons l'habitude de compter notre age en annees, le passage aux semaines revele des chiffres etonnamment eleves qui donnent une nouvelle dimension a notre perception du temps vecu.</p>
+
+                    <h2>Pourquoi calculer son age en semaines ?</h2>
+
+                    <p>Exprimer son age en semaines peut sembler inhabituel, mais cette mesure presente plusieurs interets pratiques et psychologiques.</p>
+
+                    <h3>Pour le suivi des grossesses et nouveau-nes</h3>
+
+                    <p>Dans le domaine medical, la <strong>semaine</strong> est l'unite de reference pour :</p>
+
+                    <ul>
+                        <li><strong>Grossesse :</strong> Les 9 mois de grossesse correspondent a 39-40 semaines d'amenorrhee (SA)</li>
+                        <li><strong>Prematurite :</strong> Un bebe est considere premature s'il nait avant 37 semaines</li>
+                        <li><strong>Developpement foetal :</strong> Chaque semaine de grossesse apporte des evolutions majeures</li>
+                        <li><strong>Nouveau-nes :</strong> Les pediatres comptent en semaines jusqu'a 8-12 semaines de vie</li>
+                    </ul>
+
+                    <h3>Pour une nouvelle perspective sur le temps</h3>
+
+                    <p>Calculer votre age en semaines offre une vision renouvelee de votre vie :</p>
+
+                    <ul>
+                        <li>Un adulte de 30 ans a vecu plus de 1500 semaines</li>
+                        <li>L'esperance de vie moyenne (80 ans) represente environ 4000 semaines</li>
+                        <li>Cette perspective rend le temps plus concret et precieux</li>
+                        <li>Aide a mieux apprecier chaque semaine comme une unite de vie</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p><strong>Reflexion :</strong> Si vous vivez 80 ans, vous ne disposerez que d'environ 4000 semaines. Ce chiffre relativement "petit" aide a prendre conscience de la valeur de chaque semaine et encourage a mieux planifier son temps.</p>
+                    </div>
+
+                    <h3>Applications pratiques</h3>
+
+                    <ul>
+                        <li><strong>Planification de projets :</strong> Les sprints agiles durent generalement 1-2 semaines</li>
+                        <li><strong>Programmes d'entrainement :</strong> Nombreux plans sportifs structures en semaines (12 semaines pour un semi-marathon)</li>
+                        <li><strong>Habitudes et defis :</strong> Les challenges de 4 semaines (1 mois) sont populaires</li>
+                        <li><strong>Calendrier scolaire :</strong> Structure en semaines de cours</li>
+                    </ul>
+
+                    <h2>La formule pour calculer son age en semaines</h2>
+
+                    <p>Pour <strong>calculer votre age en semaines</strong>, plusieurs methodes existent selon le niveau de precision souhaite.</p>
+
+                    <h3>Methode simplifiee (approximation)</h3>
+
+                    <p>La methode rapide utilise la conversion standard :</p>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Age en semaines = Age en annees x 52</p>
+
+                    <p>Cette formule repose sur le fait qu'une annee comporte approximativement 52 semaines (52,14 exactement).</p>
+
+                    <h3>Exemple avec la methode simplifiee</h3>
+
+                    <p>Si vous avez 25 ans :</p>
+                    <ul>
+                        <li>25 x 52 = 1300 semaines</li>
+                        <li>Cette approximation est suffisante pour une estimation rapide</li>
+                    </ul>
+
+                    <h3>Methode precise (calcul exact)</h3>
+
+                    <p>Pour une <strong>precision maximale</strong>, calculez d'abord le nombre total de jours, puis divisez par 7 :</p>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Age en semaines = Nombre total de jours / 7</p>
+
+                    <h3>Etapes du calcul precis</h3>
+
+                    <ol>
+                        <li><strong>Calculez le nombre de jours :</strong> Tenez compte des annees bissextiles</li>
+                        <li><strong>Divisez par 7 :</strong> Obtenez le nombre de semaines completes</li>
+                        <li><strong>Le reste :</strong> Indique les jours supplementaires (0 a 6 jours)</li>
+                    </ol>
+
+                    <h3>Exemple detaille</h3>
+
+                    <p>Pour une personne nee le 1er janvier 2000, au 1er janvier 2025 :</p>
+
+                    <ul>
+                        <li><strong>Periode :</strong> 25 ans exactement</li>
+                        <li><strong>Annees bissextiles :</strong> 2000, 2004, 2008, 2012, 2016, 2020, 2024 = 7 annees avec 366 jours</li>
+                        <li><strong>Annees normales :</strong> 18 annees avec 365 jours</li>
+                        <li><strong>Total de jours :</strong> (7 x 366) + (18 x 365) = 2562 + 6570 = 9132 jours</li>
+                        <li><strong>Semaines :</strong> 9132 / 7 = 1304,57 semaines</li>
+                        <li><strong>Resultat :</strong> 1304 semaines et 4 jours</li>
+                    </ul>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre age en semaines instantanement</h3>
+                        <p style="margin-bottom: 20px;">Obtenez votre age exact en semaines, jours et heures</p>
+                        <a href="../index.html#calculer" class="btn">Calculer maintenant</a>
+                    </div>
+
+                    <h2>Tableau de conversion : annees vers semaines</h2>
+
+                    <p>Voici un <strong>tableau de reference</strong> pour convertir rapidement des annees en semaines :</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age (annees)</th>
+                                <th>Semaines approximatives</th>
+                                <th>Age (annees)</th>
+                                <th>Semaines approximatives</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 an</td>
+                                <td>52 semaines</td>
+                                <td>30 ans</td>
+                                <td>1560 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>2 ans</td>
+                                <td>104 semaines</td>
+                                <td>40 ans</td>
+                                <td>2080 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>5 ans</td>
+                                <td>260 semaines</td>
+                                <td>50 ans</td>
+                                <td>2600 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>10 ans</td>
+                                <td>520 semaines</td>
+                                <td>60 ans</td>
+                                <td>3120 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>18 ans</td>
+                                <td>936 semaines</td>
+                                <td>70 ans</td>
+                                <td>3640 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>20 ans</td>
+                                <td>1040 semaines</td>
+                                <td>80 ans</td>
+                                <td>4160 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>25 ans</td>
+                                <td>1300 semaines</td>
+                                <td>90 ans</td>
+                                <td>4680 semaines</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>52 semaines par an : vrai ou faux ?</h2>
+
+                    <p>On dit souvent qu'une annee compte <strong>52 semaines</strong>, mais est-ce vraiment exact ?</p>
+
+                    <h3>Le calcul precis</h3>
+
+                    <p>Une annee compte :</p>
+                    <ul>
+                        <li><strong>365 jours</strong> (annee normale)</li>
+                        <li><strong>366 jours</strong> (annee bissextile)</li>
+                    </ul>
+
+                    <p>En divisant par 7 jours (une semaine) :</p>
+                    <ul>
+                        <li>365 / 7 = 52,14 semaines (52 semaines et 1 jour)</li>
+                        <li>366 / 7 = 52,29 semaines (52 semaines et 2 jours)</li>
+                    </ul>
+
+                    <h3>Implications pratiques</h3>
+
+                    <p>Cette difference de 1-2 jours par an explique pourquoi :</p>
+
+                    <ul>
+                        <li>Certaines annees comptent 53 semaines au sens du calendrier ISO (semaine 53)</li>
+                        <li>Votre anniversaire "change de jour" chaque annee (decalage d'un jour, 2 si annee bissextile)</li>
+                        <li>Les calculs doivent etre ajustes pour une precision maximale</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <p><strong>Astuce :</strong> Pour un calcul rapide et suffisamment precis, utilisez 52 semaines par an. Pour une precision scientifique, utilisez 52,14 semaines ou calculez directement a partir des jours.</p>
+                    </div>
+
+                    <h2>Celebrer les anniversaires en semaines</h2>
+
+                    <p>Celebrer des <strong>anniversaires en semaines</strong> peut etre amusant et original, surtout pour les enfants ou les couples.</p>
+
+                    <h3>Ages cles en semaines</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Semaines</th>
+                                <th>Equivalent en annees</th>
+                                <th>Occasion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>52 semaines</td>
+                                <td>1 an</td>
+                                <td>Premier anniversaire</td>
+                            </tr>
+                            <tr>
+                                <td>100 semaines</td>
+                                <td>~2 ans</td>
+                                <td>Premier anniversaire "rond" en semaines</td>
+                            </tr>
+                            <tr>
+                                <td>500 semaines</td>
+                                <td>~9,6 ans</td>
+                                <td>Anniversaire des 500 semaines</td>
+                            </tr>
+                            <tr>
+                                <td>1000 semaines</td>
+                                <td>~19 ans</td>
+                                <td>Millenaire de semaines</td>
+                            </tr>
+                            <tr>
+                                <td>2000 semaines</td>
+                                <td>~38 ans</td>
+                                <td>Double millenaire</td>
+                            </tr>
+                            <tr>
+                                <td>3000 semaines</td>
+                                <td>~58 ans</td>
+                                <td>Triple millenaire</td>
+                            </tr>
+                            <tr>
+                                <td>4000 semaines</td>
+                                <td>~77 ans</td>
+                                <td>Rare milestone de fin de vie</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Pour les relations amoureuses</h3>
+
+                    <p>Les couples peuvent celebrer :</p>
+                    <ul>
+                        <li><strong>52 semaines :</strong> 1 an de relation</li>
+                        <li><strong>100 semaines :</strong> ~2 ans ensemble</li>
+                        <li><strong>500 semaines :</strong> ~10 ans (anniversaire special)</li>
+                    </ul>
+
+                    <h2>La semaine comme unite de temps</h2>
+
+                    <h3>Origine de la semaine de 7 jours</h3>
+
+                    <p>La <strong>semaine de 7 jours</strong> trouve ses origines dans :</p>
+
+                    <ul>
+                        <li><strong>Traditions bibliques :</strong> Les 7 jours de la Creation</li>
+                        <li><strong>Astronomie babylonienne :</strong> Les 7 astres visibles (Soleil, Lune, 5 planetes)</li>
+                        <li><strong>Cycles lunaires :</strong> Un quart de cycle lunaire (~7 jours)</li>
+                        <li><strong>Standardisation internationale :</strong> Adoptee mondialement au fil des siecles</li>
+                    </ul>
+
+                    <h3>La semaine dans differentes cultures</h3>
+
+                    <p>Si la semaine de 7 jours est universelle aujourd'hui, d'autres systemes ont existe :</p>
+
+                    <ul>
+                        <li><strong>Semaine revolutionnaire française :</strong> 10 jours (decadi) entre 1793 et 1805</li>
+                        <li><strong>Semaine sovietique :</strong> Tentatives de semaines de 5 ou 6 jours (1929-1940)</li>
+                        <li><strong>Calendrier maya :</strong> Cycles de 13 et 20 jours</li>
+                    </ul>
+
+                    <h2>Applications modernes du calcul en semaines</h2>
+
+                    <h3>Developpement logiciel (Sprints)</h3>
+
+                    <p>Les methodes agiles utilisent des <strong>sprints</strong> generalement de 2 semaines :</p>
+
+                    <ul>
+                        <li>Planification au debut du sprint</li>
+                        <li>Developpement pendant 2 semaines</li>
+                        <li>Retrospective en fin de sprint</li>
+                        <li>Un projet de 6 mois = 12-13 sprints</li>
+                    </ul>
+
+                    <h3>Fitness et sport</h3>
+
+                    <p>Les programmes d'entrainement sont structures en semaines :</p>
+
+                    <ul>
+                        <li><strong>Programme 5K :</strong> 8 semaines</li>
+                        <li><strong>Programme 10K :</strong> 10-12 semaines</li>
+                        <li><strong>Programme semi-marathon :</strong> 12-16 semaines</li>
+                        <li><strong>Programme marathon :</strong> 16-20 semaines</li>
+                        <li><strong>Musculation :</strong> Cycles de 4-8 semaines</li>
+                    </ul>
+
+                    <h3>Grossesse et parentalite</h3>
+
+                    <p>La grossesse est toujours comptee en <strong>semaines d'amenorrhee</strong> :</p>
+
+                    <ul>
+                        <li><strong>Trimestre 1 :</strong> Semaines 1-13</li>
+                        <li><strong>Trimestre 2 :</strong> Semaines 14-26</li>
+                        <li><strong>Trimestre 3 :</strong> Semaines 27-40</li>
+                        <li><strong>Terme :</strong> 39-41 semaines</li>
+                    </ul>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre age en semaines precise</h3>
+                        <p style="margin-bottom: 20px;">Decouvrez combien de semaines vous avez vecu avec precision</p>
+                        <a href="../index.html#calculer" class="btn">Calculer mon age</a>
+                    </div>
+
+                    <h2>Conversion semaines vers autres unites</h2>
+
+                    <h3>Semaines vers jours</h3>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Jours = Semaines x 7</p>
+
+                    <p>Exemples :</p>
+                    <ul>
+                        <li>10 semaines = 70 jours</li>
+                        <li>100 semaines = 700 jours</li>
+                        <li>1000 semaines = 7000 jours</li>
+                    </ul>
+
+                    <h3>Semaines vers mois</h3>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Mois = Semaines / 4,33</p>
+
+                    <p>Un mois moyen compte environ 4,33 semaines (30,4 jours / 7).</p>
+
+                    <h3>Semaines vers annees</h3>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-weight: 600;">Annees = Semaines / 52,14</p>
+
+                    <h2>Outils pour calculer son age en semaines</h2>
+
+                    <h3>Calculateurs en ligne</h3>
+
+                    <p>Les <strong>calculateurs d'age en ligne</strong> offrent :</p>
+
+                    <ul>
+                        <li>Calcul instantane et precis</li>
+                        <li>Prise en compte des annees bissextiles</li>
+                        <li>Affichage en plusieurs unites simultanement</li>
+                        <li>Calcul du prochain anniversaire en semaines</li>
+                    </ul>
+
+                    <h3>Formule Excel</h3>
+
+                    <p>Dans Excel ou Google Sheets :</p>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-family: monospace;">
+                        =(AUJOURDHUI() - date_naissance) / 7
+                    </p>
+
+                    <p>Ou pour un resultat en semaines entieres :</p>
+
+                    <p style="background: #f0f9ff; padding: 15px; border-radius: 8px; font-family: monospace;">
+                        =ENT((AUJOURDHUI() - date_naissance) / 7)
+                    </p>
+
+                    <h3>Applications mobiles</h3>
+
+                    <ul>
+                        <li><strong>Age Calculator</strong> : Calcul multi-unites</li>
+                        <li><strong>Time Since</strong> : Compteurs personnalisables</li>
+                        <li><strong>Life Calendar</strong> : Visualisation de la vie en semaines</li>
+                    </ul>
+
+                    <h2>La perspective des "4000 semaines"</h2>
+
+                    <p>Le concept des <strong>4000 semaines</strong> est popularise par le livre "Four Thousand Weeks" d'Oliver Burkeman.</p>
+
+                    <h3>Une vie humaine en perspective</h3>
+
+                    <p>Si vous vivez 80 ans :</p>
+                    <ul>
+                        <li>80 x 52 = 4160 semaines environ</li>
+                        <li>Ce nombre "petit" rend le temps de vie plus tangible</li>
+                        <li>Aide a prioriser ce qui compte vraiment</li>
+                        <li>Encourage a ne pas reporter indefiniment ses projets</li>
+                    </ul>
+
+                    <h3>Combien de semaines vous reste-t-il ?</h3>
+
+                    <p>Pour calculer les semaines restantes (theoriques) :</p>
+
+                    <ol>
+                        <li>Estimez votre esperance de vie (ex: 80 ans = 4160 semaines)</li>
+                        <li>Calculez votre age actuel en semaines</li>
+                        <li>Soustrayez : 4160 - votre age en semaines = semaines restantes</li>
+                    </ol>
+
+                    <p>Exemple pour une personne de 30 ans :</p>
+                    <ul>
+                        <li>Age : 30 x 52 = 1560 semaines</li>
+                        <li>Reste : 4160 - 1560 = 2600 semaines</li>
+                    </ul>
+
+                    <h2>Conclusion : Le temps en semaines</h2>
+
+                    <p>Calculer son <strong>age en semaines</strong> offre une perspective unique sur la duree de notre existence. Cette unite de temps, ni trop grande ni trop petite, permet de mieux apprehender la progression de notre vie.</p>
+
+                    <p>Que vous ayez vecu 1000, 2000 ou 3000 semaines, chaque semaine representeune fraction tangible et precieuse de votre vie totale. Cette prise de conscience peut vous aider a mieux valoriser votre temps et a prendre des decisions plus alignees avec vos priorites.</p>
+
+                    <p>Utilisez notre <a href="../index.html#calculer">calculateur d'age</a> pour decouvrir precisement combien de semaines vous avez vecu, et peut-etre celebrer votre prochain "anniversaire en semaines" avec vos proches. Chaque semaine compte !</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>Questions frequentes sur le calcul d'age en semaines</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment calculer rapidement son age en semaines ?</div>
+                    <div class="faq-answer">Pour un calcul rapide, multipliez votre age en annees par 52. Par exemple, si vous avez 25 ans : 25 x 52 = 1300 semaines. Pour plus de precision, calculez le nombre total de jours depuis votre naissance et divisez par 7.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Une annee compte-t-elle exactement 52 semaines ?</div>
+                    <div class="faq-answer">Non, une annee compte 52,14 semaines (365 jours / 7 = 52 semaines et 1 jour). Une annee bissextile compte 52,29 semaines. C'est pourquoi votre date d'anniversaire change de jour chaque annee.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Combien de semaines dans une vie de 80 ans ?</div>
+                    <div class="faq-answer">Une vie de 80 ans represente environ 4160 semaines (80 x 52). Ce chiffre relativement "petit" aide a prendre conscience de la valeur de chaque semaine et encourage a mieux utiliser son temps.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Pourquoi compter la grossesse en semaines ?</div>
+                    <div class="faq-answer">La grossesse est comptee en semaines d'amenorrhee (SA) car le developpement foetal evolue rapidement chaque semaine. Cette precision permet un suivi medical optimal et une evaluation precise de la maturite du bebe. Une grossesse dure 39-40 semaines.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment celebrer un anniversaire en semaines ?</div>
+                    <div class="faq-answer">Vous pouvez celebrer des milestones comme 1000 semaines (~19 ans), 2000 semaines (~38 ans), ou des multiples de 100 semaines. Pour les couples, 52 semaines (1 an), 100 semaines (~2 ans) ou 500 semaines (~10 ans) sont des occasions speciales.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Age - Tous droits reserves</p>
+            <p>
+                <a href="../index.html">Accueil</a> |
+                <a href="../index.html#calculer">Calculateur</a> |
+                <a href="calculer-age-mois.html">Age en mois</a> |
+                <a href="#top">Haut de page</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment calculer rapidement son age en semaines ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour un calcul rapide, multipliez votre age en annees par 52. Par exemple, si vous avez 25 ans : 25 x 52 = 1300 semaines. Pour plus de precision, calculez le nombre total de jours depuis votre naissance et divisez par 7."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Une annee compte-t-elle exactement 52 semaines ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Non, une annee compte 52,14 semaines (365 jours / 7 = 52 semaines et 1 jour). Une annee bissextile compte 52,29 semaines."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de semaines dans une vie de 80 ans ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Une vie de 80 ans represente environ 4160 semaines (80 x 52). Ce chiffre aide a prendre conscience de la valeur de chaque semaine."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pourquoi compter la grossesse en semaines ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La grossesse est comptee en semaines d'amenorrhee car le developpement foetal evolue rapidement chaque semaine. Cette precision permet un suivi medical optimal. Une grossesse dure 39-40 semaines."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul âge exact – Calculez votre âge en années, mois et jours</title>
+    <meta name="description" content="Calculez votre âge exact en ligne (années, mois, jours). Outil gratuit, rapide et conforme aux années bissextiles. Testez maintenant.">
+    <meta name="keywords" content="calcul âge, calculer âge, âge exact, quel âge ai-je, calculer son âge, âge en jours, calculateur âge, date de naissance">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calcul âge exact – Calculez votre âge en années, mois et jours">
+    <meta property="og:description" content="Outil gratuit pour calculer votre âge précis. Résultat instantané en années, mois, jours, semaines et heures.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.calculeage.fr/">
+    <meta property="og:image" content="https://www.calculeage.fr/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calcul âge exact – Outil gratuit">
+    <meta name="twitter:description" content="Calculez votre âge précis en secondes. Gratuit et instantané.">
+    <meta name="twitter:image" content="https://www.calculeage.fr/og-image.jpg">
+    
+    <link rel="canonical" href="https://www.calculeage.fr/">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://agebiologique.eu">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #10b981;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .calculator-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin: -40px auto 40px;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group > label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        
+        .date-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 15px;
+        }
+        
+        .input-wrapper label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 12px;
+            background: #f0f7ff;
+            border-radius: 8px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            margin: 0;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .result {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .result.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .result-block {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+            border: 2px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+        
+        .result h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .result-main {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+        }
+        
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .detail-item {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .detail-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .detail-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        .calculation-steps {
+            background: #fffbeb;
+            border: 2px solid #fde047;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .calculation-steps.show {
+            display: block;
+        }
+        
+        .calculation-steps h4 {
+            color: #854d0e;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        
+        .calculation-steps ol {
+            margin-left: 20px;
+            color: #713f12;
+        }
+        
+        .calculation-steps li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .toggle-steps {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .toggle-steps:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .actions-block {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .actions-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 14px 28px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        .share-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .share-menu {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            z-index: 1000;
+            min-width: 220px;
+            bottom: 100%;
+            margin-bottom: 5px;
+            left: 0;
+        }
+        
+        .share-menu.show {
+            display: block;
+            animation: slideIn 0.2s ease-out;
+        }
+        
+        .share-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .share-option:hover {
+            background: #f3f4f6;
+        }
+        
+        .share-option-icon {
+            font-size: 20px;
+        }
+        
+        .bio-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
+            border: 2px solid var(--secondary);
+            color: white;
+            font-weight: 700;
+        }
+        
+        .bio-btn:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            border-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+        
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2563eb;
+        }
+        
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .faq-section {
+            background: var(--bg);
+            padding: 60px 0;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        footer a:hover {
+            color: var(--white);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .calculator-section {
+                padding: 20px;
+                margin: -30px 15px 30px;
+            }
+
+            .date-inputs {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            nav li {
+                flex-shrink: 0;
+            }
+
+            nav a {
+                white-space: nowrap;
+                font-size: 14px;
+            }
+
+            .result-details {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .detail-item {
+                padding: 12px;
+            }
+
+            .detail-value {
+                font-size: 18px;
+            }
+
+            .detail-label {
+                font-size: 12px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .share-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+
+            .share-menu {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                width: auto;
+                margin: 0;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .result-main {
+                font-size: 22px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+
+            .content-section p, .content-section li {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 15px;
+            }
+
+            input[type="number"], input[type="date"], select {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 13px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 4px 8px;
+            }
+
+            .calculator-section {
+                padding: 15px;
+            }
+
+            .result-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">📅 Calcul d'Âge</a>
+            <ul>
+                <li><a href="#calculer">Calculer</a></li>
+                <li><a href="age-en-mois-jours.html">Âge en mois</a></li>
+                <li><a href="chien.html">Âge chien</a></li>
+                <li><a href="chat.html">Âge chat</a></li>
+                <li><a href="comparer-ages.html">Comparer</a></li>
+                <li><a href="age-celebrites.html">Célébrités</a></li>
+                <li><a href="#comment-ca-marche">Info</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://agebiologique.eu" target="_blank">Âge Bio</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Calculer mon âge exact à partir de ma date de naissance</h1>
+                <p>Découvrez votre âge précis en années, mois, jours et bien plus encore</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="calculator-section" id="calculer">
+                <div class="form-group">
+                    <label>Votre date de naissance</label>
+                    <div class="date-inputs">
+                        <div class="input-wrapper">
+                            <label for="day">Jour</label>
+                            <input type="number" id="day" min="1" max="31" placeholder="15">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="month">Mois</label>
+                            <select id="month">
+                                <option value="">Sélectionner</option>
+                                <option value="1">Janvier</option>
+                                <option value="2">Février</option>
+                                <option value="3">Mars</option>
+                                <option value="4">Avril</option>
+                                <option value="5">Mai</option>
+                                <option value="6">Juin</option>
+                                <option value="7">Juillet</option>
+                                <option value="8">Août</option>
+                                <option value="9">Septembre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Décembre</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="year">Année</label>
+                            <input type="number" id="year" min="1900" max="2025" placeholder="1990">
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="customDate">
+                        <label for="customDate">Calculer à une date spécifique</label>
+                    </div>
+                    
+                    <div id="targetDateGroup" style="display: none; margin-top: 15px;">
+                        <label for="targetDate" style="display: block; margin-bottom: 8px; font-weight: 600;">Date cible</label>
+                        <input type="date" id="targetDate">
+                    </div>
+                </div>
+                
+                <button type="button" class="btn" onclick="calculateAge()">Calculer mon âge 🎂</button>
+                
+                <div class="result" id="result">
+                    <div class="result-block">
+                        <h3>✨ Votre âge exact</h3>
+                        <div class="result-main" id="resultMain"></div>
+                        
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <div class="detail-value" id="totalDays"></div>
+                                <div class="detail-label">Jours au total</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="totalWeeks"></div>
+                                <div class="detail-label">Semaines</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="totalMonths"></div>
+                                <div class="detail-label">Mois au total</div>
+                            </div>
+                        </div>
+                        
+                        <button class="toggle-steps" onclick="toggleFunStats()">
+                            ✨ Découvrir des statistiques amusantes
+                        </button>
+                        
+                        <div class="calculation-steps" id="funStats">
+                            <h4>🎉 Depuis votre naissance, vous avez :</h4>
+                            <div style="display: grid; gap: 12px; margin-top: 15px;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">💓</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="heartbeats"></div>
+                                        <div style="font-size: 13px; color: #713f12;">battements de cœur</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">🌬️</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="breaths"></div>
+                                        <div style="font-size: 13px; color: #713f12;">respirations</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">🌍</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="earthRotations"></div>
+                                        <div style="font-size: 13px; color: #713f12;">tours complets de la Terre autour du Soleil</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">🌙</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="moonCycles"></div>
+                                        <div style="font-size: 13px; color: #713f12;">cycles lunaires complets</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">😴</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="sleepDays"></div>
+                                        <div style="font-size: 13px; color: #713f12;">jours passés à dormir (environ)</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 24px;">🎂</span>
+                                    <div>
+                                        <div style="font-weight: 700; color: #854d0e;" id="nextBirthday"></div>
+                                        <div style="font-size: 13px; color: #713f12;">jours avant votre prochain anniversaire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions-block">
+                        <div class="actions-title">🎯 Que souhaitez-vous faire ?</div>
+                        <div style="margin-bottom: 12px;">
+                            <a href="https://agebiologique.eu" class="share-btn bio-btn" target="_blank" rel="noopener" style="width: 100%; display: block; text-align: center; font-size: 18px; line-height: 1.4;">🧬 Et votre VRAI âge ?<br>Calculez votre âge biologique</a>
+                        </div>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="copyResult()" style="flex: 1;">📋 Copier</button>
+                            <div style="position: relative; flex: 1;">
+                                <button class="share-btn" onclick="toggleShareMenu(event)" style="width: 100%;">📤 Partager</button>
+                                <div class="share-menu" id="shareMenu">
+                                    <a href="#" class="share-option" onclick="shareViaWhatsApp(event)">
+                                        <span class="share-option-icon">💬</span>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <a href="#" class="share-option" onclick="shareViaFacebook(event)">
+                                        <span class="share-option-icon">📘</span>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" class="share-option" onclick="shareViaTwitter(event)">
+                                        <span class="share-option-icon">🦅</span>
+                                        <span>Twitter / X</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="content-section" id="comment-ca-marche">
+            <div class="container">
+                <h2>Qu'est-ce que le calcul d'âge ?</h2>
+                
+                <p>Le <strong>calcul d'âge</strong> est une opération mathématique qui permet de déterminer avec précision le temps écoulé entre votre <strong>date de naissance</strong> et une date donnée (généralement aujourd'hui). Notre calculateur gratuit vous permet d'obtenir instantanément votre <strong>âge exact en années, mois et jours</strong>, mais aussi en semaines, heures, et même en minutes si nécessaire.</p>
+                
+                <p>Contrairement à un calcul mental approximatif, notre outil prend en compte tous les détails calendaires importants : les <strong>années bissextiles</strong> (avec 366 jours au lieu de 365), les mois de durée variable (28, 29, 30 ou 31 jours), et effectue un calcul précis jour par jour.</p>
+                
+                <h3>Comment fonctionne le calcul d'âge ?</h3>
+                
+                <p>Le principe est simple mais nécessite de la rigueur :</p>
+                
+                <ol>
+                    <li><strong>On commence par les années :</strong> On soustrait l'année de naissance de l'année actuelle.</li>
+                    <li><strong>Puis on ajuste avec les mois :</strong> Si le mois actuel est antérieur au mois de naissance, on retire une année et on ajoute 12 mois.</li>
+                    <li><strong>Enfin, on calcule les jours restants :</strong> Si le jour actuel est inférieur au jour de naissance, on retire un mois et on ajoute le nombre de jours du mois précédent.</li>
+                    <li><strong>On vérifie les années bissextiles :</strong> Une année bissextile survient tous les 4 ans (années divisibles par 4), sauf les années séculaires non divisibles par 400.</li>
+                </ol>
+                
+                <div class="highlight-box">
+                    <p><strong>💡 Exemple concret :</strong> Si vous êtes né(e) le 15 mars 1990 et que nous sommes le 13 octobre 2025 :</p>
+                    <ul>
+                        <li>Années : 2025 - 1990 = 35 ans</li>
+                        <li>Mois : octobre (mois 10) - mars (mois 3) = 7 mois</li>
+                        <li>Jours : 13 - 15 = -2 jours → on retire 1 mois et on ajoute 30 jours (septembre a 30 jours) = 28 jours</li>
+                        <li><strong>Résultat : 35 ans, 6 mois et 28 jours</strong></li>
+                    </ul>
+                </div>
+                
+                <h3>La particularité du 29 février</h3>
+                
+                <p>Les personnes nées un <strong>29 février</strong> ont un anniversaire "officiel" tous les 4 ans seulement. Cependant, pour le calcul d'âge, on considère qu'elles vieillissent d'un an chaque année, comme tout le monde. En pratique, leur anniversaire est célébré le 28 février ou le 1er mars les années non bissextiles.</p>
+                
+                <p>Notre calculateur gère automatiquement ce cas particulier et vous indique votre âge exact, que vous soyez né(e) un 29 février ou n'importe quel autre jour.</p>
+                
+                <h3>Applications pratiques du calcul d'âge</h3>
+                
+                <p>Calculer son âge exact n'est pas qu'une curiosité mathématique. Voici les situations où cela devient indispensable :</p>
+                
+                <ul>
+                    <li><strong>Démarches administratives :</strong> Demande de permis de conduire (18 ans révolus), inscription sur les listes électorales, dépôt de dossier de retraite (62 ans minimum en France).</li>
+                    <li><strong>Assurances et finances :</strong> Les primes d'assurance vie et auto varient selon l'âge exact. Certains placements financiers ont des seuils d'âge précis.</li>
+                    <li><strong>Santé et suivi médical :</strong> Le développement des nourrissons et enfants est suivi au jour près durant les premières années. Les vaccins ont des calendriers précis.</li>
+                    <li><strong>Planification personnelle :</strong> Calculer combien de jours avant un événement important (anniversaire, retraite, majorité d'un enfant).</li>
+                    <li><strong>Ressources humaines :</strong> Vérification de l'âge pour l'embauche, calcul de l'ancienneté exacte, préparation des départs en retraite.</li>
+                    <li><strong>Juridique :</strong> Certains contrats et actes juridiques nécessitent un âge précis (majorité légale, capacité juridique).</li>
+                </ul>
+                
+                <h3>Pourquoi utiliser un calculateur en ligne ?</h3>
+                
+                <p>Bien qu'il soit techniquement possible de calculer son âge manuellement, un calculateur en ligne présente plusieurs avantages majeurs :</p>
+                
+                <ul>
+                    <li><strong>Précision garantie :</strong> Aucun risque d'erreur de calcul, prise en compte automatique des années bissextiles.</li>
+                    <li><strong>Rapidité :</strong> Résultat instantané en quelques secondes.</li>
+                    <li><strong>Détails enrichis :</strong> Vous obtenez non seulement votre âge en années/mois/jours, mais aussi le nombre total de jours vécus, de semaines, d'heures, etc.</li>
+                    <li><strong>Calculs complexes :</strong> Possibilité de calculer votre âge à une date future (ex : "Quel âge aurai-je le 1er janvier 2030 ?").</li>
+                    <li><strong>Accessibilité :</strong> Utilisable partout, sur ordinateur comme sur smartphone.</li>
+                </ul>
+                
+                <h3>Les limites de l'âge chronologique</h3>
+                
+                <p>L'âge que nous calculons ici est votre <strong>âge chronologique</strong>, c'est-à-dire le temps écoulé depuis votre naissance. Mais il existe d'autres façons de mesurer l'âge :</p>
+                
+                <ul>
+                    <li><strong>Âge biologique :</strong> Reflète l'état réel de vos cellules et organes. Une personne de 50 ans peut avoir un âge biologique de 40 ans si elle est en excellente santé, ou de 60 ans en cas de facteurs de risque.</li>
+                    <li><strong>Âge mental/cognitif :</strong> Évalue vos capacités intellectuelles indépendamment de votre âge réel.</li>
+                    <li><strong>Âge social :</strong> Comment la société perçoit votre âge en fonction de votre apparence et comportement.</li>
+                </ul>
+                
+                <p>Pour découvrir votre âge biologique et comprendre votre véritable état de santé, nous vous invitons à utiliser notre <a href="https://agebiologique.eu" target="_blank" rel="noopener"><strong>calculateur d'âge biologique</strong></a>.</p>
+            </div>
+        </section>
+        
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>Questions fréquentes sur le calcul d'âge</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Comment calculer son âge exact en années, mois et jours ?</div>
+                    <div class="faq-answer">Pour calculer votre âge exact, entrez votre jour, mois et année de naissance dans notre calculateur ci-dessus. L'outil prend automatiquement en compte les années bissextiles et vous donne instantanément votre âge précis en années, mois et jours. Il suffit de quelques secondes pour obtenir un résultat fiable.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Qu'est-ce qu'une année bissextile et comment est-elle prise en compte ?</div>
+                    <div class="faq-answer">Une année bissextile compte 366 jours au lieu de 365, avec un 29 février supplémentaire. Cela se produit tous les 4 ans (années divisibles par 4), sauf pour les années séculaires qui ne sont bissextiles que si elles sont divisibles par 400. Par exemple, 2000 était bissextile mais pas 1900. Notre calculateur gère automatiquement ces règles complexes pour un résultat toujours exact.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Pourquoi utiliser un calculateur d'âge en ligne plutôt que calculer manuellement ?</div>
+                    <div class="faq-answer">Un calculateur en ligne évite les erreurs de calcul manuel et fournit instantanément des détails précis impossibles à calculer mentalement : nombre exact de jours vécus, de semaines, d'heures. Il gère aussi les cas complexes comme les années bissextiles et les mois de durée variable. C'est la garantie d'un résultat fiable en quelques secondes.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Que se passe-t-il si je suis né(e) le 29 février ?</div>
+                    <div class="faq-answer">Si vous êtes né(e) un 29 février (année bissextile), vous avez techniquement un anniversaire tous les 4 ans. Cependant, pour le calcul d'âge, vous vieillissez normalement chaque année. Les années non bissextiles, votre anniversaire est généralement célébré le 28 février ou le 1er mars. Notre calculateur prend en charge ce cas particulier automatiquement.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Peut-on calculer son âge à une date future ?</div>
+                    <div class="faq-answer">Oui ! Notre calculateur permet de calculer l'âge que vous aurez à n'importe quelle date future. Cochez simplement l'option "Calculer à une date spécifique" et sélectionnez la date souhaitée. C'est utile pour savoir quel âge vous aurez à une date importante (retraite, événement familial, etc.).</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Quelle est la différence entre l'âge chronologique et l'âge biologique ?</div>
+                    <div class="faq-answer">L'âge chronologique est le temps écoulé depuis votre naissance (ce que calcule cet outil). L'âge biologique reflète l'état réel de votre corps et peut différer de votre âge chronologique selon votre hygiène de vie, génétique et facteurs environnementaux. Une personne de 50 ans peut avoir un âge biologique de 40 ans si elle est en excellente santé. Pour découvrir votre âge biologique, visitez <a href="https://agebiologique.eu" target="_blank" rel="noopener">agebiologique.eu</a>.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Le calculateur est-il gratuit et sans inscription ?</div>
+                    <div class="faq-answer">Oui, notre calculateur d'âge est 100% gratuit et ne nécessite aucune inscription. Vous pouvez l'utiliser autant de fois que vous le souhaitez, sans limite. Aucune donnée personnelle n'est collectée ou stockée.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Comment est calculé le nombre total de jours vécus ?</div>
+                    <div class="faq-answer">Le nombre total de jours est calculé en faisant la différence exacte entre votre date de naissance et la date actuelle (ou la date cible choisie). Le calcul tient compte de toutes les années bissextiles entre ces deux dates, garantissant une précision absolue au jour près.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Âge - Tous droits réservés</p>
+            <p>
+                <a href="/mentions-legales">Mentions légales</a> | 
+                <a href="/politique-confidentialite">Politique de confidentialité</a> | 
+                <a href="/contact">Contact</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle custom date input
+        document.getElementById('customDate').addEventListener('change', function() {
+            const targetDateGroup = document.getElementById('targetDateGroup');
+            targetDateGroup.style.display = this.checked ? 'block' : 'none';
+            if (this.checked) {
+                document.getElementById('targetDate').value = new Date().toISOString().split('T')[0];
+            }
+        });
+        
+        // Allow Enter key to submit
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculateAge();
+                }
+            });
+        });
+        
+        function calculateAge() {
+            const day = parseInt(document.getElementById('day').value);
+            const month = parseInt(document.getElementById('month').value);
+            const year = parseInt(document.getElementById('year').value);
+            
+            if (!day || !month || !year) {
+                alert('⚠️ Veuillez remplir tous les champs (jour, mois et année)');
+                return;
+            }
+            
+            if (day < 1 || day > 31) {
+                alert('⚠️ Le jour doit être entre 1 et 31');
+                return;
+            }
+            
+            if (year < 1900 || year > 2025) {
+                alert('⚠️ L\'année doit être entre 1900 et 2025');
+                return;
+            }
+            
+            const birthdate = new Date(year, month - 1, day);
+            
+            // Determine target date
+            let targetDate;
+            if (document.getElementById('customDate').checked) {
+                const targetInput = document.getElementById('targetDate').value;
+                if (!targetInput) {
+                    alert('⚠️ Veuillez sélectionner une date cible');
+                    return;
+                }
+                targetDate = new Date(targetInput);
+            } else {
+                targetDate = new Date();
+            }
+            
+            if (birthdate > targetDate) {
+                alert('⚠️ La date de naissance ne peut pas être après la date cible');
+                return;
+            }
+            
+            if (birthdate.getMonth() !== month - 1 || birthdate.getDate() !== day) {
+                alert('⚠️ Cette date n\'existe pas. Vérifiez le jour et le mois.');
+                return;
+            }
+            
+            // Calculate age
+            let years = targetDate.getFullYear() - year;
+            let months = targetDate.getMonth() - (month - 1);
+            let days = targetDate.getDate() - day;
+            
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            const totalDays = Math.floor((targetDate - birthdate) / (1000 * 60 * 60 * 24));
+            const totalWeeks = Math.floor(totalDays / 7);
+            const totalMonths = years * 12 + months;
+            
+            // Display results
+            const dateStr = document.getElementById('customDate').checked 
+                ? 'à cette date' 
+                : 'aujourd\'hui';
+            
+            document.getElementById('resultMain').textContent = 
+                `${years} an${years > 1 ? 's' : ''}, ${months} mois et ${days} jour${days > 1 ? 's' : ''}`;
+            
+            document.getElementById('totalDays').textContent = totalDays.toLocaleString('fr-FR');
+            document.getElementById('totalWeeks').textContent = totalWeeks.toLocaleString('fr-FR');
+            document.getElementById('totalMonths').textContent = totalMonths.toLocaleString('fr-FR');
+            
+            // Generate fun statistics
+            generateFunStats(birthdate, targetDate, totalDays, years);
+            
+            document.getElementById('result').classList.add('show');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function generateFunStats(birthdate, targetDate, totalDays, years) {
+            const heartbeats = (totalDays * 100800).toLocaleString('fr-FR');
+            const breaths = (totalDays * 23040).toLocaleString('fr-FR');
+            const earthRotations = years;
+            const moonCycles = Math.floor(totalDays / 29.5).toLocaleString('fr-FR');
+            const sleepDays = Math.floor(totalDays / 3).toLocaleString('fr-FR');
+            
+            let nextBirthday = new Date(targetDate.getFullYear(), birthdate.getMonth(), birthdate.getDate());
+            if (nextBirthday <= targetDate) {
+                nextBirthday.setFullYear(targetDate.getFullYear() + 1);
+            }
+            const daysUntilBirthday = Math.ceil((nextBirthday - targetDate) / (1000 * 60 * 60 * 24));
+            
+            document.getElementById('heartbeats').textContent = heartbeats;
+            document.getElementById('breaths').textContent = breaths;
+            document.getElementById('earthRotations').textContent = earthRotations;
+            document.getElementById('moonCycles').textContent = moonCycles;
+            document.getElementById('sleepDays').textContent = sleepDays;
+            document.getElementById('nextBirthday').textContent = daysUntilBirthday;
+        }
+        
+        function toggleFunStats(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            const stats = document.getElementById('funStats');
+            if (!stats) {
+                console.error('Element funStats not found');
+                return;
+            }
+            const btn = event ? event.target : null;
+            stats.classList.toggle('show');
+            if (btn) {
+                btn.textContent = stats.classList.contains('show') 
+                    ? '✨ Masquer les statistiques' 
+                    : '✨ Découvrir des statistiques amusantes';
+            }
+        }
+        
+        function copyResult() {
+            const resultText = document.getElementById('resultMain').textContent;
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+            
+            if (!resultText || !day || !month || !year) {
+                alert('⚠ Veuillez d\'abord calculer votre âge');
+                return;
+            }
+            
+            const text = `Mon âge : ${resultText}\nNé(e) le : ${day}/${month}/${year}`;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('✅ Résultat copié dans le presse-papier !\n\n💡 Vous pouvez maintenant le coller où vous voulez, ou cliquer sur "Partager" pour l\'envoyer directement.');
+                }).catch(() => {
+                    alert('❌ Erreur lors de la copie');
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('✅ Résultat copié !');
+                } catch (err) {
+                    alert('❌ Erreur lors de la copie');
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+        
+        function toggleShareMenu(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            const menu = document.getElementById('shareMenu');
+            const resultText = document.getElementById('resultMain').textContent;
+            
+            if (!resultText) {
+                alert('❌ Veuillez d\'abord calculer votre âge');
+                return;
+            }
+            
+            const isShowing = menu.classList.contains('show');
+            menu.classList.toggle('show');
+            
+            if (!isShowing) {
+                setTimeout(() => {
+                    document.addEventListener('click', handleOutsideClick);
+                }, 100);
+            } else {
+                document.removeEventListener('click', handleOutsideClick);
+            }
+        }
+        
+        function handleOutsideClick(event) {
+            const menu = document.getElementById('shareMenu');
+            const clickedInsideMenu = event.target.closest('.share-menu');
+            const clickedShareButton = event.target.closest('button')?.textContent.includes('Partager');
+            
+            if (!clickedInsideMenu && !clickedShareButton) {
+                menu.classList.remove('show');
+                document.removeEventListener('click', handleOutsideClick);
+            }
+        }
+        
+        function closeShareMenu() {
+            const menu = document.getElementById('shareMenu');
+            menu.classList.remove('show');
+            document.removeEventListener('click', handleOutsideClick);
+        }
+        
+        function getShareText() {
+            const resultText = document.getElementById('resultMain').textContent;
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+            return `Mon âge exact : ${resultText} (né(e) le ${day}/${month}/${year})`;
+        }
+        
+        function shareViaWhatsApp(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const text = getShareText();
+            const url = `https://wa.me/?text=${encodeURIComponent(text + '\n\n✨ Calculé sur Calcul d\'Âge')}`;
+            window.open(url, '_blank');
+            closeShareMenu();
+        }
+        
+        function shareViaFacebook(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const shareUrl = 'https://calculeage.fr';
+            const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+            closeShareMenu();
+        }
+        
+        function shareViaTwitter(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const text = getShareText();
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + ' ✨')}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+            closeShareMenu();
+        }
+    </script>
+</body>
+</html>

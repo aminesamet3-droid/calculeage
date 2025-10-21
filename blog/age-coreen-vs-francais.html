@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age coréen vs âge français : Pourquoi 1 ou 2 ans de différence ?</title>
+    <meta name="description" content="Découvrez le système d'âge coréen unique et pourquoi les Coréens sont plus âgés d'1 ou 2 ans. Comparaison avec le système français et calcul de votre âge coréen.">
+    <meta name="keywords" content="âge coréen, système âge Corée, calculer âge coréen, différence âge coréen français, âge international vs coréen">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Age coréen vs âge français - Pourquoi cette différence ?">
+    <meta property="og:description" content="Comprenez le système d'âge coréen unique et calculez votre âge selon la méthode traditionnelle coréenne.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.calculeage.fr/blog/age-coreen-vs-francais.html">
+
+    <link rel="canonical" href="https://www.calculeage.fr/blog/age-coreen-vs-francais.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #10b981;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #2563eb;
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: var(--bg);
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .content-section h2 {
+                font-size: 26px;
+            }
+
+            .content-section h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Calcul d'Age</a>
+            <ul>
+                <li><a href="../index.html#calculer">Calculer</a></li>
+                <li><a href="../age-en-mois-jours.html">Age en mois</a></li>
+                <li><a href="../chien.html">Age chien</a></li>
+                <li><a href="../chat.html">Age chat</a></li>
+                <li><a href="../comparer-ages.html">Comparer</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Age coréen vs âge français : Pourquoi 1 ou 2 ans de différence ?</h1>
+                <p>Découvrez le système d'âge unique de la Corée et calculez votre âge coréen</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="article-content">
+                    <p>Imaginez découvrir que vous avez soudainement 1 ou 2 ans de plus qu'indiqué sur votre carte d'identité. C'est exactement ce qui arrive lorsqu'on applique le <strong>système d'âge coréen traditionnel</strong>. Pendant des siècles, la Corée du Sud a utilisé un système de calcul de l'âge radicalement différent de celui utilisé en France et dans la plupart des pays occidentaux. Selon ce système, tous les Coréens naissent à l'âge de 1 an et gagnent une année supplémentaire chaque 1er janvier, indépendamment de leur date d'anniversaire réelle. Cette particularité culturelle fascinante a créé une confusion importante dans les échanges internationaux et a même conduit le gouvernement sud-coréen à abandonner officiellement ce système en 2023. Dans cet article complet, nous allons explorer en détail le système d'âge coréen, comprendre ses origines, le comparer au système français, et vous apprendre à calculer votre âge selon cette méthode traditionnelle.</p>
+
+                    <h2>Qu'est-ce que le système d'âge coréen ?</h2>
+
+                    <p>Le <strong>système d'âge coréen traditionnel</strong>, appelé "seollal nai" en coréen, repose sur deux principes fondamentaux qui le distinguent radicalement du système occidental.</p>
+
+                    <h3>Principe 1 : Naissance à 1 an</h3>
+
+                    <p>Dans le système coréen traditionnel, un bébé naît déjà âgé de 1 an, et non de 0 an comme dans le système international. Cette particularité s'explique par le fait que les Coréens comptaient le temps passé dans le ventre maternel. La vie commençant à la conception, un bébé a déjà environ 9 mois au moment de la naissance, arrondi à 1 an par commodité et symbolisme.</p>
+
+                    <p>Ainsi, un bébé né le 31 décembre 2024 à 23h59 aurait immédiatement 1 an selon le système coréen. Mais l'histoire ne s'arrête pas là...</p>
+
+                    <h3>Principe 2 : Vieillissement au Nouvel An</h3>
+
+                    <p>Le deuxième principe, encore plus déroutant pour un Occidental, est que tout le monde gagne une année supplémentaire simultanément le 1er janvier, indépendamment de sa date d'anniversaire réelle. Il n'y a pas de concept d'anniversaire individuel pour le calcul de l'âge dans le système traditionnel coréen.</p>
+
+                    <p>Reprenons notre exemple : le bébé né le 31 décembre 2024 à 23h59 aurait 1 an à sa naissance. Puis, une minute plus tard, au passage au 1er janvier 2025, il aurait 2 ans ! En l'espace de 60 secondes, ce nouveau-né serait passé de 1 an à 2 ans selon le système coréen, alors qu'il n'a qu'une minute de vie réelle.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Exemple concret :</strong> Si vous êtes né le 15 juillet 2000, voici vos différents âges en janvier 2025 :<br>
+                        - Age international (français) : 24 ans (vous aurez 25 ans le 15 juillet 2025)<br>
+                        - Age coréen traditionnel : 26 ans (1 an à la naissance + 25 passages du 1er janvier)<br>
+                        - Différence : 2 ans de plus qu'en France</p>
+                    </div>
+
+                    <h2>Comment calculer son âge coréen ?</h2>
+
+                    <p>Calculer votre <strong>âge selon le système coréen</strong> est relativement simple une fois que vous comprenez les règles. Voici la méthode étape par étape.</p>
+
+                    <h3>Méthode de calcul simplifiée</h3>
+
+                    <p>La formule la plus simple pour calculer votre âge coréen est la suivante :</p>
+
+                    <p><strong>Age coréen = (Année actuelle - Année de naissance) + 1</strong></p>
+
+                    <p>Cette formule fonctionne si nous sommes après le 1er janvier de l'année en cours. Par exemple, si vous êtes né en 1990 et que nous sommes en 2025 : Age coréen = (2025 - 1990) + 1 = 36 ans.</p>
+
+                    <h3>Ajustement selon la période de l'année</h3>
+
+                    <p>Cependant, la différence entre votre âge coréen et votre âge international varie selon que votre anniversaire a eu lieu ou non cette année :</p>
+
+                    <ul>
+                        <li><strong>Si votre anniversaire n'a pas encore eu lieu cette année :</strong> Votre âge coréen sera supérieur de 2 ans à votre âge international. Exemple : né le 15 juillet 1990, en janvier 2025, vous avez 34 ans (international) et 36 ans (coréen).</li>
+                        <li><strong>Si votre anniversaire a déjà eu lieu cette année :</strong> Votre âge coréen sera supérieur de 1 an seulement. Exemple : né le 15 janvier 1990, en juillet 2025, vous avez 35 ans (international) et 36 ans (coréen).</li>
+                    </ul>
+
+                    <h3>Cas particulier des naissances en fin d'année</h3>
+
+                    <p>Les personnes nées entre le 1er janvier et le 31 décembre de la même année auront toutes le même âge coréen durant l'année suivante, même si elles sont nées à 11 mois d'intervalle. Un bébé né le 2 janvier 2024 et un autre né le 31 décembre 2024 auront tous deux 2 ans coréens le 1er janvier 2025, alors que leurs âges internationaux diffèrent de presque un an.</p>
+
+                    <div class="cta-box">
+                        <h3>Calculez votre âge français exact</h3>
+                        <p style="margin-bottom: 20px;">Avant de comparer avec l'âge coréen, connaissez votre âge international précis</p>
+                        <a href="../index.html#calculer" class="btn">Calculer mon âge</a>
+                    </div>
+
+                    <h2>Les origines culturelles du système d'âge coréen</h2>
+
+                    <p>Pour comprendre ce système apparemment complexe, il faut remonter aux <strong>racines culturelles et philosophiques</strong> de la Corée et de l'Asie de l'Est.</p>
+
+                    <h3>L'influence du confucianisme</h3>
+
+                    <p>Le confucianisme, philosophie dominante en Corée pendant des siècles, accorde une importance capitale au respect des aînés et à la hiérarchie basée sur l'âge. Savoir précisément qui est plus âgé que qui détermine le langage à utiliser (formes honorifiques), les comportements appropriés, et la place de chacun dans la société.</p>
+
+                    <p>Le système d'âge coréen simplifie cette hiérarchisation : toutes les personnes nées la même année civile ont le même âge et sont donc égales hiérarchiquement. Cela créait une cohésion générationnelle forte et évitait les micro-distinctions basées sur quelques mois de différence.</p>
+
+                    <h3>La reconnaissance de la vie prénatale</h3>
+
+                    <p>Compter la période de gestation dans l'âge reflète une vision philosophique où la vie commence à la conception, pas à la naissance. Cette perspective valorise la vie dès ses premiers instants et reconnaît le temps passé dans le ventre maternel comme une partie intégrante de l'existence.</p>
+
+                    <h3>Le calendrier lunaire traditionnel</h3>
+
+                    <p>Historiquement, la Corée utilisait le calendrier lunaire, et le Nouvel An lunaire (Seollal) était le moment clé où tout le monde prenait collectivement une année. Même après l'adoption du calendrier grégorien, cette tradition s'est maintenue, transférée au 1er janvier du calendrier solaire pour certains usages, tout en conservant le Seollal comme célébration importante.</p>
+
+                    <h2>Les trois systèmes d'âge en Corée du Sud</h2>
+
+                    <p>La situation en Corée du Sud était en réalité encore plus complexe, car trois <strong>systèmes d'âge différents</strong> coexistaient simultanément jusqu'en 2023.</p>
+
+                    <h3>L'âge coréen traditionnel (seollal nai)</h3>
+
+                    <p>C'est le système que nous avons décrit : naissance à 1 an, vieillissement au 1er janvier. Utilisé principalement dans les interactions sociales quotidiennes, les conversations informelles, et pour déterminer la hiérarchie sociale.</p>
+
+                    <h3>L'âge "compté" (yeon nai)</h3>
+
+                    <p>Un système légèrement différent utilisé pour certains contextes administratifs : on naît à 0 an (comme dans le système international), mais on gagne une année chaque 1er janvier. Ce système était utilisé notamment pour déterminer l'âge de scolarisation et certains services publics.</p>
+
+                    <h3>L'âge international (man nai)</h3>
+
+                    <p>Le système occidental standard : on naît à 0 an et on vieillit d'un an à chaque anniversaire. Utilisé dans les documents officiels, les passeports, les contrats internationaux, et de plus en plus dans les contextes formels.</p>
+
+                    <p>Cette coexistence de trois systèmes créait une confusion considérable, même pour les Coréens eux-mêmes. Selon le contexte, une même personne pouvait avoir trois âges différents simultanément !</p>
+
+                    <h2>La fin officielle du système d'âge coréen en 2023</h2>
+
+                    <p>Face aux nombreuses complications créées par ce système unique, le gouvernement sud-coréen a pris une <strong>décision historique</strong> en 2023.</p>
+
+                    <h3>Les raisons de l'abandon</h3>
+
+                    <p>Plusieurs facteurs ont motivé cette réforme majeure :</p>
+
+                    <ul>
+                        <li><strong>Confusion administrative :</strong> Les différents systèmes créaient des erreurs dans les dossiers médicaux, les assurances, les contrats, et les statistiques nationales.</li>
+                        <li><strong>Complications internationales :</strong> Dans un monde globalisé, avoir un système d'âge différent compliquait les échanges avec l'étranger (visa, contrats, compétitions sportives).</li>
+                        <li><strong>Injustices perçues :</strong> Certaines lois basées sur l'âge (âge minimum pour acheter de l'alcool, tabac, etc.) créaient des situations absurdes où une personne née le 31 décembre pouvait légalement acheter de l'alcool deux ans avant une personne née le 2 janvier de l'année suivante.</li>
+                        <li><strong>Modernisation sociale :</strong> Les jeunes générations, plus internationalisées, trouvaient ce système archaïque et inutilement complexe.</li>
+                    </ul>
+
+                    <h3>L'application de la réforme</h3>
+
+                    <p>À partir du 28 juin 2023, la Corée du Sud a officiellement adopté le système d'âge international pour tous les usages officiels, administratifs et légaux. Du jour au lendemain, tous les Sud-Coréens ont "rajeuni" de 1 ou 2 ans sur leurs documents officiels.</p>
+
+                    <p>Cependant, dans les interactions sociales quotidiennes, beaucoup de Coréens continuent d'utiliser le système traditionnel par habitude, créant encore parfois des malentendus. Le changement culturel profond prendra probablement une génération complète.</p>
+
+                    <h2>Comparaison détaillée : âge coréen vs âge français</h2>
+
+                    <p>Comparons concrètement les <strong>différences entre les deux systèmes</strong> à travers plusieurs exemples.</p>
+
+                    <h3>Exemple 1 : Naissance en début d'année</h3>
+
+                    <p>Personne née le 5 janvier 2000 :<br>
+                    - Le 10 janvier 2000 : 10 jours (France) vs 1 an (Corée) = différence de presque 1 an<br>
+                    - Le 1er janvier 2001 : 1 an (France) vs 2 ans (Corée) = différence de 1 an<br>
+                    - Le 10 janvier 2025 : 25 ans (France) vs 26 ans (Corée) = différence de 1 an</p>
+
+                    <h3>Exemple 2 : Naissance en fin d'année</h3>
+
+                    <p>Personne née le 28 décembre 2000 :<br>
+                    - Le 30 décembre 2000 : 2 jours (France) vs 1 an (Corée) = différence énorme<br>
+                    - Le 1er janvier 2001 : 4 jours (France) vs 2 ans (Corée) = différence de presque 2 ans<br>
+                    - Le 10 janvier 2025 : 24 ans (France) vs 26 ans (Corée) = différence de 2 ans</p>
+
+                    <h3>Exemple 3 : Naissance en milieu d'année</h3>
+
+                    <p>Personne née le 15 juillet 2000 :<br>
+                    - Le 1er janvier 2025 : 24 ans (France) vs 26 ans (Corée) = différence de 2 ans<br>
+                    - Le 15 juillet 2025 : 25 ans (France) vs 26 ans (Corée) = différence de 1 an<br>
+                    - Le 1er janvier 2026 : 25 ans (France) vs 27 ans (Corée) = différence de 2 ans</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Règle générale :</strong> Selon le système coréen traditionnel, vous êtes toujours 1 ou 2 ans plus âgé qu'avec le système français. Vous avez 2 ans de plus avant votre anniversaire de l'année en cours, et 1 an de plus après votre anniversaire.</p>
+                    </div>
+
+                    <h2>Impact du système d'âge coréen sur la société</h2>
+
+                    <p>Le <strong>système d'âge coréen</strong> n'était pas qu'une curiosité mathématique ; il influençait profondément les interactions sociales et la structure de la société coréenne.</p>
+
+                    <h3>Hiérarchie sociale et langage</h3>
+
+                    <p>En coréen, il existe différents niveaux de langage selon que vous parlez à quelqu'un de plus âgé, du même âge, ou plus jeune. Connaître l'âge exact de votre interlocuteur est crucial pour choisir le bon niveau de politesse. Une erreur peut être considérée comme un manque de respect grave.</p>
+
+                    <p>Le système traditionnel simplifie cette question : toutes les personnes de la même "génération d'année" (nées la même année civile) sont égales et peuvent se parler de manière informelle. Cela crée une forte cohésion entre personnes nées la même année, qui se considèrent comme des pairs absolus.</p>
+
+                    <h3>Relations et amitiés</h3>
+
+                    <p>En Corée, on demande souvent l'âge dès la première rencontre, ce qui peut sembler impoli pour un Occidental. Cette question n'est pas indiscrète mais nécessaire pour établir la relation appropriée. Les amis du même âge (même année de naissance) développent souvent des liens particulièrement forts, se considérant comme véritablement égaux.</p>
+
+                    <h3>Milieu professionnel</h3>
+
+                    <p>Dans les entreprises coréennes, la hiérarchie basée sur l'âge (et l'ancienneté) est très importante. Un employé plus jeune doit montrer du respect à un collègue plus âgé, même s'ils ont le même poste. Le système d'âge coréen renforçait cette structure hiérarchique claire.</p>
+
+                    <div class="cta-box">
+                        <h3>Comparez deux âges différents</h3>
+                        <p style="margin-bottom: 20px;">Calculez la différence d'âge entre deux personnes selon le système français</p>
+                        <a href="../comparer-ages.html" class="btn">Comparer les âges</a>
+                    </div>
+
+                    <h2>Autres pays utilisant des systèmes d'âge similaires</h2>
+
+                    <p>La Corée n'est pas le seul pays à avoir utilisé un <strong>système d'âge alternatif</strong>. D'autres cultures asiatiques ont développé des approches similaires.</p>
+
+                    <h3>Le Japon</h3>
+
+                    <p>Le Japon utilisait autrefois un système similaire appelé "kazoedoshi", où tout le monde gagnait une année au Nouvel An. Cependant, le Japon a abandonné ce système en 1950 pour adopter le système international, bien avant la Corée. Aujourd'hui, le Japon utilise exclusivement le système d'âge occidental.</p>
+
+                    <h3>La Chine</h3>
+
+                    <p>La Chine traditionnelle utilisait également un système où l'on naissait à 1 an et vieillissait au Nouvel An lunaire. Ce système, appelé "xusui", est encore occasionnellement utilisé par les personnes âgées en milieu rural, mais la majorité des Chinois utilisent désormais le système international, surtout en ville et dans les contextes officiels.</p>
+
+                    <h3>Le Vietnam</h3>
+
+                    <p>Le Vietnam avait aussi un système traditionnel similaire, bien que moins rigidement appliqué que en Corée. Comme la Chine, le Vietnam a progressivement adopté le système international, particulièrement auprès des jeunes générations.</p>
+
+                    <h2>Implications pratiques pour les étrangers en Corée</h2>
+
+                    <p>Si vous voyagez en Corée du Sud ou interagissez avec des Coréens, comprendre le <strong>système d'âge</strong> peut éviter des malentendus.</p>
+
+                    <h3>Quelle âge donner quand on vous demande ?</h3>
+
+                    <p>Depuis la réforme de 2023, vous pouvez donner votre âge international sans problème dans les contextes officiels. Dans les interactions sociales, les Coréens s'adaptent généralement aux étrangers et acceptent l'âge international. Si vous voulez être absolument précis, vous pouvez demander : "Voulez-vous mon âge international ou mon âge coréen ?"</p>
+
+                    <h3>Comprendre les références culturelles</h3>
+
+                    <p>Dans les dramas coréens, les films, ou les conversations, vous entendrez souvent des références à l'âge qui peuvent sembler étranges. Par exemple, des personnages très préoccupés par une différence de quelques mois d'âge, ou des blagues sur le fait de vieillir d'un an au Nouvel An. Comprendre le système traditionnel éclaire ces références.</p>
+
+                    <h3>Âge et légalité</h3>
+
+                    <p>Pour les questions légales (âge minimum pour boire de l'alcool à 19 ans, pour conduire, pour voter), la Corée utilise désormais exclusivement le système international. Un étranger de 18 ans ne peut pas boire d'alcool, même si son "âge coréen" serait de 19 ou 20 ans.</p>
+
+                    <h2>L'âge dans d'autres cultures du monde</h2>
+
+                    <p>Au-delà de l'Asie de l'Est, d'autres cultures ont développé des <strong>conceptions uniques de l'âge</strong>.</p>
+
+                    <h3>L'Éthiopie et son calendrier unique</h3>
+
+                    <p>L'Éthiopie utilise un calendrier différent du calendrier grégorien, avec environ 7 à 8 ans de décalage. Un Éthiopien né en "2000" selon son calendrier serait né en 2007-2008 selon notre calendrier. Cela crée une confusion similaire à celle du système coréen lors des interactions internationales.</p>
+
+                    <h3>Certaines cultures africaines</h3>
+
+                    <p>Dans certaines cultures africaines traditionnelles, l'âge exact en années n'a pas la même importance qu'en Occident. On se définit plutôt par sa "classe d'âge" ou son statut social (enfant, adolescent initié, adulte marié, ancien). La notion d'âge chronologique précis est une préoccupation moderne importée.</p>
+
+                    <h2>Conclusion : la diversité des façons de compter le temps</h2>
+
+                    <p>Le <strong>système d'âge coréen traditionnel</strong> nous rappelle que notre façon occidentale de compter l'âge n'est pas universelle. Pendant des siècles, des millions de personnes ont vécu avec un système radicalement différent, qui avait sa propre logique culturelle et philosophique.</p>
+
+                    <p>Bien que la Corée du Sud ait officiellement abandonné ce système en 2023 pour s'aligner sur le standard international, cette tradition reste fascinante. Elle illustre comment la culture influence notre perception du temps, de l'identité et des relations sociales.</p>
+
+                    <p>Pour les passionnés de culture coréenne, comprendre ce système permet de mieux apprécier les dramas, les films, et les interactions sociales. Pour les voyageurs, c'est une clé pour comprendre certains aspects de la société coréenne. Et pour tous, c'est un rappel que notre façon de voir le monde n'est qu'une parmi tant d'autres, tout aussi valides et riches de sens.</p>
+
+                    <p>Alors, quel âge auriez-vous si vous étiez né en Corée ? Faites le calcul et découvrez cette version alternative de vous-même, plus âgée d'un ou deux ans, et qui vieillit collectivement avec tous ceux nés la même année à chaque passage du Nouvel An !</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>Questions fréquentes</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Comment calculer son âge coréen ?</div>
+                    <div class="faq-answer">Pour calculer votre âge coréen traditionnel, utilisez la formule : (Année actuelle - Année de naissance) + 1. Par exemple, si vous êtes né en 1995 et nous sommes en 2025, votre âge coréen serait 31 ans. Avant votre anniversaire, vous aurez 2 ans de plus qu'en France ; après votre anniversaire, seulement 1 an de plus.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Pourquoi les Coréens sont-ils plus âgés d'1 ou 2 ans ?</div>
+                    <div class="faq-answer">Le système coréen traditionnel compte 1 an à la naissance (incluant le temps de gestation) et ajoute 1 an à tout le monde simultanément chaque 1er janvier, indépendamment de la date d'anniversaire réelle. Cela crée une différence de 1 à 2 ans avec le système international où l'on naît à 0 an et vieillit à son anniversaire.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">La Corée du Sud utilise-t-elle encore le système d'âge traditionnel ?</div>
+                    <div class="faq-answer">Non, depuis le 28 juin 2023, la Corée du Sud a officiellement adopté le système d'âge international pour tous les usages administratifs et légaux. Cependant, certains Coréens continuent d'utiliser le système traditionnel dans les interactions sociales quotidiennes par habitude culturelle.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quels autres pays utilisent un système d'âge différent ?</div>
+                    <div class="faq-answer">Le Japon utilisait un système similaire jusqu'en 1950. La Chine et le Vietnam avaient aussi des systèmes traditionnels comparables, mais les ont progressivement abandonnés au profit du système international. L'Éthiopie utilise un calendrier différent qui crée également un décalage d'âge d'environ 7-8 ans.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcul d'Age - Tous droits réservés</p>
+            <p>
+                <a href="../index.html">Accueil</a> |
+                <a href="../index.html#calculer">Calculateur</a> |
+                <a href="#top">Haut de page</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment calculer son âge coréen ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour calculer votre âge coréen traditionnel, utilisez la formule : (Année actuelle - Année de naissance) + 1. Avant votre anniversaire, vous aurez 2 ans de plus qu'en France ; après votre anniversaire, seulement 1 an de plus."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pourquoi les Coréens sont-ils plus âgés d'1 ou 2 ans ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le système coréen traditionnel compte 1 an à la naissance et ajoute 1 an à tout le monde simultanément chaque 1er janvier, indépendamment de la date d'anniversaire réelle."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "La Corée du Sud utilise-t-elle encore le système d'âge traditionnel ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Non, depuis le 28 juin 2023, la Corée du Sud a officiellement adopté le système d'âge international pour tous les usages administratifs et légaux."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
