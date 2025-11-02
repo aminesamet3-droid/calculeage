@@ -1,14 +1,15 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [
         {
           "type": "host",
           "value": "calculeage.fr"
         }
       ],
-      "destination": "https://www.calculeage.fr/:path*",
+      "destination": "https://www.calculeage.fr/:path",
+      "permanent": true,
       "statusCode": 308
     }
   ],
