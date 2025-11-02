@@ -9,7 +9,7 @@
         }
       ],
       "destination": "https://www.calculeage.fr/:path*",
-      "permanent": true
+      "statusCode": 308
     }
   ],
   "headers": [
