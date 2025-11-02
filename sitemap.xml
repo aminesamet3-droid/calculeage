@@ -3,9 +3,27 @@
   <!-- Pages principales -->
   <url>
     <loc>https://www.calculeage.fr/</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/a-propos.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/contact.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/outil-pro-age-groupe.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.calculeage.fr/age-en-mois-jours.html</loc>
@@ -38,7 +56,34 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Articles de blog SEO (20 articles) -->
+  <!-- Articles de blog SEO (24 articles) -->
+  <!-- Nouveaux articles 2025 -->
+  <url>
+    <loc>https://www.calculeage.fr/blog/guide-complet-calcul-age-exact.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/blog/annees-bissextiles-expliquees-2025.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/blog/importance-calcul-age-demarches-administratives.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/blog/calculer-age-animaux-chien-chat-2025.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Articles existants -->
   <url>
     <loc>https://www.calculeage.fr/blog/comment-calculer-son-age-exact.html</loc>
     <lastmod>2025-10-15</lastmod>
@@ -544,6 +589,12 @@
   <url>
     <loc>https://www.calculeage.fr/ville/calcul-age-villeurbanne.html</loc>
     <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.calculeage.fr/ville/calcul-age-besancon.html</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
